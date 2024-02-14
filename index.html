@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sth</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"
+      integrity="sha512-aNMyYYxdIxIaot0Y1/PLuEu3eipGCmsEUBrUq+7aVyPGMFH8z0eTP0tkqAvv34fzN6z+201d3T8HPb1svWSKHQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="min-h-[100vw] max-w-[100vw] overflow-x-hidden">
+    <div class="relative w-screen h-screen">
+      <img class="w-screen h-screen object-cover" src="img/big.png" alt="" />
+
+      <div
+        id="overlay"
+        class="absolute top-0 left-0 w-screen flex justify-center pt-[11.95vh]"
+      >
+        <!-- pt=118px -->
+        <div id="scale-container" class="relative w-[35.2vw] h-[98vh]">
+          <!-- w=507px h=1022px -->
+          <div
+            id="scale-border"
+            class="absolute -left-[1.25px] -top-[1.25px] border bg-gray-100 rounded-[120px] w-[100.5%] h-[100.5%] shrink-0"
+          ></div>
+          <div
+            id="scale-box"
+            class="absolute shrink-0 -left-[32.36vw] -top-[12vh]"
+          ></div>
+        </div>
+      </div>
+      <svg
+        class=""
+        xmlns="http://www.w3.org/2000/svg"
+        width="507"
+        height="1022"
+        viewBox="0 0 507 1022"
+        enable-background="new 0 0 200 200"
+      >
+        <g>
+          <clipPath id="clip">
+            <rect
+              x="32.4vw"
+              y="12vh"
+              width="35.2vw"
+              height="99.8vh"
+              rx="120"
+              ry="120"
+              fill="white"
+            />
+          </clipPath>
+        </g>
+      </svg>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

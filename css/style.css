@@ -1,0 +1,9 @@
+#scale-box {
+    background-image: url("/img/big.png");
+    background-size: cover;
+    background-position-x: 50%;
+    background-position-y: 50%;
+    width: 100vw;
+    height: 100vh;
+    clip-path: url(#clip);
+}

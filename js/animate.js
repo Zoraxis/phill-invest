@@ -27,8 +27,6 @@ var coverRatio = Math.max(originalRatios.width, originalRatios.height);
 var finalWidth = imgX * coverRatio;
 var finalHeight = imgY * coverRatio;
 
-console.log("🚀 ~ finalWidth:", finalWidth);
-console.log("🚀 ~ finalHeight:", finalHeight);
 zoomWidth = finalWidth * zoomCoef;
 zoomHeight = finalHeight * zoomCoef;
 
@@ -56,7 +54,6 @@ let lastScroll = 0,
 onscroll = (event) => {
   lastScroll = thisScroll;
   thisScroll = window.scrollY;
-  console.log("🚀 ~ lastKnownScrollPosition:", thisScroll);
 
   if (thisScroll > 0 && lastScroll == 0) {
     animate([
@@ -85,17 +82,17 @@ onscroll = (event) => {
           left: "-38.475vw",
           backgroundSize: `${zoomWidth * 1.3}px ${zoomHeight * 1.3}px`,
           backgroundPositionY: "-=80%",
-        //   complete: () => {
-        //     animate([
-        //       {
-        //         targets: ["#scale-box"],
-        //         props: {
-        //           backgroundSize: `${zoomWidth}px ${zoomHeight}px`,
-        //           backgroundPositionY: "10%",
-        //         },
-        //       },
-        //     ]);
-        //   },
+          //   complete: () => {
+          //     animate([
+          //       {
+          //         targets: ["#scale-box"],
+          //         props: {
+          //           backgroundSize: `${zoomWidth}px ${zoomHeight}px`,
+          //           backgroundPositionY: "10%",
+          //         },
+          //       },
+          //     ]);
+          //   },
         },
       },
       {
@@ -110,13 +107,48 @@ onscroll = (event) => {
         targets: ["#overlay"],
         props: {
           paddingTop: "36.71vh", // pt=375px
+        }
+      },
+      {
+        targets: [".up"],
+        props: {
+          translateY: "-=20%",
+          opacity: 0,
+        },
+      },
+      {
+        targets: [
+          "#scale-content .gradient-top",
+          "#scale-content .gradient-bottom",
+        ],
+        props: {
+          top: "+=15%",
+        },
+      },
+      {
+        targets: [".play-default"],
+        props: {
+          width: "4.09vw",
+          height: "7.63vw",
+        },
+      },
+      {
+        targets: ["#scale-content .gradient-bottom", "#scale-content"],
+        props: {
+          borderRadius: "120px",
+        },
+      },
+      {
+        targets: ["#scale-content"],
+        props: {
+          height: "100%",
         },
       },
     ]);
     body.style.overflowY = "hidden";
     setTimeout(() => {
       body.style.overflowY = "visible";
-    }, duration * 0.7);
+    }, duration * 1);
   } else if (thisScroll == 0 && lastScroll > 0) {
     animate([
       {
@@ -151,6 +183,41 @@ onscroll = (event) => {
         targets: ["#overlay"],
         props: {
           paddingTop: "11.95vh", // pt=118px
+        },
+      },
+      {
+        targets: [".up"],
+        props: {
+          translateY: "+=20%",
+          opacity: 1,
+        },
+      },
+      {
+        targets: [
+          "#scale-content .gradient-top",
+          "#scale-content .gradient-bottom",
+        ],
+        props: {
+          top: "-=15%",
+        },
+      },
+      {
+        targets: [".play-default"],
+        props: {
+          width: "7.63vw",
+          height: "7.63vw",
+        },
+      },
+      {
+        targets: ["#scale-content .gradient-bottom", "#scale-content"],
+        props: {
+          borderRadius: "0",
+        },
+      },
+      {
+        targets: ["#scale-content"],
+        props: {
+          height: "89.9%",
         },
       },
     ]);

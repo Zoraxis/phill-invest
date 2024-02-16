@@ -16,6 +16,7 @@ const animate = (anims) => {
 };
 
 const container = document.querySelector("#scale-block");
+const body = document.body
 const layer = document.querySelector("#scale-layer");
 
 const containerX = container.clientWidth,
@@ -73,6 +74,8 @@ onscroll = (event) => {
         scale: 1
       },
     ]);
+    body.style.overflowY = "hidden";
+    setTimeout(() => {body.style.overflowY = "visible";}, duration * 0.9);
   } else if (thisScroll == 0 && lastScroll > 0) {
     animate([
       {

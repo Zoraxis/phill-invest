@@ -5,18 +5,33 @@ const duration = 1080,
   delay = 50,
   easing = "cubicBezier(.35, 0, 0, 1)";
 
-const animate = (anims) => {
+let queue = [];
+
+const animate = (anims, name = false) => {
+  if (!!name) {
+    if (queue.find((x) => x.name == name) != undefined && name) return -1;
+    queue.push({ name, count: anims.length });
+  }
   for (const anim of anims) {
     anime({
       easing,
       duration,
       ...anim,
+      complete: () => {
+        if(!name) return;
+
+        const q = queue.find((x) => x.name == name);
+        q.count--;
+        if (q.count <= 0) {
+          queue = queue.filter((x) => x.name != q.name);
+        }
+      },
     });
   }
 };
 
 const container = document.querySelector("#scale-block");
-const body = document.body
+const body = document.body;
 const layer = document.querySelector("#scale-layer");
 
 const containerX = container.clientWidth,
@@ -71,11 +86,13 @@ onscroll = (event) => {
         translateX: "-50%",
         translateY: "0vh",
         opacity: 1,
-        scale: 1
+        scale: 1,
       },
     ]);
     body.style.overflowY = "hidden";
-    setTimeout(() => {body.style.overflowY = "visible";}, duration * 0.9);
+    setTimeout(() => {
+      body.style.overflowY = "visible";
+    }, duration * 0.9);
   } else if (thisScroll == 0 && lastScroll > 0) {
     animate([
       {
@@ -119,14 +136,14 @@ onscroll = (event) => {
         translateX: "-50%",
         translateY: "-10vh",
         opacity: 0,
-        scale: 0.6
+        scale: 0.6,
       },
       {
         targets: ".scale-up-in",
         translateX: "-50%",
         translateY: "+10vh",
         opacity: 0,
-        scale: 0.6
+        scale: 0.6,
       },
     ]);
   }

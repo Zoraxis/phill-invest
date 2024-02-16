@@ -23,11 +23,40 @@ const getAllAfter = (id) => {
 const move = (dir = 0) => {
   const moveDistance = dir * (sliderX + sliderGapX);
 
-  if ((curr + dir < 0 || curr + dir > totalSlides)) {
+  if ((curr + dir < 0 || curr + dir > totalSlides - 1)) {
     return;
   }
 
   const nextId = curr + dir;
+
+  let free = 0;
+  if(dir == 1) {
+    free = animate([
+      {
+        targets: getSlideSelector(curr),
+        scale: 0.3,
+        opacity: 0,
+      },
+      {
+        targets: getAllAfter(curr),
+        translateX: `-=${sliderX}px`,
+      },
+    ], "slider")
+  } else if (dir == -1) {
+    free = animate([
+      {
+        targets: getSlideSelector(curr - 1),
+        scale: 1,
+        opacity: 1
+      },
+      {
+        targets: getAllAfter(curr - 1),
+        translateX: `+=${sliderX}px`,
+      },
+    ], "slider")
+  }
+
+  if( free == -1) return;
 
   if (nextId == 0) {
     prev.classList.add(...disabledStyles);
@@ -40,32 +69,6 @@ const move = (dir = 0) => {
     next.classList.remove(...disabledStyles);
   }
 
-  if(dir == 1) {
-    animate([
-      {
-        targets: getSlideSelector(curr),
-        scale: 0.3,
-        opacity: 0,
-        changeComplete: () => { console.log("complete") },
-      },
-      {
-        targets: getAllAfter(curr),
-        translateX: `-=${sliderX}px`,
-      },
-    ])
-  } else if (dir == -1) {
-    animate([
-      {
-        targets: getSlideSelector(curr - 1),
-        scale: 1,
-        opacity: 1
-      },
-      {
-        targets: getAllAfter(curr - 1),
-        translateX: `+=${sliderX}px`,
-      },
-    ])
-  }
   curr += dir;
 };
 

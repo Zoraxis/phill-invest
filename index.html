@@ -45,20 +45,51 @@
                     <span data-text="caroseul-description2" class="font-normal text-lg"></span>
                     <span data-text="caroseul-description3" class="font-normal text-lg"></span>
                 </div>
-                <object data="media/icons/mic.svg" style="transform: translateX(-50%);"
-                    class="absolute scale-down-in scale-down left-1/2 bottom-[-10vh] h-[47vh] w-[49.7vh] object-fill pointer-events-none opacity-0 origin-center z-[1] scale-[0.6]"></object>
-                <div class="w-[29.4vh] h-[46.6vh] absolute bottom-[17.5vh] left-[26.1vh] rounded-[80px] overflow-hidden">
-                    <img class="top-0 left-0 w-full h-full absolute object-cover" src="media/img/caroseul2.png" alt="c">
-                    <div class="absolute left-0 -bottom-[7vh] w-full gradient-bottom h-full z-[1]"></div>
+                <!-- <object data="media/icons/mic.svg" style="transform: translateX(-50%);" -->
+                    <!-- class="absolute scale-down-in scale-down left-1/2 bottom-[-10vh] h-[47vh] w-[49.7vh] object-fill pointer-events-none opacity-0 origin-center z-[1] scale-[0.6]"></object> -->
+                <div id="caroseul" class="z-[2]">
+                    <div data-num="-1" style="transform: translateX(-19.5vh);" class="w-[29.4vh] h-[46.6vh] absolute bottom-[17.5vh] left-[17.7vw] rounded-[80px] overflow-hidden flex justify-end flex-col pl-[2.9vh] pb-[5vh] caroseul-item">
+                        <img class="top-0 left-0 w-full h-full absolute object-cover" src="media/img/caroseul2.png" alt="c">
+                        <div class="absolute left-0 -bottom-[7vh] w-full gradient-bottom h-full z-[1]"></div>
+                        <object class="top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 absolute w-[6.9vh]" data="media/icons/play.svg"></object>
+                        <div class="text-rows z-[1]">
+                            <span data-text="caroseul2-title" class="text-[#84E644] text-[19px] font-medium"></span>
+                            <span data-text="caroseul2-author" class="text-white text-[17px] font-normal"></span>
+                        </div>
+                    </div>
+                    <div style="transform: translateX(-19.5vh);" class="w-[39vh] h-[62vh] absolute bottom-[10vh] left-[17.7vw] rounded-[80px] overflow-hidden flex justify-end flex-col pl-[2.9vh] pb-[5vh] caroseul-item z-[2]">
+                        <img class="top-0 left-0 w-full h-full absolute object-cover" src="media/img/big.png" alt="c">
+                        <div class="absolute left-0 -bottom-[7vh] w-full gradient-bottom h-full z-[1]"></div>
+                        <object class="top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 absolute w-[6.9vh]" data="media/icons/play.svg"></object>
+                        <div class="text-rows z-[1]">
+                            <span data-text="caroseul3-title" class="text-[#84E644] text-[19px] font-medium"></span>
+                            <span data-text="caroseul3-author" class="text-white text-[17px] font-normal"></span>
+                        </div>
+                    </div>
+                    <div data-num="1" style="transform: translateX(-19.5vh);" class="w-[29.4vh] h-[46.6vh] absolute bottom-[17.5vh] left-[17.7vw] rounded-[80px] overflow-hidden flex justify-end flex-col pl-[2.9vh] pb-[5vh] caroseul-item z-[1]">
+                        <img class="top-0 left-0 w-full h-full absolute object-cover" src="media/img/caroseul3.png" alt="c">
+                        <div class="absolute left-0 -bottom-[7vh] w-full gradient-bottom h-full z-[1]"></div>
+                        <object class="top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 absolute w-[6.9vh]" data="media/icons/play.svg"></object>
+                        <div class="text-rows z-[1]">
+                            <span data-text="caroseul3-title" class="text-[#84E644] text-[19px] font-medium"></span>
+                            <span data-text="caroseul3-author" class="text-white text-[17px] font-normal"></span>
+                        </div>
+                    </div>
+                    <div style="transform: translateX(-19.5vh);" class="w-[29.4vh] h-[46.6vh] absolute bottom-[17.5vh] left-[17.7vw] rounded-[80px] overflow-hidden flex justify-end flex-col pl-[2.9vh] pb-[5vh] caroseul-item -z-[2] opacity-0">
+                        <img class="top-0 left-0 w-full h-full absolute object-cover" src="media/img/caroseul3.png" alt="c">
+                        <div class="absolute left-0 -bottom-[7vh] w-full gradient-bottom h-full z-[1]"></div>
+                        <object class="top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 absolute w-[6.9vh]" data="media/icons/play.svg"></object>
+                        <div class="text-rows z-[1]">
+                            <span data-text="caroseul3-title" class="text-[#84E644] text-[19px] font-medium"></span>
+                            <span data-text="caroseul3-author" class="text-white text-[17px] font-normal"></span>
+                        </div>
+                    </div>
                 </div>
-                <div class="w-[29.4vh] h-[46.6vh] absolute bottom-[17.5vh] right-[26.1vh] rounded-[80px] overflow-hidden">
-                    <img class="top-0 left-0 w-full h-full absolute object-cover" src="media/img/caroseul3.png" alt="c">
-                    <div class="absolute left-0 -bottom-[7vh] w-full gradient-bottom h-full z-[1]"></div>
+                <div id="carousel-dots" class="flex items-center gap-2 absolute left-1/2 -translate-x-1/2 bottom-[5vh]">
                 </div>
 
                 <div id="scale-box"
                     class="bottom-0 h-[86.2vh] w-[60vh] overflow-hidden absolute left-1/2 -translate-x-1/2 shrink-0 origin-bottom border-4 border-b-[0.5px] rounded-t-[80px] border-white block z-[2]">
-                    <!-- <div class="absolute left-0 bottom-0 bg-black w-full h-full z-[10]"></div> -->
                     <div id="scale-img" style="transform: translateX(-50%);"
                         class="main-bg w-screen h-screen absolute -top-[13.8vh] left-1/2 origin[50%_100%] z-[1]">
                     </div>
@@ -144,7 +175,7 @@
                 </div>
             </div>
         </div>
-        <div class="relative w-full">
+        <div class="relative w-full overflow-hidden">
             <div class="absolute pointer-events-none bg-white top-0 -left-[1200px] w-[1200px] h-[680px] z-[2]"></div>
             <div class="absolute pointer-events-none -top-[1px] -left-[2px] gradient-w-left h-[681px] w-[400px] z-[2]">
             </div>
@@ -187,6 +218,8 @@
     </div>
 
     <script src="js/animate.js"></script>
+    <script src="js/caroseul.js"></script>
+    <script src="js/scroll.js"></script>
     <script src="js/text.js"></script>
     <script src="js/slider.js"></script>
 </body>

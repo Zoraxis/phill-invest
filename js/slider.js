@@ -78,7 +78,7 @@ const move = (dir = 0) => {
   curr += dir;
 };
 
-window.addEventListener("load", () => {
+const initSlider = () => {
   prev = document.getElementById("slider-prev-btn");
   next = document.getElementById("slider-next-btn");
 
@@ -95,4 +95,4 @@ window.addEventListener("load", () => {
   next.onclick = () => {
     move(1);
   };
-});
+};

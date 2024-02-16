@@ -1,0 +1,95 @@
+{
+    "en": {
+        "header": {
+            "type": "list",
+            "data": [
+                {
+                    "label": "Episodes",
+                    "href":  "/episodes"
+                },
+                {
+                    "label": "Blog",
+                    "href":  "/blog"
+                },
+                {
+                    "label": "Resource",
+                    "href":  "/resource"
+                },
+                {
+                    "label": "About",
+                    "href":  "/about"
+                }
+            ]
+        },
+        "main-header1": "let's invest",
+        "main-header2": "together",
+        "main-description1": "Welcome to “let's Invest” - the financial podcast",
+        "main-description2": "podcast that helps women learn about investing in a fun",
+        "main-description3": "way.",
+        "caroseul1-title": "Let’s invest together",
+        "caroseul1-author": "by Denise Lim",
+        "banner1": "PoDCAST AVAILABLE ON",
+        "slider-header": "Meet our HOSTs",
+        "caroseul": {
+            "type": "list",
+            "callback": "initCaroseul();ScrollHandle();",
+            "data": [{
+                    "title": "Let’s invest together",
+                    "author": "by Denise Lim",
+                    "src": "caroseul2.png",
+                    "num": -1
+                },
+                {
+                    "title": "Let’s invest together",
+                    "author": "by Denise Lim",
+                    "src": "big.png",
+                    "w": "39vh",
+                    "h": "62vh",
+                    "bottom": "10vh"
+                },
+                {
+                    "title": "Let’s invest together",
+                    "author": "by Denise Lim",
+                    "src": "caroseul3.png",
+                    "num": 1
+                },
+                {
+                    "title": "Let’s invest together",
+                    "author": "by Denise Lim",
+                    "src": "caroseul2.png",
+                    "z": "1"
+                }
+            ],
+            "default": {
+                "z": "2",
+                "w": "29.4vh",
+                "h": "46.6vh",
+                "bottom": "17.5vh"
+            }
+        },
+        "slider": {
+            "type": "list",
+            "callback": "initSlider();",
+            "data": [{
+                    "src": "pro1.png",
+                    "text": "“Investing should not be complex. Join me as I start my personal investing...”"
+                },
+                {
+                    "src": "pro2.png",
+                    "text": "“Investing should not be complex. Join me as I start my personal investing...”"
+                },
+                {
+                    "src": "pro1.png",
+                    "text": "“Investing should not be complex. Join me as I start my personal investing...”"
+                },
+                {
+                    "src": "pro2.png",
+                    "text": "“Investing should not be complex. Join me as I start my personal investing...”"
+                }
+            ],
+            "default": {
+                "button": "listen now"
+            }
+        }
+    }
+}

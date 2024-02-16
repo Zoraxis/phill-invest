@@ -25,7 +25,7 @@ const calcCaroseulDots = (newCaroseulId) => {
   );
 };
 
-window.addEventListener("load", () => {
+const initCaroseul = () => {
   caroseul = document.getElementById("caroseul");
   caroseulDots = document.getElementById("carousel-dots");
 
@@ -50,7 +50,7 @@ window.addEventListener("load", () => {
       caroseulScrollTo(cDotId);
     });
   });
-});
+};
 
 const getCaroseulTarget = (index) =>
   `#caroseul .caroseul-item:nth-child(${index + 1})`;
@@ -105,6 +105,22 @@ const action = (target, caroseulDuration = 300) => {
           scale: 1,
           opacity: 1,
         },
+        {
+          targets: getCaroseulTarget(getCaroseulIndex(currC)) + " div .caroseul-author",
+          translateY: "0%",
+          opacity: 1,
+        },
+        {
+          targets:
+            getCaroseulTarget(getCaroseulIndex(getCaroseulIndex(currC + 1))) +
+            " div .caroseul-author",
+          translateY: "-100%",
+          opacity: 0,
+        },
+        {
+          targets: "#scale-content-equalizer",
+          opacity: 1
+        },
       ],
       caroseulDuration,
       "caroseul"
@@ -141,6 +157,18 @@ const action = (target, caroseulDuration = 300) => {
           targets: getCaroseulTarget(getCaroseulIndex(currC + 1)),
           scale: 0.8,
           opacity: 0,
+        },
+        {
+          targets: getCaroseulTarget(getCaroseulIndex(currC - 1)) + " div .caroseul-author",
+          translateY: "-100%",
+          opacity: 0,
+        },
+        {
+          targets:
+            getCaroseulTarget(getCaroseulIndex(getCaroseulIndex(currC))) +
+            " div .caroseul-author",
+          translateY: "0%",
+          opacity: 1,
         },
       ],
       caroseulDuration,

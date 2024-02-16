@@ -1,7 +1,7 @@
 let lastScroll = 0,
   thisScroll = 0;
 
-window.addEventListener("scroll", (event) => {
+const ScrollHandle = () => {
   lastScroll = thisScroll;
   thisScroll = window.scrollY;
 
@@ -17,10 +17,10 @@ window.addEventListener("scroll", (event) => {
       },
       {
         targets: "#scale-img",
-        scale: 0.4,
+        scale: 0.6,
         translateX: "-49.8%",
-        translateY: "-82vh",
-        height: `${(62 / 40) * 100}vh`,
+        translateY: "-12vh",
+        height: `${(62 / 60) * 100}vh`,
       },
       {
         targets: "#scale-box",
@@ -64,7 +64,38 @@ window.addEventListener("scroll", (event) => {
         targets: "#scale-box",
         opacity: 0,
         delay: duration,
-        duration: 100
+        duration: 100,
+      },
+      {
+        targets: "#scale-content",
+        paddingLeft: "0vh",
+        paddingRight: "0vh",
+      },
+      {
+        targets: "#scale-content-title",
+        fontSize: "19px",
+        paddingLeft: "2.9vh",
+        paddingRight: "2.9vh",
+      },
+      {
+        targets: "#scale-content-author",
+        fontSize: "17px",
+        translateY: "-100%",
+        opacity: 0,
+      },
+      {
+        targets: "#scale-content-equalizer",
+        translateY: "65%",
+        height: "7.64vh",
+      },
+      {
+        targets: "#scale-content-play",
+        width: "6.9vh",
+      },
+      {
+        targets: "#caroseul .caroseul-item:nth-child(2) div .caroseul-author",
+        opacity: 0,
+        translateY: "-100%",
       },
     ]);
     body.style.overflowY = "hidden";
@@ -127,14 +158,47 @@ window.addEventListener("scroll", (event) => {
         {
           targets: "#caroseul .caroseul-item",
           left: "17.7vw",
-          translateX: "-19.5vh"
+          translateX: "-19.5vh",
         },
         {
           targets: "#scale-box",
           opacity: 1,
-          duration: 100
+          duration: 100,
+        },
+        {
+          targets: "#scale-content",
+          paddingLeft: "5.2vh",
+          paddingRight: "5.2vh",
+        },
+        {
+          targets: "#scale-content-title",
+          fontSize: "28px",
+          paddingLeft: "0vh",
+          paddingRight: "0vh",
+        },
+        {
+          targets: "#scale-content-author",
+          fontSize: "22px",
+          translateY: "0%",
+          opacity: 1,
+        },
+        {
+          targets: "#scale-content-equalizer",
+          translateY: "0%",
+          height: "10vh",
+        },
+        {
+          targets: "#scale-content-play",
+          width: "13vh",
+        },
+        {
+          targets: "#caroseul .caroseul-item:nth-child(2) div .caroseul-author",
+          opacity: 1,
+          translateY: "0%",
         },
       ]);
     });
   }
-});
+};
+
+window.addEventListener("scroll", ScrollHandle);

@@ -13,26 +13,50 @@
 </head>
 
 <body class="min-h-[100vw] max-w-[100vw] overflow-x-hidden">
-    <header class="absolute left-0 top-0 w-screen">
-        <nav class="text-white font-medium text-base flex justify-center gap-8 pt-8 z-10">
+    <header class="absolute left-0 top-0 w-screen block">
+        <nav class="text-white font-medium text-base flex justify-center gap-8 pt-8 z-10 relative">
             <a data-text="head1" href="/episodes"></a>
             <a data-text="head2" href="/blog"></a>
             <a data-text="head3" href="/resources"></a>
             <a data-text="head4" href="/about"></a>
         </nav>
     </header>
-    <div class="absolute w-screen h-screen top-0 left-0 pt-[123px] pl-[72px] leading-[136px] text-[#E2F4D8] up">
+
+    <div id="scale-block" class="body-block h-screen main-bg">
+        <div class="pl-[138px] pt-[120px] block relative z-[1] up">
+            <div class="text-[164px] text-[#e2f4d8] font-bold leading-[134px] wise-sans">
+                <div data-text="main-header1"></div>
+                <div data-text="main-header2"></div>
+            </div>
+        </div>
+        <div id="scale-layer"
+            class="absolute w-[60vh] h-[86.2vh] bg-white rounded-t-[80px] overflow-hidden bottom-0 left-1/2 -translate-x-1/2 origin-bottom box-content">
+            <div class="flex items-center flex-col h-[100%] w-[100%]">
+                <div id="scale-box"
+                    class="bottom-0 h-[86.2vh] w-[60vh] overflow-hidden absolute left-1/2 -translate-x-1/2 shrink-0 origin-bottom border-4 border-b-[0.5px] rounded-t-[80px] border-white">
+                    <div id="scale-img" style="transform: translateX(-50%);"
+                        class="main-bg w-screen h-screen absolute -top-[13.8vh] left-1/2 origin[50%_100%]">
+                    </div>
+                    <div class="absolute left-0 bottom-0 w-full gradient-bottom h-full"></div>
+                </div>
+            </div>
+            <object data="media/icons/mic.svg" style="transform: translateX(-50%);" class="absolute down left-1/2 bottom-[19vh] h-[37.41vh] w-[49.7vh] object-fill pointer-events-none -z-[1] opacity-0 origin-center"></object>
+                
+        </div>
+    </div>
+
+    <!-- <div class="absolute w-screen h-screen top-0 left-0 pt-[123px] pl-[72px] leading-[136px] text-[#E2F4D8] up">
         <span data-text="main-header"
-            class="uppercase text-[164px] font-bold block w-[50vw] break-words wise-sans"></span>
+            class="uppercase text-[10.25rem] font-bold block w-[50vw] break-words wise-sans"></span>
         <span data-text="main-description" class="text-2xl font-medium block w-[35vw] break-words"></span>
     </div>
     <div class="relative w-screen h-screen pointer-events-none -z-[2]">
         <img class="w-screen h-screen object-cover" src="media/img/big.png" alt="" />
 
         <div id="overlay" class="absolute top-0 left-0 w-screen flex justify-center pt-[11.95vh]">
-            <!-- pt=118px -->
+             pt=118px 
             <div id="scale-container" class="relative w-[35.2vw] h-[98vh]">
-                <!-- w=507px h=1022px -->
+                 w=507px h=1022px 
                 <div id="scale-border"
                     class="absolute left-[0] top-[0] bg-white border border-[#D4D4D4] rounded-[120px] w-full h-full shrink-0 z-[1] box-content">
                 </div>
@@ -60,7 +84,7 @@
                 </clipPath>
             </g>
         </svg>
-    </div>
+    </div> -->
 
     <div class="relative w-screen pt-[52px] bg-[#030043]">
         <span class="w-full block wise-sans text-[#84E644] text-[88px] font-bold pb-[60px] text-center"
@@ -87,7 +111,7 @@
             <span data-text="slider-header"
                 class="uppercase wise-sans leading-[90px] font-bold text-[90px] block w-[390px] break-words text-[#030043]"></span>
             <div class="flex gap-6">
-                <div id="slider-prev-btn" class="cursor-pointer">
+                <div id="slider-prev-btn" class="cursor-pointer grayscale-[0.9] opacity-75">
                     <img class="-scale-[100%] w-[78px] h-[78px]" src="media/icons/next-big.svg" alt="next">
                 </div>
                 <div id="slider-next-btn" class="cursor-pointer">
@@ -95,10 +119,10 @@
                 </div>
             </div>
         </div>
-        <div class="relative">
+        <div class="relative w-full">
             <div class="absolute pointer-events-none bg-white top-0 -left-[1200px] w-[1200px] h-[680px] z-[2]"></div>
             <div class="absolute pointer-events-none -top-[1px] -left-[2px] gradient-w-left h-[681px] w-[400px] z-[2]"></div>
-            <div id="slider" class="absolute top-0 left-0 flex gap-6">
+            <div id="slider" class="absolute top-0 flex gap-6">
                 <div class="h-[680px] w-[487px] p-[16.5px] flex flex-col justify-end rounded-[30px] relative">
                     <img class="absolute top-0 left-0 w-full h-full" src="media/img/pro1.png" alt="pro" />
                     <div class="h-[180px] w-full bg-white z-[2] rounded-[20px] p-6 flex flex-col gap-8">

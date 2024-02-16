@@ -4,12 +4,21 @@
         "head2": "Blog",
         "head3": "Resource",
         "head4": "About",
-        "main-header": "let's invest together",
+        "main-header1": "let's invest",
+        "main-header2": "together",
         "main-description": "Welcome to “let's Invest” - the financial podcast that helps women learn about investing in a fun way.",
         "card1-title": "Let’s invest together",
         "card1-author": "by Denise Lim",
         "banner1": "PoDCAST AVAILABLE ON",
         "slider-header": "Meet our HOSTs",
-        "pro1-text": "“Investing should not be complex. Join me as I start my personal investing...”"
+        "pro1-text": "“Investing should not be complex. Join me as I start my personal investing...”",
+        "pro": {
+            "type": "list",
+            "element": "slider1",
+            "list": [{
+                "href": "/test/",
+                "text": "test"
+            }]
+        }
     }
 }

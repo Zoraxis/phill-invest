@@ -13,14 +13,15 @@ body {
     font-family: wiseSans, sans-serif;
 }
 
-#scale-box {
-    background-image: url("/media/img/big.png");
-    background-size: cover;
-    background-position-x: 50%;
-    background-position-y: 50%;
+.body-block {
     width: 100vw;
-    height: 100vh;
-    clip-path: url(#clip);
+    position: relative;
+}
+
+.main-bg {
+    background-image: url(/media/img/big.png);
+    background-position: bottom;
+    background-size: cover;
 }
 
 .gradient-top {
@@ -31,4 +32,8 @@ body {
 }
 .gradient-w-left {
     background: linear-gradient(90deg, #FFF 10.18%, rgba(0, 0, 0, 0.00) 45.22%);
+}
+
+.down {
+    opacity: 0;
 }

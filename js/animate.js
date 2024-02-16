@@ -34,6 +34,9 @@ onscroll = (event) => {
       {
         targets: ".up",
         translateY: "-300px",
+      },
+      {
+        targets: ".scale-out",
         opacity: 0,
       },
       {
@@ -45,7 +48,7 @@ onscroll = (event) => {
       },
       {
         targets: "#scale-box",
-        bottom: "35.5vh",
+        bottom: "10vh",
         width: "39vh",
         height: "62vh",
         borderBottomLeftRadius: "80px",
@@ -56,19 +59,18 @@ onscroll = (event) => {
         borderTopLeftRadius: "0px",
         borderTopRightRadius: "0px",
         width: `${containerX}px`,
-        height: "100vh",
-        paddingBottom: "35.5vh",
+        height: "200vh",
       },
       {
         targets: "#scale-box .gradient-bottom",
         bottom: "-7vh",
       },
       {
-        targets: ".down",
-        opacity: 1,
-        scale: 1,
+        targets: [".scale-down-in", ".scale-up-in"],
         translateX: "-50%",
         translateY: "0vh",
+        opacity: 1,
+        scale: 1
       },
     ]);
   } else if (thisScroll == 0 && lastScroll > 0) {
@@ -76,6 +78,9 @@ onscroll = (event) => {
       {
         targets: ".up",
         translateY: "0px",
+      },
+      {
+        targets: ".scale-out",
         opacity: 1,
       },
       {
@@ -100,17 +105,25 @@ onscroll = (event) => {
         width: `${containerY * widthCoef}px`,
         height: "86.2vh",
         paddingBottom: "0vh",
+        paddingTop: "0vh",
       },
       {
         targets: "#scale-box .gradient-bottom",
         bottom: "0vh",
       },
       {
-        targets: ".down",
-        opacity: 0,
-        scale: 0.6,
+        targets: ".scale-down-in",
         translateX: "-50%",
         translateY: "-10vh",
+        opacity: 0,
+        scale: 0.6
+      },
+      {
+        targets: ".scale-up-in",
+        translateX: "-50%",
+        translateY: "+10vh",
+        opacity: 0,
+        scale: 0.6
       },
     ]);
   }

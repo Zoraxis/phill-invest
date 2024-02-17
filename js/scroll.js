@@ -17,10 +17,10 @@ const ScrollHandle = () => {
       },
       {
         targets: "#scale-img",
-        scale: 0.6,
+        scale: 0.4,
         translateX: "-49.8%",
-        translateY: "-12vh",
-        height: `${(62 / 60) * 100}vh`,
+        translateY: "-83vh",
+        height: `${(62 / 40) * 100}vh`,
       },
       {
         targets: "#scale-box",
@@ -29,6 +29,7 @@ const ScrollHandle = () => {
         height: "62vh",
         borderBottomLeftRadius: "80px",
         borderBottomRightRadius: "80px",
+        borderWidth: 0,
       },
       {
         targets: "#scale-layer",
@@ -40,6 +41,7 @@ const ScrollHandle = () => {
       {
         targets: "#scale-box .gradient-bottom",
         bottom: "-7vh",
+        opacity: 0.3,
       },
       {
         targets: [".scale-down-in", ".scale-up-in"],
@@ -61,7 +63,13 @@ const ScrollHandle = () => {
         translateX: "-58.5vh",
       },
       {
-        targets: "#scale-box",
+        targets: [
+          "#scale-content-title",
+          "#scale-content-author",
+          "#scale-content-play",
+          "#scale-img",
+          "#scale-box .gradient-bottom",
+        ],
         opacity: 0,
         delay: duration,
         duration: 100,
@@ -131,6 +139,7 @@ const ScrollHandle = () => {
           height: "86.2vh",
           borderBottomLeftRadius: "0px",
           borderBottomRightRadius: "0px",
+          borderWidth: "4px",
         },
         {
           targets: "#scale-layer",
@@ -144,6 +153,7 @@ const ScrollHandle = () => {
         {
           targets: "#scale-box .gradient-bottom",
           bottom: "0vh",
+          opacity: 1,
         },
         {
           targets: ".scale-down-in",
@@ -165,7 +175,13 @@ const ScrollHandle = () => {
           translateX: "-19.5vh",
         },
         {
-          targets: "#scale-box",
+          targets: [
+            "#scale-content-title",
+            "#scale-content-author",
+            "#scale-content-play",
+            "#scale-img",
+            "#scale-box .gradient-bottom",
+          ],
           opacity: 1,
           duration: 100,
         },

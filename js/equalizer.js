@@ -3,6 +3,6 @@ anime({
   scaleY: 1.25,
   delay: anime.stagger(50, { from: "center" }),
   direction: "alternate",
-  endDelay: 0,
+  endDelay: -50,
   loop: true,
 });

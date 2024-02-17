@@ -68,6 +68,26 @@ const action = (target, caroseulDuration = 300) => {
   caroseul.children[getCaroseulIndex(nextC)].dataset.num = 0;
   caroseul.children[getCaroseulIndex(nextC)].style.zIndex = 2;
   caroseul.children[getCaroseulIndex(nextC + 1)].dataset.num = 1;
+  animate([
+    {
+      targets: ["#scale-content-equalizer"],
+      opacity: 0,
+      scale: 0.8,
+      translateY: "16vh",
+      duration: 200,
+      complete: () => {
+        animate([
+          {
+            targets: ["#scale-content-equalizer"],
+            opacity: 1,
+            scale: 1,
+            translateY: "6vh",
+            duration: 200,
+          },
+        ]);
+      },
+    },
+  ]);
   if (target > 0) {
     console.log(getCaroseulIndex(currC + 2), currC);
     const caroseulFadeIn = caroseul.children[getCaroseulIndex(currC + 2)];
@@ -106,7 +126,9 @@ const action = (target, caroseulDuration = 300) => {
           opacity: 1,
         },
         {
-          targets: getCaroseulTarget(getCaroseulIndex(currC)) + " div .caroseul-author",
+          targets:
+            getCaroseulTarget(getCaroseulIndex(currC)) +
+            " div .caroseul-author",
           translateY: "0%",
           opacity: 1,
         },
@@ -116,10 +138,6 @@ const action = (target, caroseulDuration = 300) => {
             " div .caroseul-author",
           translateY: "-100%",
           opacity: 0,
-        },
-        {
-          targets: "#scale-content-equalizer",
-          opacity: 1
         },
       ],
       caroseulDuration,
@@ -159,7 +177,9 @@ const action = (target, caroseulDuration = 300) => {
           opacity: 0,
         },
         {
-          targets: getCaroseulTarget(getCaroseulIndex(currC - 1)) + " div .caroseul-author",
+          targets:
+            getCaroseulTarget(getCaroseulIndex(currC - 1)) +
+            " div .caroseul-author",
           translateY: "-100%",
           opacity: 0,
         },

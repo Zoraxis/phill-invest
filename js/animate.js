@@ -23,6 +23,7 @@ const animate = (anims, time = duration, name = false) => {
         duration: time,
         ...anim,
         complete: () => {
+          if(!!anim.complete) anim.complete()
           if (!name) return;
 
           const q = queue.find((x) => x.name == name);

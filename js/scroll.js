@@ -214,6 +214,9 @@ const ScrollHandle = () => {
         },
       ]);
     });
+    setTimeout(() => {
+      caroseulScrollTo(1);
+    }, 700);
   }
 };
 

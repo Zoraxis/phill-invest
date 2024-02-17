@@ -201,10 +201,30 @@ const action = (target, caroseulDuration = 300) => {
   else if (nextC == caroseul.children.length) currC = 0;
 };
 
-const caroseulScrollTo = async (targetIndex = 1, callback) => {
-  while (currC != targetIndex) {
-    action(1, 100);
-    await threadSleep(150);
-  }
-  if (!!callback) callback();
+let targetIndex = -1,
+  callback = null;
+
+const caroseulScrollTo = (targetInputIndex = 1, callbackInput) => {
+  callback = callbackInput;
+  targetIndex = targetInputIndex;
 };
+
+let ticks = 0;
+const caroseulTimer = () => {
+  requestAnimationFrame(caroseulTimer);
+  ticks++;
+
+  if (targetIndex != -1) {
+    if (ticks % 30 != 0) return;
+
+    if (currC != targetIndex) {
+      action(1, 100);
+      console.log(`TARGET: ${targetIndex}, CURR:${currC}`);
+    } else {
+      if (!!callback) callback();
+      targetIndex = -1;
+      callback = null;
+    }
+  }
+};
+caroseulTimer();

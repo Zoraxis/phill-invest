@@ -97,10 +97,6 @@ const ScrollHandle = () => {
         height: "7.64vh",
       },
       {
-        targets: "#scale-equalizer",
-        height: "7.64vh",
-      },
-      {
         targets: "#scale-content-play",
         width: "6.9vh",
       },

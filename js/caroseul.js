@@ -1,6 +1,6 @@
 let currC = 1;
 
-let caroseul, caroseulDots, caroseulBtns, link;
+let caroseul, caroseulDots, caroseulBtns, link, linkMob;
 
 let touchStartX = 0, touchEndX = 0;
 
@@ -35,6 +35,7 @@ const calcCaroseulDots = (newCaroseulId) => {
 const setCareoseulLink = (caroseulLinkId = currC) => {
   const href = caroseul.children[getCaroseulIndex(caroseulLinkId)].dataset.link;
   link.setAttribute("href", href);
+  linkmob.setAttribute("href", href);
 };
 
 const initCaroseul = () => {
@@ -42,6 +43,7 @@ const initCaroseul = () => {
   caroseulBtns = document.querySelectorAll("#caroseul .caroseul-item .btn");
   caroseulDots = document.getElementById("carousel-dots");
   link = document.getElementById("scale-content-button");
+  linkMob = document.getElementById("scale-content-button-mob");
 
   [...caroseul.children].forEach((cSlide, cSlideId) => {
     if (cSlideId == 1)

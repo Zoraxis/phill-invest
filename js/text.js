@@ -36,11 +36,10 @@ const applyContent = () => {
         ...overrrideValues,
       };
       for (const [key, val] of Object.entries(replacement)) {
-        markup = markup.replace(`{${key}}`, val);
+        markup = markup.replaceAll(`{${key}}`, val);
       }
       templateField.innerHTML += markup;
     }
-    console.log(values.callback)
     setTimeout(`${values.callback}`, 1);
     // setTimeout(`try{${values.callback}} catch {}`, 1);
   }

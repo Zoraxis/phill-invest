@@ -201,24 +201,32 @@
     </div>
 
     <div
-        class="body-block max-sm:flex-col max-sm:px-[42px] max-sm:pt-[51px] pt-[100px] pb-[142px] pl-[97px] bg-white flex gap-[120px]">
-        <div class="max-sm:h-max flex flex-col justify-center h-[680px] gap-12 z-[3]">
+        class="body-block max-sm:flex-col max-sm:px-[0px] max-sm:pt-[51px] max-sm:gap-6 pt-[100px] pb-[142px] pl-[97px] bg-white flex gap-[120px]">
+        <div class="max-sm:h-max max-sm:pl-[42px] flex flex-col justify-center h-[680px] gap-12 z-[3]">
             <span data-text="slider-header"
                 class="max-sm:text-6xl uppercase wise-sans leading-[90px] font-bold text-[90px] block w-[390px] break-words text-[#030043]"></span>
             <div class="max-sm:hidden flex gap-6">
-                <div id="slider-prev-btn" class="grayscale-[0.9] opacity-75 btn">
+                <div class="slider-prev-btn grayscale-[0.9] opacity-75 btn">
                     <img class="-scale-[100%] w-[78px] h-[78px]" src="media/icons/next-big.svg" alt="next" />
                 </div>
-                <div id="slider-next-btn" class="btn">
+                <div class="slider-next-btn btn">
                     <img class="w-[78px] h-[78px]" src="media/icons/next-big.svg" alt="next" />
                 </div>
             </div>
         </div>
-        <div class="relative w-full overflow-hidden">
-            <div class="absolute pointer-events-none bg-white top-0 -left-[1200px] w-[1200px] h-[680px] z-[2]"></div>
-            <div class="absolute pointer-events-none -top-[1px] -left-[2px] gradient-w-left h-[681px] w-[400px] z-[2]">
+        <div class="max-sm:h-[358px] relative w-full overflow-hidden">
+            <div class="max-sm:opacity-0 absolute pointer-events-none bg-white top-0 -left-[1200px] w-[1200px] h-[680px] z-[2]"></div>
+            <div class="max-sm:opacity-0 absolute pointer-events-none -top-[1px] -left-[2px] gradient-w-left h-[681px] w-[400px] z-[2]">
             </div>
             <div data-template="slider" id="slider" class="absolute top-0 flex gap-6 overflow-hidden">
+            </div>
+        </div>
+        <div class="max-sm:pl-[42px] max-sm:flex hidden gap-4">
+            <div class="slider-prev-btn grayscale-[0.9] opacity-75 btn">
+                <img class="-scale-[100%] w-[50px] h-[50px]" src="media/icons/next-big.svg" alt="next" />
+            </div>
+            <div class="slider-next-btn btn">
+                <img class="w-[50px] h-[50px]" src="media/icons/next-big.svg" alt="next" />
             </div>
         </div>
     </div>

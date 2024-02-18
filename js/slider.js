@@ -1,9 +1,11 @@
 let totalSlides = 0,
   curr = 0;
 
-const sliderX = 487,
-  sliderGapX = 26,
-  sliderMargin = 320;
+const {
+  sliderX,
+  gap: sliderGapX,
+  margin: sliderMargin,
+} = getResponsiveValues("slider");
 
 let prev, next;
 
@@ -38,7 +40,7 @@ const move = (dir = 0) => {
         },
         {
           targets: getAllAfter(curr),
-          translateX: `-=${sliderX}px`,
+          translateX: `-=${sliderX + sliderGapX}px`,
         },
       ],
       650,
@@ -54,7 +56,7 @@ const move = (dir = 0) => {
         },
         {
           targets: getAllAfter(curr - 1),
-          translateX: `+=${sliderX}px`,
+          translateX: `+=${sliderX + sliderGapX}px`,
         },
       ],
       650,
@@ -65,22 +67,30 @@ const move = (dir = 0) => {
   if (free == -1) return;
 
   if (nextId == 0) {
-    prev.classList.add(...disabledStyles);
+    [...prev].forEach((prevBtn) => {
+      prevBtn.classList.add(...disabledStyles);
+    });
   } else {
-    prev.classList.remove(...disabledStyles);
+    [...prev].forEach((prevBtn) => {
+      prevBtn.classList.remove(...disabledStyles);
+    });
   }
   if (nextId == totalSlides - 1) {
-    next.classList.add(...disabledStyles);
+    [...next].forEach((nextBtn) => {
+      nextBtn.classList.add(...disabledStyles);
+    });
   } else {
-    next.classList.remove(...disabledStyles);
+    [...next].forEach((nextBtn) => {
+      nextBtn.classList.remove(...disabledStyles);
+    });
   }
 
   curr += dir;
 };
 
 const initSlider = () => {
-  prev = document.getElementById("slider-prev-btn");
-  next = document.getElementById("slider-next-btn");
+  prev = document.getElementsByClassName("slider-prev-btn");
+  next = document.getElementsByClassName("slider-next-btn");
 
   const slider = document.getElementById("slider");
   const slides = slider.children;
@@ -89,10 +99,14 @@ const initSlider = () => {
   const sliderOffset = (sliderX + sliderGapX) * (totalSlides - 1);
   slider.style.right = `-${sliderOffset - sliderMargin}px`;
 
-  prev.onclick = () => {
-    move(-1);
-  };
-  next.onclick = () => {
-    move(1);
-  };
+  [...prev].forEach((prevBtn) => {
+    prevBtn.addEventListener("click", () => {
+      move(-1);
+    });
+  });
+  [...next].forEach((nextBtn) => {
+    nextBtn.addEventListener("click", () => {
+      move(1);
+    });
+  });
 };

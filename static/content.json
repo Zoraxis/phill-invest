@@ -79,6 +79,7 @@
         "slider": {
             "type": "list",
             "callback": "initSlider();",
+            "constants": "slider",
             "data": [{
                     "src": "pro1.png",
                     "text": "“Investing should not be complex. Join me as I start my personal investing...”"
@@ -97,7 +98,9 @@
                 }
             ],
             "default": {
-                "button": "listen now"
+                "button": "listen now",
+                "w": "const-width",
+                "h": "const-height"
             }
         }
     }

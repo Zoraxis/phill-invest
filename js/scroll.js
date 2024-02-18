@@ -240,9 +240,9 @@ const ScrollHandle = () => {
 
 const ScrollSizeChanged = () => {
   SizeChangedHandle();
-  console.log(containerX);
-  if (thisScroll > 0) ScrollUpHandle();
-  else if ((thisScroll = 0)) ScrollDownHandle();
+  console.log(containerX, window.scrollY);
+  if (window.scrollY > 0) ScrollDownHandle();
+  else if ((window.scrollY = 0)) ScrollUpHandle();
 };
 
 window.addEventListener("scroll", ScrollHandle);

@@ -51,3 +51,7 @@ body {
 path {
     transform-origin: center;
 }
+
+.btn{
+    cursor: pointer;
+}

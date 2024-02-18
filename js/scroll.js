@@ -71,6 +71,14 @@ const ScrollDownHandle = () => {
       opacity: 0,
       delay: duration,
       duration: 100,
+      zIndex: "-1"
+    },
+    {
+      targets: [
+        "#scale-content-play",
+      ],
+      opacity: 0,
+      duration
     },
     {
       targets: "#scale-content",
@@ -93,10 +101,6 @@ const ScrollDownHandle = () => {
       targets: "#scale-content-equalizer",
       translateY: "65%",
       height: "7.64vh",
-    },
-    {
-      targets: "#scale-content-play",
-      width: "6.9vh",
     },
     {
       targets: "#caroseul .caroseul-item:nth-child(2) div .caroseul-author",
@@ -185,6 +189,7 @@ const ScrollUpHandle = () => {
         ],
         opacity: 1,
         duration: 100,
+        zIndex: "1"
       },
       {
         targets: "#scale-content",

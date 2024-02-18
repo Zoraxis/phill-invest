@@ -1,6 +1,6 @@
 let currC = 1;
 
-let caroseul, caroseulDots;
+let caroseul, caroseulDots, caroseulBtns;
 
 const calcCaroseulDots = (newCaroseulId) => {
   caroseulDots.children[currC].classList.remove(
@@ -27,15 +27,29 @@ const calcCaroseulDots = (newCaroseulId) => {
 
 const initCaroseul = () => {
   caroseul = document.getElementById("caroseul");
+  caroseulBtns = document.querySelectorAll("#caroseul .caroseul-item .btn");
   caroseulDots = document.getElementById("carousel-dots");
 
   [...caroseul.children].forEach((cSlide, cSlideId) => {
     if (cSlideId == 1)
-      caroseulDots.innerHTML += `<div class="cursor-pointer w-[1.5vh] h-[1.5vh] rounded-full bg-[#878787]"></div>`;
+      caroseulDots.innerHTML += `<div class="btn cursor-pointer w-[1.5vh] h-[1.5vh] rounded-full bg-[#878787]"></div>`;
     else
-      caroseulDots.innerHTML += `<div class="cursor-pointer w-[1vh] h-[1vh] rounded-full bg-[#C3C3C3]"></div>`;
+      caroseulDots.innerHTML += `<div class="btn cursor-pointer w-[1vh] h-[1vh] rounded-full bg-[#C3C3C3]"></div>`;
     cSlide.addEventListener("click", () => {
       const target = parseInt(cSlide.dataset.num);
+
+      if (getQueued("caroseul")) return;
+      action(target);
+    });
+  });
+
+  [...caroseulBtns].forEach(cSlideButton => {
+    const parent = cSlideButton.parentElement;
+    console.log("🚀 ~ [...caroseulBtns].forEach ~ parent:", parent)
+
+    cSlideButton.addEventListener("click", () => {
+      const target = parseInt(parent.dataset.num);
+      console.log("🚀 ~ cSlideButton.addEventListener ~ target:", target)
 
       if (getQueued("caroseul")) return;
       action(target);
@@ -135,7 +149,7 @@ const action = (target, caroseulDuration = 300) => {
             " div .caroseul-author",
           translateY: "-100%",
           opacity: 0,
-          duration: caroseulDuration * 0.8
+          duration: caroseulDuration * 0.8,
         },
       ],
       caroseulDuration,

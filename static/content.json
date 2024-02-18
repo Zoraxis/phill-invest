@@ -39,12 +39,14 @@
                     "title": "Let’s invest together",
                     "author": "by Denise Lim",
                     "src": "caroseul2.png",
+                    "href": "/podcast1",
                     "num": -1
                 },
                 {
                     "title": "Let’s invest together",
                     "author": "by Denise Lim",
                     "src": "big.png",
+                    "href": "/podcast2",
                     "w": "39vh",
                     "h": "62vh",
                     "bottom": "10vh"
@@ -53,12 +55,14 @@
                     "title": "Let’s invest together",
                     "author": "by Denise Lim",
                     "src": "caroseul3.png",
+                    "href": "/podcast3",
                     "num": 1
                 },
                 {
                     "title": "Let’s invest together",
                     "author": "by Denise Lim",
                     "src": "caroseul2.png",
+                    "href": "/podcast4",
                     "z": "1"
                 }
             ],

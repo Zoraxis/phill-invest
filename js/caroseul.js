@@ -36,7 +36,6 @@ const initCaroseul = () => {
       caroseulDots.innerHTML += `<div class="cursor-pointer w-[1vh] h-[1vh] rounded-full bg-[#C3C3C3]"></div>`;
     cSlide.addEventListener("click", () => {
       const target = parseInt(cSlide.dataset.num);
-      console.log("🚀 ~ cSlide.addEventListener ~ target:", target);
 
       if (getQueued("caroseul")) return;
       action(target);

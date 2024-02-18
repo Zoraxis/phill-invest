@@ -2,22 +2,21 @@
     "en": {
         "header": {
             "type": "list",
-            "data": [
-                {
+            "data": [{
                     "label": "Episodes",
-                    "href":  "/episodes"
+                    "href": "/episodes"
                 },
                 {
                     "label": "Blog",
-                    "href":  "/blog"
+                    "href": "/blog"
                 },
                 {
                     "label": "Resource",
-                    "href":  "/resource"
+                    "href": "/resource"
                 },
                 {
                     "label": "About",
-                    "href":  "/about"
+                    "href": "/about"
                 }
             ]
         },
@@ -35,7 +34,7 @@
         "slider-header": "Meet our HOSTs",
         "caroseul": {
             "type": "list",
-            "callback": "initCaroseul();ScrollHandle();",
+            "callback": "initCaroseul();ScrollSizeChanged();",
             "data": [{
                     "title": "Let’s invest together",
                     "author": "by Denise Lim",

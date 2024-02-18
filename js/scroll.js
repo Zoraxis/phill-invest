@@ -1,3 +1,5 @@
+const scrollStart = 10;
+
 let lastScroll = 0,
   thisScroll = 0;
 
@@ -231,18 +233,17 @@ const ScrollHandle = () => {
   lastScroll = thisScroll;
   thisScroll = window.scrollY;
 
-  if (thisScroll > 0 && lastScroll == 0) {
+  if (thisScroll > scrollStart && lastScroll <= scrollStart) {
     ScrollDownHandle();
-  } else if (thisScroll == 0 && lastScroll > 0) {
+  } else if (thisScroll <= scrollStart && lastScroll > scrollStart) {
     ScrollUpHandle();
   }
 };
 
 const ScrollSizeChanged = () => {
   SizeChangedHandle();
-  console.log(containerX, window.scrollY);
   if (window.scrollY > 0) ScrollDownHandle();
-  else if ((window.scrollY = 0)) ScrollUpHandle();
+  else if ((window.scrollY <= 0)) ScrollUpHandle();
 };
 
 window.addEventListener("scroll", ScrollHandle);

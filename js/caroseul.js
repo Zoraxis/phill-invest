@@ -2,6 +2,13 @@ let currC = 1;
 
 let caroseul, caroseulDots, caroseulBtns, link;
 
+let touchStartX = 0, touchEndX = 0;
+
+function checkSwipe() {
+  const carouselSwipeDir = touchendX > touchstartX ? -1 : 1
+  callCarouselAction(carouselSwipeDir)
+}
+
 const calcCaroseulDots = (newCaroseulId) => {
   caroseulDots.children[currC].classList.remove(
     "w-[1.5vh]",
@@ -27,8 +34,8 @@ const calcCaroseulDots = (newCaroseulId) => {
 
 const setCareoseulLink = (caroseulLinkId = currC) => {
   const href = caroseul.children[getCaroseulIndex(caroseulLinkId)].dataset.link;
-  link.setAttribute("href", href)
-}
+  link.setAttribute("href", href);
+};
 
 const initCaroseul = () => {
   caroseul = document.getElementById("caroseul");
@@ -43,24 +50,27 @@ const initCaroseul = () => {
       caroseulDots.innerHTML += `<div class="btn cursor-pointer w-[1vh] h-[1vh] rounded-full bg-[#C3C3C3]"></div>`;
     cSlide.addEventListener("click", () => {
       const target = parseInt(cSlide.dataset.num);
-
-      if (getQueued("caroseul")) return;
-      if (target != -1 && target != 1) return;
-      action(target);
+      callCarouselAction(target);
     });
   });
 
-  [...caroseulBtns].forEach(cSlideButton => {
+  [...caroseulBtns].forEach((cSlideButton) => {
     const parent = cSlideButton.parentElement;
 
     cSlideButton.addEventListener("click", () => {
       const target = parseInt(parent.dataset.num);
-
-      if (getQueued("caroseul")) return;
-      if (target != -1 && target != 1) return;
-      action(target);
+      callCarouselAction(target);
     });
   });
+
+  caroseul.addEventListener('touchstart', e => {
+    touchstartX = e.changedTouches[0].screenX
+  })
+  
+  caroseul.addEventListener('touchend', e => {
+    touchendX = e.changedTouches[0].screenX
+    checkSwipe()
+  })
 
   caroseulDots = document.getElementById("carousel-dots");
 
@@ -71,6 +81,12 @@ const initCaroseul = () => {
   });
 
   setCareoseulLink();
+};
+
+const callCarouselAction = (target) => {
+  if (getQueued("caroseul")) return;
+  if (target != -1 && target != 1) return;
+  action(target);
 };
 
 const getCaroseulTarget = (index) =>

@@ -61,10 +61,10 @@ const SizeChangedHandle = () => {
 
 const body = document.body;
 
-body.addEventListener("touchstart", (e) => {
-  // is not near edge of view, exit
-  if (e.pageX > 10 && e.pageX < window.innerWidth - 10) return;
+// body.addEventListener("touchstart", (e) => {
+//   // is not near edge of view, exit
+//   if (e.pageX > 10 && e.pageX < window.innerWidth - 10) return;
 
-  // prevent swipe to navigate gesture
-  e.preventDefault();
-});
+//   // prevent swipe to navigate gesture
+//   e.preventDefault();
+// });

@@ -42,7 +42,7 @@ const constants = {
       height: "358px",
       sliderX: 256,
       gap: 16,
-      margin: 200,
+      margin: 42,
     },
   },
 };

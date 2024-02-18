@@ -35,12 +35,12 @@ const calcCaroseulDots = (newCaroseulId) => {
 const setCareoseulLink = (caroseulLinkId = currC) => {
   const href = caroseul.children[getCaroseulIndex(caroseulLinkId)].dataset.link;
   link.setAttribute("href", href);
-  linkmob.setAttribute("href", href);
+  linkMob.setAttribute("href", href);
 };
 
 const initCaroseul = () => {
-  caroseul = document.getElementById("caroseul");
-  caroseulBtns = document.querySelectorAll("#caroseul .caroseul-item .btn");
+  caroseul = document.getElementById("carousel-children");
+  caroseulBtns = document.querySelectorAll("#carousel-children .caroseul-item .btn");
   caroseulDots = document.getElementById("carousel-dots");
   link = document.getElementById("scale-content-button");
   linkMob = document.getElementById("scale-content-button-mob");

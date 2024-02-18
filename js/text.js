@@ -26,17 +26,36 @@ const applyContent = () => {
 
     for (const value of values.data) {
       let markup = template.markup;
+      const constantString = values?.constants;
+
+      const defaultValues = !!constantString ? fetchConstValues(values.default, constantString) : values.default;
+      const overrrideValues = !!constantString ? fetchConstValues(value, constantString) : value;
+
       const replacement = {
-        ...values.default,
-        ...value
-      }
+        ...defaultValues,
+        ...overrrideValues,
+      };
       for (const [key, val] of Object.entries(replacement)) {
         markup = markup.replace(`{${key}}`, val);
       }
       templateField.innerHTML += markup;
     }
+    console.log(values.callback)
     setTimeout(`${values.callback}`, 1);
+    // setTimeout(`try{${values.callback}} catch {}`, 1);
   }
+};
+
+const fetchConstValues = (object, constantString) => {
+  const result = {};
+  const constList = getResponsiveValues(constantString);
+  for (const [key, val] of Object.entries(object)) {
+    if(typeof val == "string" && val.includes("const-")) {
+      const constPropString = val.replace("const-", "");
+      result[key] = constList[constPropString]
+    } else result[key] = val;
+  }
+  return result;
 };
 
 const LanguageChangeHandle = async () => {

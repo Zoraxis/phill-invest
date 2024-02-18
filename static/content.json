@@ -24,9 +24,7 @@
         "main-header2": "together",
         "main-description": "Welcome to Let's Invest, the financial podcast that helps women learn about investing in a fun way.",
         "podcasts-header": "Financial education for woman",
-        "podcasts-description1": "We believe that everyone should have the knowledge and tools to build their wealth and achieve their financial",
-        "podcasts-description2": "goals. Join us each week as we explore the world of investing and share tips and insights to help you make the",
-        "podcasts-description3": "most of your money.",
+        "podcasts-description": "We believe that everyone should have the knowledge and tools to build their wealth and achieve their financial goals. Join us each week as we explore the world of investing and share tips and insights to help you make the most of your money.",
         "caroseul-button": "listen now",
         "caroseul1-title": "Let’s invest together",
         "caroseul1-author": "by Denise Lim",
@@ -35,11 +33,13 @@
         "caroseul": {
             "type": "list",
             "callback": "initCaroseul();ScrollSizeChanged();",
+            "constants": "caroseul",
             "data": [{
                     "title": "Let’s invest together",
                     "author": "by Denise Lim",
                     "src": "caroseul2.png",
                     "href": "/podcast1",
+                    "transform": "const-leftStart",
                     "num": -1
                 },
                 {
@@ -47,15 +47,17 @@
                     "author": "by Denise Lim",
                     "src": "big.png",
                     "href": "/podcast2",
-                    "w": "39vh",
-                    "h": "62vh",
-                    "bottom": "10vh"
+                    "transform": "const-centerStart",
+                    "w": "const-bigW",
+                    "h": "const-bigH",
+                    "bottom": "const-bigBottom"
                 },
                 {
                     "title": "Let’s invest together",
                     "author": "by Denise Lim",
                     "src": "caroseul3.png",
                     "href": "/podcast3",
+                    "transform": "const-rightStart",
                     "num": 1
                 },
                 {
@@ -63,14 +65,15 @@
                     "author": "by Denise Lim",
                     "src": "caroseul2.png",
                     "href": "/podcast4",
+                    "transform": "const-centerStart",
                     "z": "1"
                 }
             ],
             "default": {
                 "z": "2",
-                "w": "29.4vh",
-                "h": "46.6vh",
-                "bottom": "17.5vh"
+                "w": "const-smallW",
+                "h": "const-smallH",
+                "bottom": "const-smallBottom"
             }
         },
         "slider": {

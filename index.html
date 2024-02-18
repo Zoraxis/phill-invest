@@ -13,13 +13,13 @@
 </head>
 
 <body class="min-h-[100vw] max-w-[100vw] overflow-x-hidden">
-    <header class="absolute left-0 top-0 w-screen block">
+    <header class="max-sm:hidden absolute left-0 top-0 w-screen block">
         <nav data-template="header"
             class="text-white font-medium text-base flex justify-center gap-8 pt-8 z-10 relative up scale-out"></nav>
     </header>
 
     <div id="scale-block" class="body-block h-screen main-bg overflow-visible">
-        <div class="max-sm:pl-[29px] pl-[138px] pt-[120px] block relative z-[1] up scale-out">
+        <div class="max-sm:pl-[29px] max-sm:pt-[87px] pl-[138px] pt-[120px] block relative z-[1] up scale-out">
             <div
                 class="max-sm:text-6xl max-sm:pb-3 text-[164px] text-[#e2f4d8] font-bold leading-[134px] wise-sans pb-[3.17vh]">
                 <div data-text="main-header1"></div>
@@ -30,40 +30,46 @@
                 <span data-text="main-description"></span>
             </div>
         </div>
-        <div id="scale-layer"
-            class="absolute w-[60vh] h-[86.2vh] bg-white rounded-t-[80px] overflow-visible bottom-0 left-1/2 -translate-x-1/2 origin-bottom box-content">
-            <div class="flex items-center flex-col h-[100%] w-[100%]">
+        <div id="scale-layer" style="transform: translateX(-50%);"
+            class="max-sm:box-border max-sm:mt-[34px] max-sm:h-[62.5vh] max-sm:relative max-sm:w-[91.1vw] max-sm:bg-black max-sm:bg-opacity-35 absolute w-[60vh] h-[86.2vh] bg-white rounded-t-[80px] overflow-visible bottom-0 left-1/2 origin-bottom box-content">
+            <div class="max-sm:translate-y-[350px] flex items-center flex-col h-[100%] w-[100%]">
                 <div style="transform: translateX(-50%) translateY(10vh)"
-                    class="scale-up-in scale-in text-center text-[#030043] opacity-0 w-max absolute left-1/2 bottom-[75vh] text-rows">
-                    <span data-text="podcasts-header" class="font-bold text-[56px] wise-sans"></span>
-                    <span data-text="podcasts-description1" class="font-normal text-lg"></span>
-                    <span data-text="podcasts-description2" class="font-normal text-lg"></span>
-                    <span data-text="podcasts-description3" class="font-normal text-lg"></span>
+                    class="max-sm:opacity-100 max-sm:bottom-[0] max-sm:gap-6 scale-up-in scale-in text-center text-[#030043] opacity-0 w-max absolute left-1/2 bottom-[75vh] text-rows items-center">
+                    <span data-text="podcasts-header"
+                        class="max-sm:-tracking-[0.8px] max-sm:max-w-[320px] max-sm:leading-[64px] max-sm:text-[60px] font-bold text-[56px] wise-sans"></span>
+                    <span data-text="podcasts-description"
+                        class="max-sm:max-w-[383px] max-sm:leading-[24px] max-sm:text-[18px] font-normal text-lg break-words max-w-[114.8vh]"></span>
                 </div>
                 <object data="media/icons/mic.svg" style="transform: translateX(-50%);"
                     class="absolute scale-down-in scale-down left-1/2 bottom-[-9.5vh] h-[47vh] w-[50vh] object-fill pointer-events-none opacity-0 origin-center z-[1] scale-[0.6]"></object>
-                <div id="caroseul" class="z-[2] opacity-0" data-template="caroseul">
+                <div id="caroseul"
+                    class="max-sm:translate-y-[670px] max-sm:absolute max-sm:bottom-0 max-sm:left-1/2 max-sm:-translate-x-1/2 max-sm:opacity-100 z-[2] opacity-0"
+                    data-template="caroseul">
                 </div>
                 <div id="carousel-dots"
-                    class="flex items-center gap-2 absolute left-1/2 -translate-x-1/2 bottom-[-13vh]">
+                    class="max-sm:translate-y-[585px] flex items-center gap-2 absolute left-1/2 -translate-x-1/2 -bottom-[13vh]">
                 </div>
 
                 <div id="scale-box"
-                    class="bottom-0 h-[86.2vh] w-[60vh] overflow-hidden absolute left-1/2 -translate-x-1/2 shrink-0 origin-bottom border-4 border-b-[0.5px] rounded-t-[80px] border-white block z-[2]">
+                    class="max-sm:-translate-y-[39.2vh] max-sm:relative max-sm:w-[91.1vw] max-sm:h-[62.5vh] max-sm:border max-sm:border-[#787878] max-sm:overflow-visible bottom-0 h-[86.2vh] w-[60vh] overflow-hidden absolute left-1/2 -translate-x-1/2 shrink-0 origin-bottom border-4 border-b-[0.5px] rounded-t-[80px] border-white block z-[2]">
                     <div id="scale-img" style="transform: translateX(-50%)"
-                        class="main-bg w-screen h-screen absolute -top-[13.8vh] left-1/2 origin[50%_100%] z-[1]"></div>
+                        class="max-sm:hidden main-bg w-screen h-screen absolute -top-[13.8vh] left-1/2 origin[50%_100%] z-[1]">
+                    </div>
                     <div id="scale-content"
-                        class="absolute left-0 top-0 w-full h-full flex flex-col justify-end px-[5.2vh] pb-[4.47vh] gap-2 z-[2]">
-                        <a id="scale-content-play" target="_blank" class="absolute left-1/2 top-1/2 btn" style="transform: translate(-50%, -50%);"
-                            href="/podcast50"><img class="w-[13vh] z-[1]"
-                                src="media/icons/play.svg"></img></a>
-                        <a href="#" id="scale-content-button" style="transform: translateX(-50%) translateY(-50%)"
-                            class="btn opacity-0 absolute top-1/2 left-1/2 flex gap-3 px-6 py-[15px] items-center bg-[#84E644] rounded-[40px] w-[23.8vh] h-[7.29vh] justify-center -z-[1]">
-                            <object class="w-5 h-5" data="media/icons/play-tri.svg"></object>
-                            <span class="text-[#001749] text-xl font-semibold uppercase"
-                                data-text="caroseul-button"></span>
-                        </a>
-                        <svg id="scale-content-equalizer" class="w-full h-[10vh] equalizer overflow-visible"
+                        class="max-sm:gap-[4px] max-sm:px-0 absolute left-0 top-0 w-full h-full flex flex-col justify-end px-[5.2vh] pb-[4.47vh] gap-2 z-[2]">
+                        <a id="scale-content-play" target="_blank" class="absolute left-1/2 top-1/2 btn"
+                            style="transform: translate(-50%, -50%);" href="/podcast50"><img
+                                class="max-sm:w-[85px] w-[13vh] z-[1]" src="media/icons/play.svg"></img></a>
+                        <div style="transform: translateX(-50%) translateY(-50%)" class="max-sm:top-[1318px] absolute top-1/2 left-1/2">
+                            <a href="#" target="_blank" id="scale-content-button"
+                                class="max-sm:opacity-100 max-sm:z-[1] relative btn opacity-0 flex gap-3 px-6 py-[15px] items-center bg-[#84E644] rounded-[40px] w-[23.8vh] h-[7.29vh] justify-center -z-[1]">
+                                <object class="w-5 h-5" data="media/icons/play-tri.svg"></object>
+                                <span class="text-[#001749] text-xl font-semibold uppercase"
+                                    data-text="caroseul-button"></span>
+                            </a>
+                        </div>
+                        <svg id="scale-content-equalizer"
+                            class="max-sm:translate-y-[20px] max-sm:h-[75.5px] w-full h-[10vh] equalizer overflow-visible"
                             xmlns="http://www.w3.org/2000/svg" width="426" height="84" viewBox="0 0 426 84" fill="none">
                             <g opacity="0.3" class="overflow-visible">
                                 <path
@@ -156,16 +162,16 @@
                             </g>
                         </svg>
                         <span id="scale-content-title" data-text="caroseul1-title"
-                            class="text-[#84E644] text-[28px] font-medium capitalize"></span>
+                            class="max-sm:text-[22px] max-sm:pl-[30px] text-[#84E644] text-[28px] font-medium capitalize"></span>
                         <span id="scale-content-author" data-text="caroseul1-author"
-                            class="text-white text-[22px] font-normal"></span>
+                            class="max-sm:text-[18px] max-sm:pl-[30px] text-white text-[22px] font-normal"></span>
                     </div>
                     <div class="absolute left-0 bottom-0 w-full gradient-bottom h-full z-[1]"></div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="spacer w-screen bg-transparent h-[20vh] overflow-visible block -z-[5]"></div>
+    <div class="max-sm:h-[1154px] pointer-events-none spacer w-screen bg-transparent h-[20vh] overflow-visible block -z-[5]"></div>
 
     <div class="body-block overflow-visible max-sm:pt-9 pt-[52px] bg-[#030043]">
         <span
@@ -218,11 +224,12 @@
     </div>
 
     <script src="js/animate.js"></script>
+    <script src="js/constants.js"></script>
     <script src="js/equalizer.js"></script>
     <script src="js/caroseul.js"></script>
     <script src="js/text.js"></script>
     <script>
-        if (window.screen.width > 640) {
+        if (window.screen.width > mobileMax) {
             document.write(
                 '<script src=\"js/scroll.js\"><\/script>'
             )

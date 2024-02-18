@@ -44,10 +44,10 @@ const threadSleep = (milliseconds) => {
   });
 };
 
-const body = document.body;
-let container = document.querySelector("#scale-block");
-const layer = document.querySelector("#scale-layer");
+const widthCoef = 0.6;
 
+const layer = document.querySelector("#scale-layer");
+let container = document.querySelector("#scale-block");
 let containerX = container.clientWidth,
   containerY = container.clientHeight;
 
@@ -55,8 +55,10 @@ const SizeChangedHandle = () => {
   container = document.querySelector("#scale-block");
   containerX = container.clientWidth;
   containerY = container.clientHeight;
+
+  layer.style.width = `${containerY * widthCoef}px`;
 };
 
-const widthCoef = 0.6;
+const body = document.body;
 
-layer.style.width = `${containerY * widthCoef}px`;
+

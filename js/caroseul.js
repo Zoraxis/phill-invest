@@ -45,18 +45,19 @@ const initCaroseul = () => {
       const target = parseInt(cSlide.dataset.num);
 
       if (getQueued("caroseul")) return;
+      if (target != -1 && target != 1) return;
       action(target);
     });
   });
 
   [...caroseulBtns].forEach(cSlideButton => {
     const parent = cSlideButton.parentElement;
-    console.log("🚀 ~ initCaroseul ~ cSlideButton:", cSlideButton)
 
     cSlideButton.addEventListener("click", () => {
       const target = parseInt(parent.dataset.num);
 
       if (getQueued("caroseul")) return;
+      if (target != -1 && target != 1) return;
       action(target);
     });
   });
@@ -81,6 +82,8 @@ const getCaroseulIndex = (index) => {
 };
 
 const action = (target, caroseulDuration = 300) => {
+  const carouselValues = getResponsiveValues("caroseul");
+
   const nextC = currC + target;
   calcCaroseulDots(nextC);
   setCareoseulLink(nextC);
@@ -112,7 +115,7 @@ const action = (target, caroseulDuration = 300) => {
     const caroseulFadeOut = caroseul.children[getCaroseulIndex(currC - 1)];
     const caroseulRight = caroseul.children[getCaroseulIndex(currC)];
 
-    caroseulFadeIn.style.transform = `translateX(${29.1}vh)`;
+    caroseulFadeIn.style.transform = `translateX(${carouselValues.right})`;
     caroseulFadeOut.style.zIndex = "1";
     caroseulRight.style.zIndex = "2";
     animate(
@@ -124,18 +127,18 @@ const action = (target, caroseulDuration = 300) => {
         },
         {
           targets: getCaroseulTarget(currC),
-          width: "29.4vh",
-          height: "46.6vh",
-          bottom: "17.5vh",
-          translateX: "-58.5vh",
+          width: carouselValues.smallW,
+          height: carouselValues.smallH,
+          bottom: carouselValues.smallBottom,
+          translateX: carouselValues.left,
           opacity: 1,
         },
         {
           targets: getCaroseulTarget(getCaroseulIndex(currC + 1)),
-          width: "39vh",
-          height: "62vh",
-          bottom: "10vh",
-          translateX: "-19.5vh",
+          width: carouselValues.bigW,
+          height: carouselValues.bigH,
+          bottom: carouselValues.bigBottom,
+          translateX: carouselValues.center,
           opacity: 1,
         },
         {
@@ -164,7 +167,7 @@ const action = (target, caroseulDuration = 300) => {
     );
   } else if (target < 0) {
     const caroseulFadeIn = caroseul.children[getCaroseulIndex(currC - 2)];
-    caroseulFadeIn.style.transform = `translateX(${-58.5}vh)`;
+    caroseulFadeIn.style.transform = `translateX(${carouselValues.left})`;
     caroseulFadeIn.style.zIndex = "1";
 
     animate(
@@ -176,18 +179,18 @@ const action = (target, caroseulDuration = 300) => {
         },
         {
           targets: getCaroseulTarget(getCaroseulIndex(currC - 1)),
-          width: "39vh",
-          height: "62vh",
-          bottom: "10vh",
-          translateX: "-19.5vh",
+          width: carouselValues.bigW,
+          height: carouselValues.bigH,
+          bottom: carouselValues.bigBottom,
+          translateX: carouselValues.center,
           opacity: 1,
         },
         {
           targets: getCaroseulTarget(currC),
-          width: "29.4vh",
-          height: "46.6vh",
-          bottom: "17.5vh",
-          translateX: "29.1vh",
+          width: carouselValues.smallW,
+          height: carouselValues.smallH,
+          bottom: carouselValues.smallBottom,
+          translateX: carouselValues.right,
           opacity: 1,
         },
         {

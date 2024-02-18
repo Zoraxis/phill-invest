@@ -69,7 +69,7 @@ const ScrollDownHandle = () => {
         "#scale-box .gradient-bottom",
       ],
       opacity: 0,
-      delay: duration,
+      delay: duration - 200,
       duration: 100,
       zIndex: "-1"
     },

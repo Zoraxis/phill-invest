@@ -70,18 +70,16 @@ const action = (target, caroseulDuration = 300) => {
   caroseul.children[getCaroseulIndex(nextC + 1)].dataset.num = 1;
   animate([
     {
-      targets: ["#scale-content-equalizer"],
+      targets: ["#scale-content-equalizer", "#scale-content-button"],
       opacity: 0,
-      scale: 0.8,
-      translateY: "16vh",
+      scale: 0.25,
       duration: 200,
       complete: () => {
         animate([
           {
-            targets: ["#scale-content-equalizer"],
+            targets: ["#scale-content-equalizer", "#scale-content-button"],
             opacity: 1,
             scale: 1,
-            translateY: "6vh",
             duration: 200,
           },
         ]);
@@ -138,6 +136,7 @@ const action = (target, caroseulDuration = 300) => {
             " div .caroseul-author",
           translateY: "-100%",
           opacity: 0,
+          duration: caroseulDuration * 0.8
         },
       ],
       caroseulDuration,

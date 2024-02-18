@@ -15,7 +15,7 @@ const applyContent = () => {
   for (const field of contentFields) {
     const text = field.getAttribute("data-text");
     const value = content[text];
-    field.textContent = value;
+    field.textContent += value;
   }
 
   const templateFields = document.querySelectorAll("[data-template]");

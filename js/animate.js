@@ -23,7 +23,7 @@ const animate = (anims, time = duration, name = false) => {
         duration: time,
         ...anim,
         complete: () => {
-          if(!!anim.complete) anim.complete()
+          if (!!anim.complete) anim.complete();
           if (!name) return;
 
           const q = queue.find((x) => x.name == name);
@@ -42,14 +42,20 @@ const threadSleep = (milliseconds) => {
   return new Promise((resolve) => {
     setTimeout(resolve, milliseconds);
   });
-}
+};
 
-const container = document.querySelector("#scale-block");
 const body = document.body;
+let container = document.querySelector("#scale-block");
 const layer = document.querySelector("#scale-layer");
 
-const containerX = container.clientWidth,
+let containerX = container.clientWidth,
   containerY = container.clientHeight;
+
+const SizeChangedHandle = () => {
+  container = document.querySelector("#scale-block");
+  containerX = container.clientWidth;
+  containerY = container.clientHeight;
+};
 
 const widthCoef = 0.6;
 

@@ -19,15 +19,13 @@
     </header>
 
     <div id="scale-block" class="body-block h-screen main-bg overflow-visible">
-        <div class="pl-[138px] pt-[120px] block relative z-[1] up scale-out">
-            <div class="text-[164px] text-[#e2f4d8] font-bold leading-[134px] wise-sans">
+        <div class="max-sm:pl-[29px] pl-[138px] pt-[120px] block relative z-[1] up scale-out">
+            <div class="max-sm:text-6xl max-sm:pb-3 text-[164px] text-[#e2f4d8] font-bold leading-[134px] wise-sans pb-[3.17vh]">
                 <div data-text="main-header1"></div>
                 <div data-text="main-header2"></div>
             </div>
-            <div class="text-2xl font-medium text-[#e2f4d8] text-rows">
-                <span data-text="main-description1"></span>
-                <span data-text="main-description2"></span>
-                <span data-text="main-description3"></span>
+            <div class="max-sm:text-lg max-sm:max-w-[340px] text-2xl font-medium text-[#e2f4d8] text-rows break-words max-w-[70.58vh]">
+                <span data-text="main-description"></span>
             </div>
         </div>
         <div id="scale-layer"
@@ -41,10 +39,11 @@
                     <span data-text="podcasts-description3" class="font-normal text-lg"></span>
                 </div>
                 <object data="media/icons/mic.svg" style="transform: translateX(-50%);"
-                class="absolute scale-down-in scale-down left-1/2 bottom-[-9.5vh] h-[47vh] w-[50vh] object-fill pointer-events-none opacity-0 origin-center z-[1] scale-[0.6]"></object>
-                <div id="caroseul" class="z-[2]" data-template="caroseul">
+                    class="absolute scale-down-in scale-down left-1/2 bottom-[-9.5vh] h-[47vh] w-[50vh] object-fill pointer-events-none opacity-0 origin-center z-[1] scale-[0.6]"></object>
+                <div id="caroseul" class="z-[2] opacity-0" data-template="caroseul">
                 </div>
-                <div id="carousel-dots" class="flex items-center gap-2 absolute left-1/2 -translate-x-1/2 bottom-[-13vh]">
+                <div id="carousel-dots"
+                    class="flex items-center gap-2 absolute left-1/2 -translate-x-1/2 bottom-[-13vh]">
                 </div>
 
                 <div id="scale-box"
@@ -56,7 +55,12 @@
                         <object id="scale-content-play"
                             class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[13vh]"
                             data="media/icons/play.svg"></object>
-                            
+                        <div id="scale-content-button" style="transform: translateX(-50%) translateY(-50%)"
+                            class="opacity-0 absolute top-1/2 left-1/2 flex gap-3 px-6 py-[15px] items-center bg-[#84E644] rounded-[40px] w-[23.8vh] h-[7.29vh] justify-center">
+                            <object class="w-5 h-5" data="media/icons/play-tri.svg"></object>
+                            <span class="text-[#001749] text-xl font-semibold uppercase"
+                                data-text="caroseul-button"></span>
+                        </div>
                         <svg id="scale-content-equalizer" class="w-full h-[10vh] equalizer overflow-visible"
                             xmlns="http://www.w3.org/2000/svg" width="426" height="84" viewBox="0 0 426 84" fill="none">
                             <g opacity="0.3" class="overflow-visible">
@@ -207,7 +211,13 @@
     <script src="js/equalizer.js"></script>
     <script src="js/caroseul.js"></script>
     <script src="js/text.js"></script>
-    <script src="js/scroll.js"></script>
+    <script>
+        if (window.screen.width > 640) {
+            document.write(
+                '<script src=\"js/scroll.js\"><\/script>'
+            )
+        }
+    </script>
     <script src="js/slider.js"></script>
 </body>
 

@@ -1,6 +1,6 @@
 let currC = 1;
 
-let caroseul, caroseulDots, caroseulBtns;
+let caroseul, caroseulDots, caroseulBtns, link;
 
 const calcCaroseulDots = (newCaroseulId) => {
   caroseulDots.children[currC].classList.remove(
@@ -25,10 +25,16 @@ const calcCaroseulDots = (newCaroseulId) => {
   );
 };
 
+const setCareoseulLink = (caroseulLinkId = currC) => {
+  const href = caroseul.children[getCaroseulIndex(caroseulLinkId)].dataset.link;
+  link.setAttribute("href", href)
+}
+
 const initCaroseul = () => {
   caroseul = document.getElementById("caroseul");
   caroseulBtns = document.querySelectorAll("#caroseul .caroseul-item .btn");
   caroseulDots = document.getElementById("carousel-dots");
+  link = document.getElementById("scale-content-button");
 
   [...caroseul.children].forEach((cSlide, cSlideId) => {
     if (cSlideId == 1)
@@ -45,11 +51,10 @@ const initCaroseul = () => {
 
   [...caroseulBtns].forEach(cSlideButton => {
     const parent = cSlideButton.parentElement;
-    console.log("🚀 ~ [...caroseulBtns].forEach ~ parent:", parent)
+    console.log("🚀 ~ initCaroseul ~ cSlideButton:", cSlideButton)
 
     cSlideButton.addEventListener("click", () => {
       const target = parseInt(parent.dataset.num);
-      console.log("🚀 ~ cSlideButton.addEventListener ~ target:", target)
 
       if (getQueued("caroseul")) return;
       action(target);
@@ -63,6 +68,8 @@ const initCaroseul = () => {
       caroseulScrollTo(cDotId);
     });
   });
+
+  setCareoseulLink();
 };
 
 const getCaroseulTarget = (index) =>
@@ -76,6 +83,7 @@ const getCaroseulIndex = (index) => {
 const action = (target, caroseulDuration = 300) => {
   const nextC = currC + target;
   calcCaroseulDots(nextC);
+  setCareoseulLink(nextC);
 
   caroseul.children[getCaroseulIndex(nextC - 1)].dataset.num = -1;
   caroseul.children[getCaroseulIndex(nextC)].dataset.num = 0;
@@ -100,7 +108,6 @@ const action = (target, caroseulDuration = 300) => {
     },
   ]);
   if (target > 0) {
-    console.log(getCaroseulIndex(currC + 2), currC);
     const caroseulFadeIn = caroseul.children[getCaroseulIndex(currC + 2)];
     const caroseulFadeOut = caroseul.children[getCaroseulIndex(currC - 1)];
     const caroseulRight = caroseul.children[getCaroseulIndex(currC)];
@@ -231,7 +238,6 @@ const caroseulTimer = () => {
 
     if (currC != targetIndex) {
       action(1, 100);
-      console.log(`TARGET: ${targetIndex}, CURR:${currC}`);
     } else {
       if (!!callback) callback();
       targetIndex = -1;

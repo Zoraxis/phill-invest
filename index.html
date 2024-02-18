@@ -54,14 +54,15 @@
                         class="main-bg w-screen h-screen absolute -top-[13.8vh] left-1/2 origin[50%_100%] z-[1]"></div>
                     <div id="scale-content"
                         class="absolute left-0 top-0 w-full h-full flex flex-col justify-end px-[5.2vh] pb-[4.47vh] gap-2 z-[2]">
-                        <img id="scale-content-play" style="transform: translate(-50%, -50%);"
-                            class="absolute left-1/2 top-1/2 w-[13vh] btn z-[1]" src="media/icons/play.svg"></img>
-                        <div id="scale-content-button" style="transform: translateX(-50%) translateY(-50%)"
+                        <a id="scale-content-play" target="_blank" class="absolute left-1/2 top-1/2 btn" style="transform: translate(-50%, -50%);"
+                            href="/podcast50"><img class="w-[13vh] z-[1]"
+                                src="media/icons/play.svg"></img></a>
+                        <a href="#" id="scale-content-button" style="transform: translateX(-50%) translateY(-50%)"
                             class="btn opacity-0 absolute top-1/2 left-1/2 flex gap-3 px-6 py-[15px] items-center bg-[#84E644] rounded-[40px] w-[23.8vh] h-[7.29vh] justify-center -z-[1]">
                             <object class="w-5 h-5" data="media/icons/play-tri.svg"></object>
                             <span class="text-[#001749] text-xl font-semibold uppercase"
                                 data-text="caroseul-button"></span>
-                        </div>
+                        </a>
                         <svg id="scale-content-equalizer" class="w-full h-[10vh] equalizer overflow-visible"
                             xmlns="http://www.w3.org/2000/svg" width="426" height="84" viewBox="0 0 426 84" fill="none">
                             <g opacity="0.3" class="overflow-visible">

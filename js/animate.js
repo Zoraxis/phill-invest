@@ -61,10 +61,13 @@ const SizeChangedHandle = () => {
 
 const body = document.body;
 
-// body.addEventListener("touchstart", (e) => {
-//   // is not near edge of view, exit
-//   if (e.pageX > 10 && e.pageX < window.innerWidth - 10) return;
+function gfg_Run() {
+  var x = document.getElementsByTagName("*");
 
-//   // prevent swipe to navigate gesture
-//   e.preventDefault();
-// });
+  for (var i = x.length; i--; ) {
+    var rect = x[i].getBoundingClientRect();
+    if(x[i].clientWidth + rect.left > containerX) console.log(x[i], `causing overflow (${x[i].clientWidth}:${rect.left})`)
+    console.log(x[i].clientWidth + rect.left)
+  }
+}
+gfg_Run();

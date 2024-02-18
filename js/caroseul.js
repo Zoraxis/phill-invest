@@ -2,11 +2,12 @@ let currC = 1;
 
 let caroseul, caroseulDots, caroseulBtns, link, linkMob;
 
-let touchStartX = 0, touchEndX = 0;
+let touchStartX = 0,
+  touchEndX = 0;
 
 function checkSwipe() {
-  const carouselSwipeDir = touchendX > touchstartX ? -1 : 1
-  callCarouselAction(carouselSwipeDir)
+  const carouselSwipeDir = touchendX > touchstartX ? -1 : 1;
+  callCarouselAction(carouselSwipeDir);
 }
 
 const calcCaroseulDots = (newCaroseulId) => {
@@ -40,7 +41,9 @@ const setCareoseulLink = (caroseulLinkId = currC) => {
 
 const initCaroseul = () => {
   caroseul = document.getElementById("carousel-children");
-  caroseulBtns = document.querySelectorAll("#carousel-children .caroseul-item .btn");
+  caroseulBtns = document.querySelectorAll(
+    "#carousel-children .caroseul-item .btn"
+  );
   caroseulDots = document.getElementById("carousel-dots");
   link = document.getElementById("scale-content-button");
   linkMob = document.getElementById("scale-content-button-mob");
@@ -65,14 +68,14 @@ const initCaroseul = () => {
     });
   });
 
-  caroseul.addEventListener('touchstart', e => {
-    touchstartX = e.changedTouches[0].screenX
-  })
-  
-  caroseul.addEventListener('touchend', e => {
-    touchendX = e.changedTouches[0].screenX
-    checkSwipe()
-  })
+  caroseul.addEventListener("touchstart", (e) => {
+    touchstartX = e.changedTouches[0].screenX;
+  });
+
+  caroseul.addEventListener("touchend", (e) => {
+    touchendX = e.changedTouches[0].screenX;
+    checkSwipe();
+  });
 
   caroseulDots = document.getElementById("carousel-dots");
 
@@ -112,14 +115,24 @@ const action = (target, caroseulDuration = 300) => {
   caroseul.children[getCaroseulIndex(nextC + 1)].dataset.num = 1;
   animate([
     {
-      targets: ["#scale-content-equalizer", "#scale-content-button"],
+      targets: [
+        "#scale-content-equalizer",
+        "#scale-content-button",
+        "#scale-content-button-mob",
+        "#scale-content-equalizer-mob",
+      ],
       opacity: 0,
       scale: 0.25,
       duration: 200,
       complete: () => {
         animate([
           {
-            targets: ["#scale-content-equalizer", "#scale-content-button"],
+            targets: [
+              "#scale-content-equalizer",
+              "#scale-content-button",
+              "#scale-content-button-mob",
+              "#scale-content-equalizer-mob",
+            ],
             opacity: 1,
             scale: 1,
             duration: 200,
@@ -136,6 +149,13 @@ const action = (target, caroseulDuration = 300) => {
     caroseulFadeIn.style.transform = `translateX(${carouselValues.right})`;
     caroseulFadeOut.style.zIndex = "1";
     caroseulRight.style.zIndex = "2";
+
+    const thisCarouselElement = getCaroseulTarget(
+      getCaroseulIndex(getCaroseulIndex(currC))
+    );
+    const nextCarouselElement = getCaroseulTarget(
+      getCaroseulIndex(getCaroseulIndex(currC + 1))
+    );
     animate(
       [
         {
@@ -152,7 +172,7 @@ const action = (target, caroseulDuration = 300) => {
           opacity: 1,
         },
         {
-          targets: getCaroseulTarget(getCaroseulIndex(currC + 1)),
+          targets: nextCarouselElement,
           width: carouselValues.bigW,
           height: carouselValues.bigH,
           bottom: carouselValues.bigBottom,
@@ -165,16 +185,19 @@ const action = (target, caroseulDuration = 300) => {
           opacity: 1,
         },
         {
-          targets:
-            getCaroseulTarget(getCaroseulIndex(currC)) +
-            " div .caroseul-author",
+          targets: [
+            thisCarouselElement + " div .caroseul-author",
+            thisCarouselElement + " .carousel-item-play",
+          ],
           translateY: "0%",
           opacity: 1,
+          duration: caroseulDuration * 0.4,
         },
         {
-          targets:
-            getCaroseulTarget(getCaroseulIndex(getCaroseulIndex(currC + 1))) +
-            " div .caroseul-author",
+          targets: [
+            nextCarouselElement + " div .caroseul-author",
+            nextCarouselElement + " .carousel-item-play",
+          ],
           translateY: "-100%",
           opacity: 0,
           duration: caroseulDuration * 0.8,
@@ -188,6 +211,12 @@ const action = (target, caroseulDuration = 300) => {
     caroseulFadeIn.style.transform = `translateX(${carouselValues.left})`;
     caroseulFadeIn.style.zIndex = "1";
 
+    const thisCarouselElement = getCaroseulTarget(
+      getCaroseulIndex(getCaroseulIndex(currC))
+    );
+    const nextCarouselElement = getCaroseulTarget(
+      getCaroseulIndex(getCaroseulIndex(currC - 1))
+    );
     animate(
       [
         {
@@ -217,18 +246,22 @@ const action = (target, caroseulDuration = 300) => {
           opacity: 0,
         },
         {
-          targets:
-            getCaroseulTarget(getCaroseulIndex(currC - 1)) +
-            " div .caroseul-author",
+          targets: [
+            nextCarouselElement + " div .caroseul-author",
+            nextCarouselElement + " .carousel-item-play",
+          ],
           translateY: "-100%",
           opacity: 0,
+          duration: caroseulDuration * 0.8,
         },
         {
-          targets:
-            getCaroseulTarget(getCaroseulIndex(getCaroseulIndex(currC))) +
-            " div .caroseul-author",
+          targets: [
+            thisCarouselElement + " div .caroseul-author",
+            thisCarouselElement + " .carousel-item-play",
+          ],
           translateY: "0%",
           opacity: 1,
+          duration: caroseulDuration * 0.4,
         },
       ],
       caroseulDuration,

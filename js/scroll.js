@@ -148,7 +148,7 @@ const ScrollUpHandle = () => {
         borderTopLeftRadius: "14.1vh",
         borderTopRightRadius: "14.1vh",
         borderWidth: "1px",
-        borderBottomWidth: "0.5px",
+        borderBottomWidth: "0px",
       },
       {
         targets: "#scale-layer",

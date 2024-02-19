@@ -16,9 +16,10 @@ const ScrollDownHandle = () => {
     {
       targets: "#scale-img",
       scale: 0.4,
-      translateX: "-49.8%",
-      translateY: "-83vh",
+      translateX: "-50%",
+      translateY: "-81.5vh",
       height: `${(62 / 40) * 100}vh`,
+      duration: duration * 0.9
     },
     {
       targets: "#scale-box",
@@ -40,8 +41,8 @@ const ScrollDownHandle = () => {
     },
     {
       targets: "#scale-box .gradient-bottom",
-      bottom: "-7vh",
-      opacity: 0.3,
+      bottom: "-60vh",
+      duration: duration * 0.6,
     },
     {
       targets: [".scale-down-in", ".scale-up-in"],
@@ -53,6 +54,12 @@ const ScrollDownHandle = () => {
     {
       targets: "#caroseul .caroseul-item",
       left: "50vw",
+    },
+    {
+      targets: "#caroseul .caroseul-item .gradient-bottom",
+      opacity: 1,
+      delay: duration * 0.7,
+      duration: duration * 0.5
     },
     {
       targets: "#caroseul .caroseul-item:nth-child(3)",
@@ -68,9 +75,8 @@ const ScrollDownHandle = () => {
         "#scale-content-author",
         "#scale-content-play",
         "#scale-img",
-        "#scale-box .gradient-bottom",
       ],
-      opacity: 0,
+      opacity: 0.4,
       delay: duration - 200,
       duration: 100,
       zIndex: "-1"
@@ -162,6 +168,7 @@ const ScrollUpHandle = () => {
       {
         targets: "#scale-box .gradient-bottom",
         bottom: "0vh",
+        // zIndex: 1,
         opacity: 1,
       },
       {
@@ -189,7 +196,6 @@ const ScrollUpHandle = () => {
           "#scale-content-author",
           "#scale-content-play",
           "#scale-img",
-          "#scale-box .gradient-bottom",
         ],
         opacity: 1,
         duration: 100,
@@ -221,6 +227,12 @@ const ScrollUpHandle = () => {
       {
         targets: "#scale-content-play",
         width: "13vh",
+      },
+      {
+        targets: "#caroseul .caroseul-item .gradient-bottom",
+        opacity: 0,
+        delay: duration * 0.6,
+        duration: 100
       },
       {
         targets: "#caroseul .caroseul-item:nth-child(2) div .caroseul-author",

@@ -76,7 +76,7 @@ const ScrollDownHandle = () => {
         "#scale-content-play",
         "#scale-img",
       ],
-      opacity: 0.4,
+      opacity: 0,
       delay: duration - 200,
       duration: 100,
       zIndex: "-1"

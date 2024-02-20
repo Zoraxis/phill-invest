@@ -85,6 +85,11 @@ const initCaroseul = () => {
     });
   });
 
+  if (window.screen.width > mobileMax) {
+    // caroseul.children[1].children[0].style.height = "67vh";
+    // caroseul.children[1].children[0].style.transform = "translateY(-4vh)";
+  }
+
   setCareoseulLink();
 };
 
@@ -203,7 +208,7 @@ const action = (target, caroseulDuration = 300) => {
           duration: caroseulDuration * 0.8,
         },
       ],
-      caroseulDuration,
+      { duration: caroseulDuration },
       "caroseul"
     );
   } else if (target < 0) {
@@ -264,7 +269,7 @@ const action = (target, caroseulDuration = 300) => {
           duration: caroseulDuration * 0.4,
         },
       ],
-      caroseulDuration,
+      { duration: caroseulDuration },
       "caroseul"
     );
   }

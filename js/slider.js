@@ -43,7 +43,7 @@ const move = (dir = 0) => {
           translateX: `-=${sliderX + sliderGapX}px`,
         },
       ],
-      650,
+      { duration: 650 },
       "slider"
     );
   } else if (dir == -1) {
@@ -59,7 +59,7 @@ const move = (dir = 0) => {
           translateX: `+=${sliderX + sliderGapX}px`,
         },
       ],
-      650,
+      { duration: 650 },
       "slider"
     );
   }

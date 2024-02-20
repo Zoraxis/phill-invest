@@ -6,7 +6,7 @@ let queue = [];
 
 const getQueued = (id) => queue.find((x) => x.name == id) != undefined;
 
-const animate = (anims, time = duration, name = false) => {
+const animate = (anims, options = { duration }, name = false) => {
   if (!!name) {
     if (queue.find((x) => x.name == name) != undefined && name) return -1;
     queue.push({ name, count: anims.length });
@@ -14,13 +14,13 @@ const animate = (anims, time = duration, name = false) => {
 
   var tl = anime.timeline({
     easing,
-    duration: time,
+    duration: options.duration,
   });
   for (const anim of anims) {
     tl.add(
       {
         easing,
-        duration: time,
+        ...options,
         ...anim,
         complete: () => {
           if (!!anim.complete) anim.complete();

@@ -19,7 +19,7 @@ const ScrollDownHandle = () => {
         scale: 0.6,
         translateY: "-20.5vh",
         translateX: "-49.65%",
-        height: "110vh",
+        height: { value: "110vh", delay: 0 },
       },
       {
         targets: "#scale-box",
@@ -126,6 +126,7 @@ const ScrollDownHandle = () => {
     ],
     {
       duration,
+      delay: duration * 0.2,
     }
   );
   body.style.overflowY = "hidden";

@@ -6,18 +6,27 @@ let queue = [];
 
 const getQueued = (id) => queue.find((x) => x.name == id) != undefined;
 
-const animate = (anims, options = { duration }, name = false) => {
+const animate = (
+  anims,
+  options = { duration },
+  name = false,
+  durationOverride = false
+) => {
   if (!!name) {
     if (queue.find((x) => x.name == name) != undefined && name) return -1;
     queue.push({ name, count: anims.length });
   }
 
-  var tl = anime.timeline({
-    easing,
-    duration: options.duration,
-  });
+  const durationOverrideParameter = {};
+  if (durationOverride)
+    durationOverrideParameter["duration"] = durationOverride;
+
+  // var tl = anime.timeline({
+  //   easing,
+  //   duration: options.duration,
+  // });
   for (const anim of anims) {
-    tl.add(
+    anime(
       {
         easing,
         ...options,
@@ -32,8 +41,8 @@ const animate = (anims, options = { duration }, name = false) => {
             queue = queue.filter((x) => x.name != q.name);
           }
         },
-      },
-      0
+        ...durationOverrideParameter,
+      }
     );
   }
 };

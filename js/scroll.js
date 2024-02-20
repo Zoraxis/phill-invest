@@ -3,7 +3,9 @@ const scrollStart = 10;
 let lastScroll = 0,
   thisScroll = 0;
 
-const ScrollDownHandle = () => {
+let scrollStarted = false;
+
+const ScrollDownHandle = (scrollDurationOverride = false) => {
   animate(
     [
       {
@@ -86,6 +88,37 @@ const ScrollDownHandle = () => {
         delay: duration,
         duration: 100,
         zIndex: "-1",
+        changeBegin: (anim) => {
+          if (!scrollStarted) {
+            anim.reset();
+            anim.pause();
+            animate(
+              [
+                {
+                  targets: ["#scale-img"],
+                  opacity: 1,
+                  zIndex: "1",
+                },
+                {
+                  targets: [
+                    "#scale-content-title",
+                    "#scale-content-author",
+                    "#scale-content-play",
+                  ],
+                  opacity: 1,
+                  zIndex: "1",
+                },
+              ],
+              1
+            );
+          }
+        },
+        changeComplete: () => {
+          scrollStarted = false;
+        },
+        begin: () => {
+          scrollStarted = true;
+        },
       },
       {
         targets: ["#scale-content-play"],
@@ -127,7 +160,9 @@ const ScrollDownHandle = () => {
     {
       duration,
       delay: duration * 0.2,
-    }
+    },
+    false,
+    scrollDurationOverride
   );
   body.style.overflowY = "hidden";
   setTimeout(() => {
@@ -135,7 +170,7 @@ const ScrollDownHandle = () => {
   }, duration * 0.9);
 };
 
-const ScrollUpHandle = () => {
+const ScrollUpHandle = (scrollDurationOverride) => {
   caroseulScrollTo(1, () => {
     animate(
       [
@@ -153,6 +188,9 @@ const ScrollUpHandle = () => {
           translateY: "0vh",
           translateX: "-50%",
           height: "100vh",
+          begin: () => {
+            scrollStarted = false;
+          },
         },
         {
           targets: "#scale-box",
@@ -261,7 +299,9 @@ const ScrollUpHandle = () => {
       {
         duration,
         // delay: duration * 0.3,
-      }
+      },
+      false,
+      scrollDurationOverride
     );
   });
   setTimeout(() => {

@@ -1,5 +1,6 @@
 {
     "en": {
+        "title": "Let’s invest together",
         "header": {
             "type": "list",
             "data": [{
@@ -45,7 +46,7 @@
                 {
                     "title": "Let’s invest together",
                     "author": "by Denise Lim",
-                    "src": "big_caroseul.png",
+                    "src": "big.png",
                     "href": "/podcast2",
                     "transform": "const-centerStart",
                     "w": "const-bigW",

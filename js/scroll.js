@@ -162,9 +162,9 @@ const ScrollDownHandle = (scrollDurationOverride = false) => {
     false,
     scrollDurationOverride
   );
+  body.style.overflowY = "hidden";
   const carouselCenter = document.querySelector("#carousel-center");
   scrollTo(0, carouselCenter.clientHeight / 3);
-  body.style.overflowY = "hidden";
   setTimeout(() => {
     body.style.overflowY = "visible";
   }, duration * 0.9);

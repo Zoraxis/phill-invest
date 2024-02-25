@@ -1,4 +1,4 @@
-const duration = 600,
+const duration = 1080,
   delay = 50,
   easing = "cubicBezier(.35, 0, 0, 1)";
 
@@ -21,10 +21,6 @@ const animate = (
   if (durationOverride)
     durationOverrideParameter["duration"] = durationOverride;
 
-  // var tl = anime.timeline({
-  //   easing,
-  //   duration: options.duration,
-  // });
   for (const anim of anims) {
     anime(
       {
@@ -53,9 +49,9 @@ const threadSleep = (milliseconds) => {
   });
 };
 
-const widthCoef = 0.6;
+const widthCoef = 0.598;
 
-const layer = document.querySelector("#scale-layer");
+const layer = document.querySelector("#scale-bg");
 let container = document.querySelector("#scale-block");
 let containerX = container.clientWidth,
   containerY = container.clientHeight;

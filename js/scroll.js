@@ -323,7 +323,7 @@ const ScrollHandle = () => {
 const ScrollSizeChanged = () => {
   SizeChangedHandle();
   if (window.scrollY > 0) ScrollDownHandle();
-  else if (window.scrollY <= 0) ScrollUpHandle();
+  // else if (window.scrollY <= 0) ScrollUpHandle();
 };
 
 window.addEventListener("scroll", ScrollHandle);

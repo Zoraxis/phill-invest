@@ -18,14 +18,12 @@ const ScrollDownHandle = (scrollDurationOverride = false) => {
       },
       {
         targets: "#scale-img",
-        scale: 0.6,
-        translateY: "-20.5vh",
+        scale: 0.65,
+        translateY: "-10.2vh",
         translateX: "-49.65%",
-        height: { value: "110vh", delay: 0 },
       },
       {
         targets: "#scale-box",
-        bottom: "10vh",
         width: "39vh",
         height: "62vh",
         borderBottomLeftRadius: "7.06vh",
@@ -61,7 +59,7 @@ const ScrollDownHandle = (scrollDurationOverride = false) => {
         targets: "#caroseul .caroseul-item .gradient-bottom",
         opacity: 1,
         delay: duration,
-        duration: duration * 0.5,
+        duration: duration * 0.75,
       },
       {
         targets: "#caroseul .caroseul-item:nth-child(3)",
@@ -90,27 +88,27 @@ const ScrollDownHandle = (scrollDurationOverride = false) => {
         zIndex: "-1",
         changeBegin: (anim) => {
           if (!scrollStarted) {
-            anim.reset();
-            anim.pause();
-            animate(
-              [
-                {
-                  targets: ["#scale-img"],
-                  opacity: 1,
-                  zIndex: "1",
-                },
-                {
-                  targets: [
-                    "#scale-content-title",
-                    "#scale-content-author",
-                    "#scale-content-play",
-                  ],
-                  opacity: 1,
-                  zIndex: "1",
-                },
-              ],
-              1
-            );
+            // anim.reset();
+            // anim.pause();
+            // animate(
+            //   [
+            //     {
+            //       targets: ["#scale-img"],
+            //       opacity: 1,
+            //       zIndex: "1",
+            //     },
+            //     {
+            //       targets: [
+            //         "#scale-content-title",
+            //         "#scale-content-author",
+            //         "#scale-content-play",
+            //       ],
+            //       opacity: 1,
+            //       zIndex: "1",
+            //     },
+            //   ],
+            //   1
+            // );
           }
         },
         changeComplete: () => {
@@ -164,6 +162,8 @@ const ScrollDownHandle = (scrollDurationOverride = false) => {
     false,
     scrollDurationOverride
   );
+  const carouselCenter = document.querySelector("#carousel-center");
+  scrollTo(0, carouselCenter.clientHeight / 3);
   body.style.overflowY = "hidden";
   setTimeout(() => {
     body.style.overflowY = "visible";

@@ -94,7 +94,7 @@ const CaruselResizeHandle = () => {
   if (window.screen.width > mobileMax) {
     var originalRatios = {
       width: (containerX * 1) / 2880,
-      height: (containerY * 1.1) / 1700,
+      height: (containerY * 1) / 1700,
     };
 
     var coverRatio = Math.max(originalRatios.width, originalRatios.height);
@@ -102,6 +102,7 @@ const CaruselResizeHandle = () => {
     var newImageWidth = 2880 * coverRatio;
     var newImageHeight = 1700 * coverRatio;
 
+    caroseul.children[1].setAttribute("id", "carousel-center")
     caroseul.children[1].children[0].style.transformOrigin = "left top";
     caroseul.children[1].children[0].style.left = "50%";
     caroseul.children[1].children[0].style.top = `-${0}vh`;
@@ -109,8 +110,10 @@ const CaruselResizeHandle = () => {
     caroseul.children[1].children[0].style.width = `${newImageWidth}px`;
     caroseul.children[1].children[0].style.maxWidth = `${newImageWidth}px`
 
-    const carouselCenterYOffset = newImageHeight * 0.6 - containerY * 0.62;
-    caroseul.children[1].children[0].style.transform = `scale(0.6) translateX(-49.5%) translateY(-${carouselCenterYOffset / 6 * 10}px)`;
+    const carouselCenterYOffset = newImageHeight * 0.65 - containerY * 0.62;
+    // console.log("🚀 ~ CaruselResizeHandle ~ newImageHeight * 0.65:", newImageHeight * 0.65)
+    // caroseul.children[1].children[0].style.transform = `scale(0.65) translateX(-49.5%) translateY(${0}px)`;
+    caroseul.children[1].children[0].style.transform = `scale(0.65) translateX(-49.5%) translateY(-${carouselCenterYOffset / 6.5 * 10}px)`;
   }
 }
 

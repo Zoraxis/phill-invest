@@ -1,4 +1,4 @@
-const duration = 750,
+const duration = 600,
   delay = 50,
   easing = "cubicBezier(.35, 0, 0, 1)";
 

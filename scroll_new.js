@@ -35,14 +35,48 @@ const ScrollDownHandle = (scrollDurationOverride = duration) => {
         scale: 0.65,
       },
       // SCALE ANIAMTION END
+      // PRMIMITIVES START
       {
         targets: ".up",
         translateY: "-50%",
       },
       {
+        targets: ".down",
+        translateY: "0%",
+      },
+      {
         targets: ".fade-out",
         opacity: "0",
       },
+      {
+        targets: ".fade-in",
+        opacity: "1",
+      },
+      // PRMIMITIVES END
+      // CONTENT START
+
+      {
+        targets: "#scale-content",
+        paddingLeft: "5.2vh",
+        paddingRight: "5.2vh",
+      },
+      {
+        targets: "#scale-content-author",
+        fontSize: "22px",
+        translateY: "0%",
+        opacity: 1,
+      },
+      {
+        targets: "#scale-content-equalizer",
+        translateY: "0%",
+        height: "10vh",
+        scale: 1,
+      },
+      {
+        targets: "#scale-content-play",
+        width: "13vh",
+      },
+      // CONTENT END
     ],
     { duration: scrollDurationOverride }
   );
@@ -77,14 +111,24 @@ const ScrollUpHandle = () => {
       scale: 1,
     },
     // SCALE ANIAMTION END
+    // PRMIMITIVES START
     {
       targets: ".up",
       translateY: "0%",
     },
     {
+      targets: ".down",
+      translateY: "50%",
+    },
+    {
       targets: ".fade-out",
       opacity: "1",
     },
+    {
+      targets: ".fade-in",
+      opacity: "0",
+    },
+    // PRMIMITIVES END
   ]);
 };
 

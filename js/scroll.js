@@ -264,22 +264,22 @@ const ScrollUpHandle = (scrollDurationOverride) => {
           paddingLeft: "0vh",
           paddingRight: "0vh",
         },
-        {
-          targets: "#scale-content-author",
-          fontSize: "22px",
-          translateY: "0%",
-          opacity: 1,
-        },
-        {
-          targets: "#scale-content-equalizer",
-          translateY: "0%",
-          height: "10vh",
-          scale: 1,
-        },
-        {
-          targets: "#scale-content-play",
-          width: "13vh",
-        },
+        // {
+        //   targets: "#scale-content-author",
+        //   fontSize: "22px",
+        //   translateY: "0%",
+        //   opacity: 1,
+        // },
+        // {
+        //   targets: "#scale-content-equalizer",
+        //   translateY: "0%",
+        //   height: "10vh",
+        //   scale: 1,
+        // },
+        // {
+        //   targets: "#scale-content-play",
+        //   width: "13vh",
+        // },
         {
           targets: "#caroseul .caroseul-item .gradient-bottom",
           opacity: 0,

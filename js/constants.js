@@ -18,9 +18,9 @@ const constants = {
       smallH: "46.58vh",
       bigBottom: "0vh",
       smallBottom: "7.7vh",
-      leftStart: "-34.2vh",
-      centerStart: "-3.76vh",
-      rightStart: "36vh",
+      leftStart: "0vh",
+      centerStart: "32vh",
+      rightStart: "73.6vh",
     },
   },
   slider: {

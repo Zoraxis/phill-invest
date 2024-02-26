@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 
-<head class="min-h-[100vw] max-w-[100vw] overflow-x-hidden overscroll-x-none">
+<head>
     <meta charset="UTF-8" />
-    <meta name="viewport"
-        content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <title data-text="title"></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"
         integrity="sha512-aNMyYYxdIxIaot0Y1/PLuEu3eipGCmsEUBrUq+7aVyPGMFH8z0eTP0tkqAvv34fzN6z+201d3T8HPb1svWSKHQ=="
@@ -14,7 +12,7 @@
     <link rel="stylesheet" href="css/style.css" />
 </head>
 
-<body class="min-h-[100vw] max-w-[100vw] w-screen overflow-x-hidden overscroll-x-none relative box-border">
+<body class="min-h-[100vh] w-screen max-w-[100vw] overflow-x-hidden">
     <header class="max-w-[100vw] w-screen block overflow-hidden">
         <nav data-template="header"
             class="max-sm:pt-[37px] max-sm:-top-[50vh] w-screen text-white font-medium text-base flex justify-center gap-8 pt-8 z-10 up scale-out absolute left-0 top-0">
@@ -23,8 +21,9 @@
     <img id="header-burger" class="max-sm:block absolute right-[23px] top-[42px] hidden w-6 h-4 z-[2]"
         src="media/icons/burger.svg" alt="burger">
 
-    <div id="scale-block" class="max-sm:relative max-sm:h-[850px] body-block h-screen main-bg overflow-visible">
-        <div class="max-sm:pl-[29px] max-sm:pt-[87px] pl-[138px] pt-[120px] block relative z-[1] up scale-out">
+    <div class="body-block">
+        <img class="absolute left-0 top-0 w-screen h-screen object-cover -z-[2]" src="media/img/big.png" alt="bg" />
+        <div class="max-sm:left-[29px] max-sm:top-[87px] left-[138px] top-[120px] block absolute z-[1] up fade-out">
             <div
                 class="max-sm:text-6xl max-sm:pb-3 text-[164px] text-[#e2f4d8] font-bold leading-[134px] wise-sans pb-[3.17vh]">
                 <div data-text="main-header1"></div>
@@ -35,32 +34,154 @@
                 <span data-text="main-description"></span>
             </div>
         </div>
-        <div id="scale-layer" style="transform: translateX(-50%);"
-            class="max-sm:box-border max-sm:mt-[34px] max-sm:h-[57vh] max-sm:bottom-0 max-sm:w-[91.1vw] max-sm:bg-black max-sm:bg-opacity-35 absolute w-[60vh] h-[86.2vh] bg-white rounded-t-[120px] overflow-visible bottom-0 left-1/2 origin-bottom box-content">
-            <div class="flex items-center flex-col h-[100%] w-[100%]">
-                <div style="transform: translateX(-50%) translateY(10vh)"
-                    class="max-sm:-bottom-[400px] max-sm:opacity-100 max-sm:gap-6 scale-up-in scale-in text-center text-[#030043] opacity-0 w-max absolute left-1/2 bottom-[75vh] text-rows items-center">
-                    <span data-text="podcasts-header"
-                        class="max-sm:-tracking-[0.8px] max-sm:max-w-[320px] max-sm:leading-[64px] max-sm:text-[60px] font-bold text-[56px] wise-sans"></span>
-                    <span data-text="podcasts-description"
-                        class="max-sm:max-w-[360px] max-sm:leading-[24px] max-sm:text-[18px] font-normal text-lg break-words max-w-[114.8vh]"></span>
+
+        <div class="absolute top-0 left-0 w-screen h-screen fade-in opacity-0">
+            <div style="transform: translateX(-50%) translateY(3vh)"
+                class="max-sm:-bottom-[400px] max-sm:opacity-100 max-sm:gap-6 scale-up-in scale-in text-center text-[#030043] w-max absolute left-1/2 bottom-[75vh] text-rows items-center">
+                <span data-text="podcasts-header"
+                    class="max-sm:-tracking-[0.8px] max-sm:max-w-[320px] max-sm:leading-[64px] max-sm:text-[60px] font-bold text-[56px] wise-sans"></span>
+                <span data-text="podcasts-description"
+                    class="max-sm:max-w-[360px] max-sm:leading-[24px] max-sm:text-[18px] font-normal text-lg break-words max-w-[114.8vh]"></span>
+            </div>
+            <img src="media/icons/mic.svg" style="transform: translateX(-50%);"
+                class="max-sm:hidden absolute scale-down-in scale-down left-1/2 -bottom-[17vh] h-[37.5vh] w-[52vh] object-fill pointer-events-none origin-center z-[1] scale-[0.65]"></img>
+            <div id="caroseul"
+                class="absolute max-sm:-bottom-[1000px] left-1/2 -translate-x-1/2 bottom-0 max-sm:opacity-100 z-[1] overflow-hidden w-screen h-[61.8vh]">
+                <div class="absolute left-1/2 -translate-x-1/2 w-[117vh] h-[62vh]" id="carousel-children"
+                    data-template="caroseul"></div>
+                <div style="transform: translateX(-50%) translateY(-50%)" class="block z-[2] absolute left-1/2 top-1/2">
+                    <a href="#" target="_blank" id="scale-content-button-mob"
+                        class="max-sm:w-max z-[1] relative btn flex gap-3 px-6 py-[15px] items-center bg-[#84E644] rounded-[40px] w-[23.8vh] h-[7.29vh] justify-center">
+                        <object class="w-5 h-5" data="media/icons/play-tri.svg"></object>
+                        <span class="text-[#001749] text-xl font-semibold uppercase w-max"
+                            data-text="caroseul-button"></span>
+                    </a>
                 </div>
-                <object data="media/icons/mic.svg" style="transform: translateX(-50%);"
-                    class="max-sm:hidden absolute scale-down-in scale-down left-1/2 bottom-[-16.75vh] h-[37.5vh] w-[52vh] object-fill pointer-events-none opacity-0 origin-center z-[1] scale-[0.6]"></object>
-                <div id="caroseul"
-                    class="max-sm:absolute max-sm:-bottom-[1000px] max-sm:left-1/2 max-sm:-translate-x-1/2 max-sm:opacity-100 z-[2] opacity-0 overflow-hidden w-screen h-[61.8vh]">
-                    <div id="carousel-children" data-template="caroseul"></div>
+                <svg id="scale-content-equalizer-mob" style="transform: translateX(-50%) translateY(-50%)"
+                    class="max-sm:bottom-[7vh] w-[39vh] max-sm:h-[64px] h-[7.5vh] block left-1/2 bottom-[0.45vh] z-[4] absolute equalizer overflow-visible "
+                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 426 84" fill="none">
+                    <g opacity="0.3" class="overflow-visible">
+                        <path
+                            d="M50.6011 50.0743V34.4778C50.6011 33.142 49.5182 32.0591 48.1824 32.0591C46.8466 32.0591 45.7637 33.142 45.7637 34.4778V50.0743C45.7637 51.4101 46.8466 52.493 48.1824 52.493C49.5182 52.493 50.6011 51.4101 50.6011 50.0743Z"
+                            fill="white" />
+                        <path
+                            d="M65.3241 55.3905V27.5053C65.3241 26.3603 64.3959 25.4321 63.2509 25.4321C62.1059 25.4321 61.1777 26.3603 61.1777 27.5053V55.3905C61.1777 56.5354 62.1059 57.4636 63.2509 57.4636C64.3959 57.4636 65.3241 56.5354 65.3241 55.3905Z"
+                            fill="white" />
+                        <path
+                            d="M245.15 55.3905V27.5053C245.15 26.3603 244.222 25.4321 243.077 25.4321C241.932 25.4321 241.004 26.3603 241.004 27.5053V55.3905C241.004 56.5354 241.932 57.4636 243.077 57.4636C244.222 57.4636 245.15 56.5354 245.15 55.3905Z"
+                            fill="white" />
+                        <path
+                            d="M80.7456 53.9403V30.0598C80.7456 28.724 79.6627 27.6411 78.3269 27.6411C76.9911 27.6411 75.9082 28.724 75.9082 30.0598V53.9403C75.9082 55.2761 76.9911 56.359 78.3269 56.359C79.6627 56.359 80.7456 55.2761 80.7456 53.9403Z"
+                            fill="white" />
+                        <path
+                            d="M260.568 53.9403V30.0598C260.568 28.724 259.485 27.6411 258.149 27.6411C256.813 27.6411 255.73 28.724 255.73 30.0598V53.9403C255.73 55.2761 256.813 56.359 258.149 56.359C259.485 56.359 260.568 55.2761 260.568 53.9403Z"
+                            fill="white" />
+                        <path
+                            d="M95.4667 49.8675V34.1323C95.4667 32.9873 94.5385 32.0591 93.3935 32.0591C92.2485 32.0591 91.3203 32.9873 91.3203 34.1323V49.8675C91.3203 51.0125 92.2485 51.9407 93.3935 51.9407C94.5385 51.9407 95.4667 51.0125 95.4667 49.8675Z"
+                            fill="white" />
+                        <path
+                            d="M275.291 49.8675V34.1323C275.291 32.9873 274.363 32.0591 273.218 32.0591C272.073 32.0591 271.145 32.9873 271.145 34.1323V49.8675C271.145 51.0125 272.073 51.9407 273.218 51.9407C274.363 51.9407 275.291 51.0125 275.291 49.8675Z"
+                            fill="white" />
+                        <path
+                            d="M110.882 73.8222V10.1785C110.882 8.84265 109.799 7.75977 108.464 7.75977C107.128 7.75977 106.045 8.84265 106.045 10.1785V73.8222C106.045 75.158 107.128 76.2409 108.464 76.2409C109.799 76.2409 110.882 75.158 110.882 73.8222Z"
+                            fill="white" />
+                        <path
+                            d="M290.708 73.8222V10.1785C290.708 8.84265 289.626 7.75977 288.29 7.75977C286.954 7.75977 285.871 8.84265 285.871 10.1785V73.8222C285.871 75.158 286.954 76.2409 288.29 76.2409C289.626 76.2409 290.708 75.158 290.708 73.8222Z"
+                            fill="white" />
+                        <path
+                            d="M126.298 81.0015V2.99878C126.298 1.66297 125.215 0.580078 123.88 0.580078C122.544 0.580078 121.461 1.66297 121.461 2.99878V81.0015C121.461 82.3373 122.544 83.4202 123.88 83.4202C125.215 83.4202 126.298 82.3373 126.298 81.0015Z"
+                            fill="white" />
+                        <path
+                            d="M306.125 81.0015V2.99878C306.125 1.66297 305.042 0.580078 303.706 0.580078C302.37 0.580078 301.287 1.66297 301.287 2.99878V81.0015C301.287 82.3373 302.37 83.4202 303.706 83.4202C305.042 83.4202 306.125 82.3373 306.125 81.0015Z"
+                            fill="white" />
+                        <path
+                            d="M141.025 71.4063V12.5942C141.025 11.4492 140.097 10.521 138.952 10.521C137.807 10.521 136.879 11.4492 136.879 12.5942V71.4063C136.879 72.5513 137.807 73.4795 138.952 73.4795C140.097 73.4795 141.025 72.5513 141.025 71.4063Z"
+                            fill="white" />
+                        <path
+                            d="M320.851 71.4063V12.5942C320.851 11.4492 319.923 10.521 318.778 10.521C317.633 10.521 316.705 11.4492 316.705 12.5942V71.4063C316.705 72.5513 317.633 73.4795 318.778 73.4795C319.923 73.4795 320.851 72.5513 320.851 71.4063Z"
+                            fill="white" />
+                        <path
+                            d="M155.935 72.8529V9.76147C155.935 8.42566 154.852 7.34277 153.516 7.34277C152.181 7.34277 151.098 8.42566 151.098 9.76147V72.8529C151.098 74.1887 152.181 75.2716 153.516 75.2716C154.852 75.2716 155.935 74.1887 155.935 72.8529Z"
+                            fill="white" />
+                        <path
+                            d="M335.757 72.8529V9.76147C335.757 8.42566 334.674 7.34277 333.339 7.34277C332.003 7.34277 330.92 8.42566 330.92 9.76147V72.8529C330.92 74.1887 332.003 75.2716 333.339 75.2716C334.674 75.2716 335.757 74.1887 335.757 72.8529Z"
+                            fill="white" />
+                        <path
+                            d="M171.166 71.4063V12.5942C171.166 11.4492 170.238 10.521 169.093 10.521C167.948 10.521 167.02 11.4492 167.02 12.5942V71.4063C167.02 72.5513 167.948 73.4795 169.093 73.4795C170.238 73.4795 171.166 72.5513 171.166 71.4063Z"
+                            fill="white" />
+                        <path
+                            d="M350.988 71.4063V12.5942C350.988 11.4492 350.06 10.521 348.915 10.521C347.77 10.521 346.842 11.4492 346.842 12.5942V71.4063C346.842 72.5513 347.77 73.4795 348.915 73.4795C350.06 73.4795 350.988 72.5513 350.988 71.4063Z"
+                            fill="white" />
+                        <path
+                            d="M186.583 57.8063V26.1941C186.583 24.8583 185.501 23.7754 184.165 23.7754C182.829 23.7754 181.746 24.8583 181.746 26.1941V57.8063C181.746 59.1421 182.829 60.225 184.165 60.225C185.501 60.225 186.583 59.1421 186.583 57.8063Z"
+                            fill="white" />
+                        <path
+                            d="M366.406 57.8063V26.1941C366.406 24.8583 365.323 23.7754 363.987 23.7754C362.651 23.7754 361.568 24.8583 361.568 26.1941V57.8063C361.568 59.1421 362.651 60.225 363.987 60.225C365.323 60.225 366.406 59.1421 366.406 57.8063Z"
+                            fill="white" />
+                        <path
+                            d="M201.308 51.5244V32.4755C201.308 31.3305 200.38 30.4023 199.235 30.4023C198.09 30.4023 197.162 31.3305 197.162 32.4755V51.5244C197.162 52.6694 198.09 53.5976 199.235 53.5976C200.38 53.5976 201.308 52.6694 201.308 51.5244Z"
+                            fill="white" />
+                        <path
+                            d="M381.133 51.5244V32.4755C381.133 31.3305 380.204 30.4023 379.059 30.4023C377.915 30.4023 376.986 31.3305 376.986 32.4755V51.5244C376.986 52.6694 377.915 53.5976 379.059 53.5976C380.204 53.5976 381.133 52.6694 381.133 51.5244Z"
+                            fill="white" />
+                        <path
+                            d="M216.724 47.3133V38.344C216.724 37.0082 215.641 35.9253 214.305 35.9253C212.97 35.9253 211.887 37.0082 211.887 38.344V47.3133C211.887 48.6491 212.97 49.732 214.305 49.732C215.641 49.732 216.724 48.6491 216.724 47.3133Z"
+                            fill="white" />
+                        <path
+                            d="M396.546 47.3133V38.344C396.546 37.0082 395.463 35.9253 394.128 35.9253C392.792 35.9253 391.709 37.0082 391.709 38.344V47.3133C391.709 48.6491 392.792 49.732 394.128 49.732C395.463 49.732 396.546 48.6491 396.546 47.3133Z"
+                            fill="white" />
+                        <path
+                            d="M5.04282 47.6588V37.9985C5.04282 36.8535 4.11463 35.9253 2.96965 35.9253C1.82467 35.9253 0.896484 36.8535 0.896484 37.9985V47.6588C0.896484 48.8038 1.82467 49.732 2.96965 49.732C4.11463 49.732 5.04282 48.8038 5.04282 47.6588Z"
+                            fill="white" />
+                        <path
+                            d="M231.447 45.4497V39.6552C231.447 38.5102 230.519 37.582 229.374 37.582C228.229 37.582 227.301 38.5102 227.301 39.6552V45.4497C227.301 46.5947 228.229 47.5228 229.374 47.5228C230.519 47.5228 231.447 46.5946 231.447 45.4497Z"
+                            fill="white" />
+                        <path
+                            d="M411.275 45.4497V39.6552C411.275 38.5102 410.347 37.582 409.202 37.582C408.057 37.582 407.129 38.5102 407.129 39.6552V45.4497C407.129 46.5947 408.057 47.5228 409.202 47.5228C410.347 47.5228 411.275 46.5946 411.275 45.4497Z"
+                            fill="white" />
+                        <path
+                            d="M20.4565 45.1041V40.0007C20.4565 38.6649 19.3736 37.582 18.0378 37.582C16.702 37.582 15.6191 38.6649 15.6191 40.0007V45.1041C15.6191 46.44 16.702 47.5228 18.0378 47.5228C19.3736 47.5228 20.4565 46.4399 20.4565 45.1041Z"
+                            fill="white" />
+                        <path
+                            d="M426 46.002V38.5507C426 37.4057 425.072 36.4775 423.927 36.4775C422.782 36.4775 421.854 37.4057 421.854 38.5507V46.002C421.854 47.147 422.782 48.0752 423.927 48.0752C425.072 48.0752 426 47.147 426 46.002Z"
+                            fill="white" />
+                        <path
+                            d="M35.1874 46.002V38.5507C35.1874 37.4057 34.2592 36.4775 33.1142 36.4775C31.9692 36.4775 31.041 37.4057 31.041 38.5507V46.002C31.041 47.147 31.9692 48.0752 33.1142 48.0752C34.2592 48.0752 35.1874 47.147 35.1874 46.002Z"
+                            fill="white" />
+                    </g>
+                </svg>
+            </div>
+            <div id="carousel-dots"
+                class="max-sm:-bottom-[1025px] flex items-center gap-2 absolute left-1/2 -translate-x-1/2 -bottom-[20vh]">
+            </div>
+        </div>
+
+        <div id="scale-block" class="h-screen w-screen relative">
+            <div id="scale-bg" style="transform: translateX(-50%)"
+                class="absolute left-1/2 bottom-0 w-[59.8vh] h-[86.1vh] rounded-[14.1vh] rounded-b-none bg-white -z-[1]">
+            </div>
+            <div id="scale-box" style="transform: translateX(-50%)"
+                class="absolute left-1/2 bottom-0 w-[59.8vh] h-[86.1vh] border border-b-0 border-[#D4D4D4] rounded-[14.1vh] rounded-b-none overflow-hidden">
+                <img id="scale-img" style="transform: translateX(-50%) translateY(0%) scale(1); top: -13.9vh;"
+                    class="max-w-[100vw] left-1/2 w-screen h-screen object-cover block absolute" src="media/img/big.png"
+                    alt="img" />
+                <div class="absolute left-0 bottom-0 w-full gradient-bottom h-full z-[1]"></div>
+                <div id="scale-content"
+                    class="max-sm:gap-[4px] max-sm:px-0 absolute left-0 top-0 w-full h-full flex flex-col justify-end px-[5.2vh] pb-[4.47vh] gap-2 z-[2]">
+                    <a id="scale-content-play" target="_blank" class="absolute left-1/2 top-1/2 btn fade-out"
+                        style="transform: translate(-50%, -50%);" href="/podcast50"><img
+                            class="max-sm:w-[85px] w-[13vh] z-[1]" src="media/icons/play.svg"></img></a>
                     <div style="transform: translateX(-50%) translateY(-50%)"
-                        class="max-sm:block hidden z-[2] absolute left-1/2 top-1/2">
-                        <a href="#" target="_blank" id="scale-content-button-mob"
-                            class="max-sm:w-max z-[1] relative btn flex gap-3 px-6 py-[15px] items-center bg-[#84E644] rounded-[40px] w-[23.8vh] h-[7.29vh] justify-center">
+                        class="max-sm:opacity-0 absolute top-1/2 left-1/2">
+                        <a href="#" target="_blank" id="scale-content-button"
+                            class="relative btn opacity-0 fade-in flex gap-3 px-6 py-[15px] items-center bg-[#84E644] rounded-[40px] w-[23.8vh] h-[7.29vh] justify-center -z-[1]">
                             <object class="w-5 h-5" data="media/icons/play-tri.svg"></object>
-                            <span class="text-[#001749] text-xl font-semibold uppercase w-max"
+                            <span class="text-[#001749] text-xl font-semibold uppercase"
                                 data-text="caroseul-button"></span>
                         </a>
                     </div>
-                    <svg id="scale-content-equalizer-mob" style="transform: translateX(-50%) translateY(-50%)"
-                        class="h-[64px] max-sm:block translate-y-[20px] left-1/2 bottom-[5px] z-[4] absolute w-[39vh] equalizer overflow-visible hidden"
+                    <svg id="scale-content-equalizer"
+                        class="max-sm:translate-y-[20px] max-sm:h-[75.5px] w-full h-[10vh] equalizer overflow-visible"
                         xmlns="http://www.w3.org/2000/svg" width="426" height="84" viewBox="0 0 426 84" fill="none">
                         <g opacity="0.3" class="overflow-visible">
                             <path
@@ -152,137 +273,14 @@
                                 fill="white" />
                         </g>
                     </svg>
+                    <span id="scale-content-title" data-text="caroseul1-title"
+                        class="max-sm:text-[22px] max-sm:pl-[30px] text-[#84E644] text-[28px] font-medium capitalize"></span>
+                    <span id="scale-content-author" data-text="caroseul1-author"
+                        class="max-sm:text-[18px] max-sm:pl-[30px] text-white text-[22px] font-normal"></span>
                 </div>
-                <div id="carousel-dots"
-                    class="max-sm:-bottom-[1025px] flex items-center gap-2 absolute left-1/2 -translate-x-1/2 -bottom-[20vh]">
-                </div>
-
-                <!-- <div id="scale-box" -->
-                    <!-- class="max-sm:relative max-sm:w-[91.1vw] max-sm:h-[57vh] max-sm:border max-sm:border-[#787878] max-sm:overflow-visible bottom-0 h-[86.2vh] w-[60vh] overflow-hidden absolute left-1/2 -translate-x-1/2 shrink-0 origin-bottom border border-b-[0px] rounded-t-[120px] border-white block z-[2]">
-                    <div id="scale-img" style="transform: translateX(-50%)"
-                        class="max-sm:hidden origin-center main-bg w-screen h-screen absolute -top-[13.8vh] left-1/2 origin[50%_100%] z-[1]">
-                    </div> -->
-                    <!-- <div class="absolute left-0 bottom-0 w-full gradient-bottom h-full z-[1]"></div> -->
-                    <!-- <div id="scale-content"
-                        class="max-sm:gap-[4px] max-sm:px-0 absolute left-0 top-0 w-full h-full flex flex-col justify-end px-[5.2vh] pb-[4.47vh] gap-2 z-[2]">
-                        <a id="scale-content-play" target="_blank" class="absolute left-1/2 top-1/2 btn"
-                            style="transform: translate(-50%, -50%);" href="/podcast50"><img
-                                class="max-sm:w-[85px] w-[13vh] z-[1]" src="media/icons/play.svg"></img></a>
-                        <div style="transform: translateX(-50%) translateY(-50%)"
-                            class="max-sm:opacity-0 absolute top-1/2 left-1/2">
-                            <a href="#" target="_blank" id="scale-content-button"
-                                class="relative btn opacity-0 flex gap-3 px-6 py-[15px] items-center bg-[#84E644] rounded-[40px] w-[23.8vh] h-[7.29vh] justify-center -z-[1]">
-                                <object class="w-5 h-5" data="media/icons/play-tri.svg"></object>
-                                <span class="text-[#001749] text-xl font-semibold uppercase"
-                                    data-text="caroseul-button"></span>
-                            </a>
-                        </div>
-                        <svg id="scale-content-equalizer"
-                            class="max-sm:translate-y-[20px] max-sm:h-[75.5px] w-full h-[10vh] equalizer overflow-visible"
-                            xmlns="http://www.w3.org/2000/svg" width="426" height="84" viewBox="0 0 426 84" fill="none">
-                            <g opacity="0.3" class="overflow-visible">
-                                <path
-                                    d="M50.6011 50.0743V34.4778C50.6011 33.142 49.5182 32.0591 48.1824 32.0591C46.8466 32.0591 45.7637 33.142 45.7637 34.4778V50.0743C45.7637 51.4101 46.8466 52.493 48.1824 52.493C49.5182 52.493 50.6011 51.4101 50.6011 50.0743Z"
-                                    fill="white" />
-                                <path
-                                    d="M65.3241 55.3905V27.5053C65.3241 26.3603 64.3959 25.4321 63.2509 25.4321C62.1059 25.4321 61.1777 26.3603 61.1777 27.5053V55.3905C61.1777 56.5354 62.1059 57.4636 63.2509 57.4636C64.3959 57.4636 65.3241 56.5354 65.3241 55.3905Z"
-                                    fill="white" />
-                                <path
-                                    d="M245.15 55.3905V27.5053C245.15 26.3603 244.222 25.4321 243.077 25.4321C241.932 25.4321 241.004 26.3603 241.004 27.5053V55.3905C241.004 56.5354 241.932 57.4636 243.077 57.4636C244.222 57.4636 245.15 56.5354 245.15 55.3905Z"
-                                    fill="white" />
-                                <path
-                                    d="M80.7456 53.9403V30.0598C80.7456 28.724 79.6627 27.6411 78.3269 27.6411C76.9911 27.6411 75.9082 28.724 75.9082 30.0598V53.9403C75.9082 55.2761 76.9911 56.359 78.3269 56.359C79.6627 56.359 80.7456 55.2761 80.7456 53.9403Z"
-                                    fill="white" />
-                                <path
-                                    d="M260.568 53.9403V30.0598C260.568 28.724 259.485 27.6411 258.149 27.6411C256.813 27.6411 255.73 28.724 255.73 30.0598V53.9403C255.73 55.2761 256.813 56.359 258.149 56.359C259.485 56.359 260.568 55.2761 260.568 53.9403Z"
-                                    fill="white" />
-                                <path
-                                    d="M95.4667 49.8675V34.1323C95.4667 32.9873 94.5385 32.0591 93.3935 32.0591C92.2485 32.0591 91.3203 32.9873 91.3203 34.1323V49.8675C91.3203 51.0125 92.2485 51.9407 93.3935 51.9407C94.5385 51.9407 95.4667 51.0125 95.4667 49.8675Z"
-                                    fill="white" />
-                                <path
-                                    d="M275.291 49.8675V34.1323C275.291 32.9873 274.363 32.0591 273.218 32.0591C272.073 32.0591 271.145 32.9873 271.145 34.1323V49.8675C271.145 51.0125 272.073 51.9407 273.218 51.9407C274.363 51.9407 275.291 51.0125 275.291 49.8675Z"
-                                    fill="white" />
-                                <path
-                                    d="M110.882 73.8222V10.1785C110.882 8.84265 109.799 7.75977 108.464 7.75977C107.128 7.75977 106.045 8.84265 106.045 10.1785V73.8222C106.045 75.158 107.128 76.2409 108.464 76.2409C109.799 76.2409 110.882 75.158 110.882 73.8222Z"
-                                    fill="white" />
-                                <path
-                                    d="M290.708 73.8222V10.1785C290.708 8.84265 289.626 7.75977 288.29 7.75977C286.954 7.75977 285.871 8.84265 285.871 10.1785V73.8222C285.871 75.158 286.954 76.2409 288.29 76.2409C289.626 76.2409 290.708 75.158 290.708 73.8222Z"
-                                    fill="white" />
-                                <path
-                                    d="M126.298 81.0015V2.99878C126.298 1.66297 125.215 0.580078 123.88 0.580078C122.544 0.580078 121.461 1.66297 121.461 2.99878V81.0015C121.461 82.3373 122.544 83.4202 123.88 83.4202C125.215 83.4202 126.298 82.3373 126.298 81.0015Z"
-                                    fill="white" />
-                                <path
-                                    d="M306.125 81.0015V2.99878C306.125 1.66297 305.042 0.580078 303.706 0.580078C302.37 0.580078 301.287 1.66297 301.287 2.99878V81.0015C301.287 82.3373 302.37 83.4202 303.706 83.4202C305.042 83.4202 306.125 82.3373 306.125 81.0015Z"
-                                    fill="white" />
-                                <path
-                                    d="M141.025 71.4063V12.5942C141.025 11.4492 140.097 10.521 138.952 10.521C137.807 10.521 136.879 11.4492 136.879 12.5942V71.4063C136.879 72.5513 137.807 73.4795 138.952 73.4795C140.097 73.4795 141.025 72.5513 141.025 71.4063Z"
-                                    fill="white" />
-                                <path
-                                    d="M320.851 71.4063V12.5942C320.851 11.4492 319.923 10.521 318.778 10.521C317.633 10.521 316.705 11.4492 316.705 12.5942V71.4063C316.705 72.5513 317.633 73.4795 318.778 73.4795C319.923 73.4795 320.851 72.5513 320.851 71.4063Z"
-                                    fill="white" />
-                                <path
-                                    d="M155.935 72.8529V9.76147C155.935 8.42566 154.852 7.34277 153.516 7.34277C152.181 7.34277 151.098 8.42566 151.098 9.76147V72.8529C151.098 74.1887 152.181 75.2716 153.516 75.2716C154.852 75.2716 155.935 74.1887 155.935 72.8529Z"
-                                    fill="white" />
-                                <path
-                                    d="M335.757 72.8529V9.76147C335.757 8.42566 334.674 7.34277 333.339 7.34277C332.003 7.34277 330.92 8.42566 330.92 9.76147V72.8529C330.92 74.1887 332.003 75.2716 333.339 75.2716C334.674 75.2716 335.757 74.1887 335.757 72.8529Z"
-                                    fill="white" />
-                                <path
-                                    d="M171.166 71.4063V12.5942C171.166 11.4492 170.238 10.521 169.093 10.521C167.948 10.521 167.02 11.4492 167.02 12.5942V71.4063C167.02 72.5513 167.948 73.4795 169.093 73.4795C170.238 73.4795 171.166 72.5513 171.166 71.4063Z"
-                                    fill="white" />
-                                <path
-                                    d="M350.988 71.4063V12.5942C350.988 11.4492 350.06 10.521 348.915 10.521C347.77 10.521 346.842 11.4492 346.842 12.5942V71.4063C346.842 72.5513 347.77 73.4795 348.915 73.4795C350.06 73.4795 350.988 72.5513 350.988 71.4063Z"
-                                    fill="white" />
-                                <path
-                                    d="M186.583 57.8063V26.1941C186.583 24.8583 185.501 23.7754 184.165 23.7754C182.829 23.7754 181.746 24.8583 181.746 26.1941V57.8063C181.746 59.1421 182.829 60.225 184.165 60.225C185.501 60.225 186.583 59.1421 186.583 57.8063Z"
-                                    fill="white" />
-                                <path
-                                    d="M366.406 57.8063V26.1941C366.406 24.8583 365.323 23.7754 363.987 23.7754C362.651 23.7754 361.568 24.8583 361.568 26.1941V57.8063C361.568 59.1421 362.651 60.225 363.987 60.225C365.323 60.225 366.406 59.1421 366.406 57.8063Z"
-                                    fill="white" />
-                                <path
-                                    d="M201.308 51.5244V32.4755C201.308 31.3305 200.38 30.4023 199.235 30.4023C198.09 30.4023 197.162 31.3305 197.162 32.4755V51.5244C197.162 52.6694 198.09 53.5976 199.235 53.5976C200.38 53.5976 201.308 52.6694 201.308 51.5244Z"
-                                    fill="white" />
-                                <path
-                                    d="M381.133 51.5244V32.4755C381.133 31.3305 380.204 30.4023 379.059 30.4023C377.915 30.4023 376.986 31.3305 376.986 32.4755V51.5244C376.986 52.6694 377.915 53.5976 379.059 53.5976C380.204 53.5976 381.133 52.6694 381.133 51.5244Z"
-                                    fill="white" />
-                                <path
-                                    d="M216.724 47.3133V38.344C216.724 37.0082 215.641 35.9253 214.305 35.9253C212.97 35.9253 211.887 37.0082 211.887 38.344V47.3133C211.887 48.6491 212.97 49.732 214.305 49.732C215.641 49.732 216.724 48.6491 216.724 47.3133Z"
-                                    fill="white" />
-                                <path
-                                    d="M396.546 47.3133V38.344C396.546 37.0082 395.463 35.9253 394.128 35.9253C392.792 35.9253 391.709 37.0082 391.709 38.344V47.3133C391.709 48.6491 392.792 49.732 394.128 49.732C395.463 49.732 396.546 48.6491 396.546 47.3133Z"
-                                    fill="white" />
-                                <path
-                                    d="M5.04282 47.6588V37.9985C5.04282 36.8535 4.11463 35.9253 2.96965 35.9253C1.82467 35.9253 0.896484 36.8535 0.896484 37.9985V47.6588C0.896484 48.8038 1.82467 49.732 2.96965 49.732C4.11463 49.732 5.04282 48.8038 5.04282 47.6588Z"
-                                    fill="white" />
-                                <path
-                                    d="M231.447 45.4497V39.6552C231.447 38.5102 230.519 37.582 229.374 37.582C228.229 37.582 227.301 38.5102 227.301 39.6552V45.4497C227.301 46.5947 228.229 47.5228 229.374 47.5228C230.519 47.5228 231.447 46.5946 231.447 45.4497Z"
-                                    fill="white" />
-                                <path
-                                    d="M411.275 45.4497V39.6552C411.275 38.5102 410.347 37.582 409.202 37.582C408.057 37.582 407.129 38.5102 407.129 39.6552V45.4497C407.129 46.5947 408.057 47.5228 409.202 47.5228C410.347 47.5228 411.275 46.5946 411.275 45.4497Z"
-                                    fill="white" />
-                                <path
-                                    d="M20.4565 45.1041V40.0007C20.4565 38.6649 19.3736 37.582 18.0378 37.582C16.702 37.582 15.6191 38.6649 15.6191 40.0007V45.1041C15.6191 46.44 16.702 47.5228 18.0378 47.5228C19.3736 47.5228 20.4565 46.4399 20.4565 45.1041Z"
-                                    fill="white" />
-                                <path
-                                    d="M426 46.002V38.5507C426 37.4057 425.072 36.4775 423.927 36.4775C422.782 36.4775 421.854 37.4057 421.854 38.5507V46.002C421.854 47.147 422.782 48.0752 423.927 48.0752C425.072 48.0752 426 47.147 426 46.002Z"
-                                    fill="white" />
-                                <path
-                                    d="M35.1874 46.002V38.5507C35.1874 37.4057 34.2592 36.4775 33.1142 36.4775C31.9692 36.4775 31.041 37.4057 31.041 38.5507V46.002C31.041 47.147 31.9692 48.0752 33.1142 48.0752C34.2592 48.0752 35.1874 47.147 35.1874 46.002Z"
-                                    fill="white" />
-                            </g>
-                        </svg>
-                        <span id="scale-content-title" data-text="caroseul1-title"
-                            class="max-sm:text-[22px] max-sm:pl-[30px] text-[#84E644] text-[28px] font-medium capitalize"></span>
-                        <span id="scale-content-author" data-text="caroseul1-author"
-                            class="max-sm:text-[18px] max-sm:pl-[30px] text-white text-[22px] font-normal"></span>
-                    </div> -->
-                <!-- </div> -->
             </div>
         </div>
-    </div>
-
-
-    <div
-        class="max-sm:h-[1154px] pointer-events-none spacer w-screen bg-transparent h-[35vh] overflow-visible block -z-[5]">
+        <div class="w-screen h-[25vh]"></div>
     </div>
 
     <div class="body-block overflow-visible max-sm:pt-9 pt-[52px] bg-[#030043]">
@@ -348,18 +346,15 @@
 
     <script src="js/animate.js"></script>
     <script src="js/constants.js"></script>
+    <!-- <script src="scroll_new.js"></script> -->
     <script src="js/equalizer.js"></script>
     <script src="js/caroseul.js"></script>
     <script src="js/text.js"></script>
     <script>
         if (window.screen.width > mobileMax) {
-            document.write(
-                '<script src=\"js/scroll.js\"><\/script>'
-            )
+            document.write('<script src="scroll_new.js"><\/script>');
         } else {
-            document.write(
-                '<script src=\"js/header.js\"><\/script>'
-            )
+            document.write('<script src="js/header.js"><\/script>');
         }
     </script>
     <script src="js/slider.js"></script>

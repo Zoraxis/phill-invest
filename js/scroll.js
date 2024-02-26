@@ -55,12 +55,12 @@ const ScrollDownHandle = (scrollDurationOverride = false) => {
         targets: "#caroseul .caroseul-item",
         left: "50vw",
       },
-      {
-        targets: "#caroseul .caroseul-item .gradient-bottom",
-        opacity: 1,
-        delay: duration,
-        duration: duration * 0.75,
-      },
+      // {
+      //   targets: "#caroseul .caroseul-item .gradient-bottom",
+      //   opacity: 1,
+      //   delay: duration,
+      //   duration: duration * 0.75,
+      // },
       {
         targets: "#caroseul .caroseul-item:nth-child(3)",
         translateX: "29.1vh",
@@ -123,28 +123,28 @@ const ScrollDownHandle = (scrollDurationOverride = false) => {
         opacity: 0,
         duration,
       },
-      {
-        targets: "#scale-content",
-        paddingLeft: "0vh",
-        paddingRight: "0vh",
-      },
-      {
-        targets: "#scale-content-title",
-        fontSize: "19px",
-        paddingLeft: "2.9vh",
-        paddingRight: "2.9vh",
-      },
-      {
-        targets: "#scale-content-author",
-        fontSize: "17px",
-        translateY: "-100%",
-        opacity: 0,
-      },
-      {
-        targets: "#scale-content-equalizer",
-        translateY: "65%",
-        height: "7.64vh",
-      },
+      // {
+      //   targets: "#scale-content",
+      //   paddingLeft: "0vh",
+      //   paddingRight: "0vh",
+      // },
+      // {
+      //   targets: "#scale-content-title",
+      //   fontSize: "19px",
+      //   paddingLeft: "2.9vh",
+      //   paddingRight: "2.9vh",
+      // },
+      // {
+      //   targets: "#scale-content-author",
+      //   fontSize: "17px",
+      //   translateY: "-100%",
+      //   opacity: 0,
+      // },
+      // {
+      //   targets: "#scale-content-equalizer",
+      //   translateY: "65%",
+      //   height: "7.64vh",
+      // },
       {
         targets: "#caroseul .caroseul-item:nth-child(2) div .caroseul-author",
         opacity: 0,
@@ -253,17 +253,17 @@ const ScrollUpHandle = (scrollDurationOverride) => {
           duration: 100,
           zIndex: "1",
         },
-        {
-          targets: "#scale-content",
-          paddingLeft: "5.2vh",
-          paddingRight: "5.2vh",
-        },
-        {
-          targets: "#scale-content-title",
-          fontSize: "28px",
-          paddingLeft: "0vh",
-          paddingRight: "0vh",
-        },
+        // {
+        //   targets: "#scale-content",
+        //   paddingLeft: "5.2vh",
+        //   paddingRight: "5.2vh",
+        // },
+        // {
+        //   targets: "#scale-content-title",
+        //   fontSize: "28px",
+        //   paddingLeft: "0vh",
+        //   paddingRight: "0vh",
+        // },
         // {
         //   targets: "#scale-content-author",
         //   fontSize: "22px",
@@ -280,12 +280,12 @@ const ScrollUpHandle = (scrollDurationOverride) => {
         //   targets: "#scale-content-play",
         //   width: "13vh",
         // },
-        {
-          targets: "#caroseul .caroseul-item .gradient-bottom",
-          opacity: 0,
-          delay: duration * 0.6,
-          duration: 100,
-        },
+        // {
+        //   targets: "#caroseul .caroseul-item .gradient-bottom",
+        //   opacity: 0,
+        //   delay: duration * 0.6,
+        //   duration: 100,
+        // },
         {
           targets: "#caroseul .caroseul-item:nth-child(2) div .caroseul-author",
           opacity: 1,

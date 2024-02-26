@@ -1,6 +1,7 @@
 let currC = 1;
 
 let caroseul, caroseulDots, caroseulBtns, link, linkMob;
+let carouselValues = getResponsiveValues("caroseul");
 
 let touchStartX = 0,
   touchEndX = 0;
@@ -91,10 +92,11 @@ const initCaroseul = () => {
 };
 
 const CaruselResizeHandle = () => {
+  carouselValues = getResponsiveValues("caroseul");
   if (window.screen.width > mobileMax) {
     var originalRatios = {
-      width: (containerX * 1) / 2880,
-      height: (containerY * 1) / 1700,
+      width: (containerX) / 2880,
+      height: (containerY) / 1700,
     };
 
     var coverRatio = Math.max(originalRatios.width, originalRatios.height);
@@ -102,20 +104,18 @@ const CaruselResizeHandle = () => {
     var newImageWidth = 2880 * coverRatio;
     var newImageHeight = 1700 * coverRatio;
 
-    caroseul.children[1].setAttribute("id", "carousel-center")
+    caroseul.children[1].setAttribute("id", "carousel-center");
     caroseul.children[1].children[0].style.transformOrigin = "left top";
     caroseul.children[1].children[0].style.left = "50%";
-    caroseul.children[1].children[0].style.top = `-${0}vh`;
-    caroseul.children[1].children[0].style.height =`${newImageHeight}px`;
-    caroseul.children[1].children[0].style.width = `${newImageWidth}px`;
-    caroseul.children[1].children[0].style.maxWidth = `${newImageWidth}px`
+    caroseul.children[1].children[0].style.top = `50%`;
+    caroseul.children[1].children[0].style.height = `${containerY}px`;
+    caroseul.children[1].children[0].style.width = `${containerX}px`;
+    caroseul.children[1].children[0].style.maxWidth = `${containerX}px`;
 
-    const carouselCenterYOffset = newImageHeight * 0.65 - containerY * 0.62;
-    // console.log("🚀 ~ CaruselResizeHandle ~ newImageHeight * 0.65:", newImageHeight * 0.65)
-    // caroseul.children[1].children[0].style.transform = `scale(0.65) translateX(-49.5%) translateY(${0}px)`;
-    caroseul.children[1].children[0].style.transform = `scale(0.65) translateX(-49.5%) translateY(-${carouselCenterYOffset / 6.5 * 10}px)`;
+    caroseul.children[1].children[0].style.transform = `scale(0.65) translateX(-50%) translateY(-50%)`;
+    // caroseul.children[1].children[0].style.transform = `scale(0.65) translateX(-49.5%) translateY(-${carouselCenterYOffset / 6.5 * 10}px)`;
   }
-}
+};
 
 window.addEventListener("resize", CaruselResizeHandle);
 
@@ -177,7 +177,7 @@ const action = (target, caroseulDuration = 300) => {
     const caroseulFadeOut = caroseul.children[getCaroseulIndex(currC - 1)];
     const caroseulRight = caroseul.children[getCaroseulIndex(currC)];
 
-    caroseulFadeIn.style.transform = `translateX(${carouselValues.right})`;
+    caroseulFadeIn.style.left = carouselValues.rightStart;
     caroseulFadeOut.style.zIndex = "1";
     caroseulRight.style.zIndex = "2";
 
@@ -199,7 +199,7 @@ const action = (target, caroseulDuration = 300) => {
           width: carouselValues.smallW,
           height: carouselValues.smallH,
           bottom: carouselValues.smallBottom,
-          translateX: carouselValues.left,
+          left: carouselValues.leftStart,
           opacity: 1,
         },
         {
@@ -207,7 +207,7 @@ const action = (target, caroseulDuration = 300) => {
           width: carouselValues.bigW,
           height: carouselValues.bigH,
           bottom: carouselValues.bigBottom,
-          translateX: carouselValues.center,
+          left: carouselValues.centerStart,
           opacity: 1,
         },
         {
@@ -239,7 +239,7 @@ const action = (target, caroseulDuration = 300) => {
     );
   } else if (target < 0) {
     const caroseulFadeIn = caroseul.children[getCaroseulIndex(currC - 2)];
-    caroseulFadeIn.style.transform = `translateX(${carouselValues.left})`;
+    caroseulFadeIn.style.left = carouselValues.leftStart;
     caroseulFadeIn.style.zIndex = "1";
 
     const thisCarouselElement = getCaroseulTarget(
@@ -260,7 +260,7 @@ const action = (target, caroseulDuration = 300) => {
           width: carouselValues.bigW,
           height: carouselValues.bigH,
           bottom: carouselValues.bigBottom,
-          translateX: carouselValues.center,
+          left: carouselValues.centerStart,
           opacity: 1,
         },
         {
@@ -268,7 +268,7 @@ const action = (target, caroseulDuration = 300) => {
           width: carouselValues.smallW,
           height: carouselValues.smallH,
           bottom: carouselValues.smallBottom,
-          translateX: carouselValues.right,
+          left: carouselValues.rightStart,
           opacity: 1,
         },
         {

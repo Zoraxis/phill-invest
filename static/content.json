@@ -40,7 +40,7 @@
                     "author": "by Denise Lim",
                     "src": "caroseul2.png",
                     "href": "/podcast1",
-                    "transform": "const-leftStart",
+                    "left": "const-leftStart",
                     "num": -1
                 },
                 {
@@ -48,7 +48,7 @@
                     "author": "by Denise Lim",
                     "src": "big.png",
                     "href": "/podcast2",
-                    "transform": "const-centerStart",
+                    "left": "const-centerStart",
                     "w": "const-bigW",
                     "h": "const-bigH",
                     "bottom": "const-bigBottom"
@@ -58,7 +58,7 @@
                     "author": "by Denise Lim",
                     "src": "caroseul3.png",
                     "href": "/podcast3",
-                    "transform": "const-rightStart",
+                    "left": "const-rightStart",
                     "num": 1
                 },
                 {
@@ -66,7 +66,7 @@
                     "author": "by Denise Lim",
                     "src": "caroseul2.png",
                     "href": "/podcast4",
-                    "transform": "const-centerStart",
+                    "left": "const-centerStart",
                     "z": "1"
                 }
             ],

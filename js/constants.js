@@ -1,23 +1,17 @@
 const constants = {
   caroseul: {
     desktop: {
-      left: "-58.5vh",
-      center: "-19.5vh",
-      right: "29.1vh",
       bigW: "39vh",
       bigH: "62vh",
       smallW: "29.4vh",
       smallH: "46.5vh",
       bigBottom: "0vh",
       smallBottom: "7.5vh",
-      leftStart: "-19.5vh",
-      centerStart: "-19.5vh",
-      rightStart: "-19.5vh",
+      leftStart: "0vh",
+      centerStart: "39.05vh",
+      rightStart: "87.7vh",
     },
     mobile: {
-      left: "-34.2vh",
-      center: "-3.76vh",
-      right: "36vh",
       bigW: "39vh",
       bigH: "61.8vh",
       smallW: "29.4vh",
@@ -54,3 +48,5 @@ const getResponsiveValues = (category) => {
 
   return constants[category][deviceType];
 };
+
+const getNum = (value) => parseFloat(value.replace(/[^\d.-]/g, ''))

@@ -5,6 +5,8 @@ let lastScroll = 0,
 
 let scrollConsts = getResponsiveValues("caroseul");
 
+let scrollStatus = -1;
+
 const ScrollDownHandle = (scrollDurationOverride = duration) => {
   animate(
     [
@@ -103,6 +105,33 @@ const ScrollDownHandle = (scrollDurationOverride = duration) => {
         opacity: 1,
         delay: duration,
         duration: duration * 0.75,
+        begin: () => {
+          scrollStatus = 1;
+        },
+        changeBegin: (anim) => {
+          if (scrollStatus === 2) {
+            anim.pause();
+            anim.reset();
+            animate(
+              [
+                {
+                  targets: [".fade-in"],
+                  opacity: 0,
+                },
+              ],
+              { duration: 1 }
+            );
+            scrollStatus = -1;
+          }
+        },
+        changeComplete: () => {
+          scrollStatus = -1;
+        },
+      },
+      {
+        targets:
+          "#carousel-children .caroseul-item:nth-child(2) div .caroseul-author",
+        opacity: 0,
       },
       //CAROSEUL END
     ],
@@ -143,6 +172,12 @@ const ScrollUpHandle = () => {
           duration: duration * 0.25,
         },
         scale: 1,
+        begin: () => {
+          scrollStatus = 2;
+        },
+        complete: () => {
+          scrollStatus = -1;
+        },
       },
       {
         targets: "#scale-box .gradient-bottom",
@@ -211,12 +246,16 @@ const ScrollHandle = () => {
   thisScroll = window.scrollY;
 
   if (thisScroll > scrollStart && lastScroll <= scrollStart) {
-    ScrollDownHandle();
     body.style.overflowY = "hidden";
     setTimeout(() => {
       body.style.overflowY = "visible";
-    }, duration * 0.9);
+    }, duration);
+    ScrollDownHandle();
   } else if (thisScroll <= scrollStart && lastScroll > scrollStart) {
+    body.style.overflowY = "hidden";
+    setTimeout(() => {
+      body.style.overflowY = "visible";
+    }, duration);
     ScrollUpHandle();
   }
 };

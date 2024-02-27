@@ -44,7 +44,7 @@ const ScrollDownHandle = (scrollDurationOverride = duration) => {
       },
       {
         targets: "#scale-box .gradient-bottom",
-        bottom: "-10vh",
+        bottom: "-20vh",
         duration: duration * 0.6,
       },
       // SCALE ANIAMTION END
@@ -78,6 +78,7 @@ const ScrollDownHandle = (scrollDurationOverride = duration) => {
         fontSize: "19px",
         paddingLeft: "2.9vh",
         paddingRight: "2.9vh",
+        translateY: "4.6px"
       },
       {
         targets: "#scale-content-author",
@@ -103,8 +104,8 @@ const ScrollDownHandle = (scrollDurationOverride = duration) => {
       {
         targets: "#caroseul .caroseul-item .gradient-bottom",
         opacity: 1,
-        delay: duration,
-        duration: duration * 0.75,
+        delay: duration * 1.25,
+        duration: duration,
         begin: () => {
           scrollStatus = 1;
         },

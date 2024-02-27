@@ -247,16 +247,12 @@ const ScrollHandle = () => {
   thisScroll = window.scrollY;
 
   if (thisScroll > scrollStart && lastScroll <= scrollStart) {
-    body.style.overflowY = "hidden";
-    setTimeout(() => {
-      body.style.overflowY = "visible";
-    }, duration);
     ScrollDownHandle();
-  } else if (thisScroll <= scrollStart && lastScroll > scrollStart) {
     body.style.overflowY = "hidden";
     setTimeout(() => {
       body.style.overflowY = "visible";
     }, duration);
+  } else if (thisScroll <= scrollStart && lastScroll > scrollStart) {
     ScrollUpHandle();
   }
 };

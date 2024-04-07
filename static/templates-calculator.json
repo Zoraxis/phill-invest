@@ -4,5 +4,11 @@
     },
     "switch-basic": {
         "markup": "<div data-value=\"{value}\" class=\"basic-button flex justify-center relative items-center border border-black p-[0.875rem] rounded-[3.25rem] z-1 overflow-visible bg-white shadow-black shadow-[2px_2px_0px_0px] aria-checked:bg-black aria-checked:text-white aria-checked:shadow-none transition-all cursor-pointer\" aria-checked=\"{selected}\"> <span class=\"max-sm:leading-[1.4rem]\">{value} years</span> </div>"
+    },
+    "switch-advanced": {
+        "markup": "<div data-value=\"{value}\" class=\"advanced-button flex justify-center relative items-center border border-black p-[0.875rem] max-sm:py-[0.65rem] rounded-[3.25rem] z-1 overflow-visible aria-checked:bg-black aria-checked:text-white aria-checked:shadow-none transition-all cursor-pointer h-min\" aria-checked=\"{selected}\"> <span class=\"h-min\">{value} years</span> </div>"
+    },
+    "iceberg-item": {
+        "markup": "<div class=\"flex flex-col gap-2 text-{color}\"> <h5 class=\"max-sm:text-[0.938rem] font-medium text-[1.063rem]\">{title}</h5> <h2 class=\"font-medium text-[2.313rem] leading-[2.484rem]\">$<span id=\"{id}-output\" class=\"leading-[2.484rem]\">30000</span></h2> <span class=\"max-sm:text-[0.75rem]\">Estimated {apr}% return annually</span> </div>"
     }
 }

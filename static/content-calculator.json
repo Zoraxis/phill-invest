@@ -31,14 +31,68 @@
                     "selected": true
                 },
                 {
-                    "value": 10,
-                    "selected": false
+                    "value": 10
                 },
                 {
-                    "value": 15,
-                    "selected": false
+                    "value": 15
                 }
-            ]
+            ],
+            "default": {
+                "selected": false
+            }
+        },
+        "switch-advanced": {
+            "type": "list",
+            "data": [
+                {
+                    "value": 5,
+                    "selected": true
+                },
+                {
+                    "value": 10
+                },
+                {
+                    "value": 15
+                }
+            ],
+            "default": {
+                "selected": false
+            }
+        },
+        "iceberg-item": {
+            "type": "list",
+            "data": [
+                {
+                    "title": "High risk Investments",
+                    "id": "high",
+                    "color": "black",
+                    "apr": 10
+                },
+                {
+                    "title": "Mid risk Investments",
+                    "id": "mid",
+                    "color": "black",
+                    "apr": 7
+                },
+                {
+                    "title": "Low risk Investments",
+                    "id": "low",
+                    "apr": 5
+                },
+                {
+                    "title": "Bank Deposit",
+                    "id": "bank",
+                    "apr": 3
+                },
+                {
+                    "title": "Cash",
+                    "id": "cash",
+                    "apr": 0.5
+                }
+            ],
+            "default": {
+                "color": "white"
+            }
         }
     }
 }

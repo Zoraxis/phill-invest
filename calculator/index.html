@@ -13,10 +13,10 @@
     <link rel="stylesheet" href="./css/calculator.css">
 </head>
 
-<body class="min-h-[100vh] w-screen max-w-[100vw] overflow-x-hidden">
+<body class="max-sm:bg-[#05AC6C] min-h-[100vh] w-screen max-w-[100vw] overflow-x-hidden">
     <header class="max-w-[100vw] w-screen block overflow-hidden">
         <nav data-template="header"
-            class="max-sm:pt-[37px] max-sm:-top-[50vh] w-screen text-black font-medium text-base flex justify-center gap-8 pt-8 z-10 up scale-out absolute left-0 top-0">
+            class="max-sm:text-white max-sm:pt-[37px] max-sm:-top-[50vh] w-screen text-black font-medium text-base flex justify-center gap-8 pt-8 z-10 up scale-out absolute left-0 top-0">
         </nav>
     </header>
     <img id="header-burger" class="max-sm:block absolute right-[23px] top-[42px] hidden w-6 h-4 z-[2]"
@@ -25,55 +25,51 @@
     <div id="scale-block" class="absolute left-0 top-0 w-screen h-screen pointer-events-none -z-50"></div>
 
 
-    <div class="w-[43.75rem] mx-auto mt-[5.5rem] flex flex-col items-center">
-        <h1 class="uppercase text-[4rem] text-center font-bold wise-sans">Income calculator</h1>
-        <h5 class="font-medium text-2xl">Find out how much you can earn if you invest</h5>
-
-        <div class="flex justify-between items-center w-full mt-[3.25rem] h-max">
-            <div class="w-[15.094rem] flex flex-col gap-3">
-                <span class="px-4 font-normal text-base">Monthly income</span>
-                <div class="h-[3.625rem] w-full bg-[#F2F4F8] rounded-[100px] flex justify-center items-center p-4">
-                    <span>$</span>
-                    <input type="number" id="income-input" value="1000" class="bg-transparent w-5/6"></input>
+    <div class="max-sm:w-[22.875rem] w-[43.75rem] mx-auto mt-[5.5rem] flex flex-col items-center">
+        <div class="max-sm:bg-white max-sm:rounded-[1.25rem] max-sm:px-5 max-sm:py-10 ">
+            <h1
+                class="max-sm:font-semibold max-sm:text-[2.625rem] max-sm:capitalize max-sm:text-left max-sm:-tracking-[3px] uppercase text-[4rem] text-center font-bold mob-wise-sans">
+                Income calculator</h1>
+            <h5 class="max-sm:text-left font-medium text-2xl text-center">Find out how much you can earn if you invest
+            </h5>
+            <div
+                class="max-sm:flex-col max-sm:gap-[1.188rem] flex justify-between items-center w-full mt-[3.25rem] h-max">
+                <div class="max-sm:w-full w-[15.094rem] flex flex-col gap-3">
+                    <span class="max-sm:hidden px-4 font-normal text-base">Monthly income</span>
+                    <div
+                        class="max-sm:border max-sm:border-black max-sm:rounded-[4px] max-sm:justify-start h-[3.625rem] w-full bg-[#F2F4F8] rounded-[100px] flex justify-center items-center p-4">
+                        <span>$</span>
+                        <input type="number" id="income-input" placeholder=" Monthly income"
+                            class="bg-transparent w-5/6 placeholder:text-black"></input>
+                    </div>
                 </div>
-            </div>
-            <div class="w-[15.094rem] flex flex-col gap-3">
-                <span class="px-4 font-normal text-base">Monthly savings</span>
-                <div
-                    class="h-[3.625rem] w-full bg-[#F2F4F8] rounded-[100px] flex justify-center items-center p-4 py-[1.031rem]">
-                    <span>$</span>
-                    <input type="number" id="savings-input" value="500" class="bg-transparent w-5/6"></input>
+                <div class="max-sm:w-full w-[15.094rem] flex flex-col gap-3">
+                    <span class="max-sm:hidden px-4 font-normal text-base">Monthly savings</span>
+                    <div
+                        class="max-sm:border max-sm:border-black max-sm:rounded-[4px] max-sm:justify-start h-[3.625rem] w-full bg-[#F2F4F8] rounded-[100px] flex justify-center items-center p-4 py-[1.031rem]">
+                        <span>$</span>
+                        <input type="number" id="savings-input" placeholder=" Monthly savings"
+                            class="bg-transparent w-5/6 placeholder:text-black"></input>
+                    </div>
                 </div>
-            </div>
-            <div class="w-[11.063rem] h-full flex justify-end flex-col gap-3">
-                <span class="px-4 font-normal text-base text-transparent">Monthly savings</span>
-                <div id="calculate-button"
-                    class="w-full rounded-[100px] flex justify-center items-center bg-[#84E644] p-4 py-[1.031rem]"><span
-                        class="font-semibold text-xl uppercase inter cursor-pointer hover:scale-110 transition-all">calculate</span>
+                <div class="max-sm:w-full max-sm:mt-[0.688rem] w-[11.063rem] h-full flex justify-end flex-col gap-3">
+                    <span class="max-sm:hidden px-4 font-normal text-base text-transparent">Monthly savings</span>
+                    <div id="calculate-button"
+                        class="max-sm:bg-[#2B72F0] w-full rounded-[100px] flex justify-center items-center bg-[#84E644] p-4 py-[1.031rem]">
+                        <span
+                            class=" max-sm:text-white max-sm:capitalize max-sm:font-medium max-sm:text-[1.125rem] font-semibold text-xl uppercase inter cursor-pointer">calculate</span>
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="bg-slate-50 rounded-[1.25rem] px-5 py-10 w-full mt-8">
-            <div class="flex gap-[0.625rem] mb-[1.875rem]">
-                <div data-value="5"
-                    class="basic-button flex justify-center relative items-center border border-black p-[0.875rem] rounded-[3.25rem] z-1 overflow-visible bg-white shadow-black shadow-[2px_2px_0px_0px] aria-checked:bg-black aria-checked:text-white aria-checked:shadow-none transition-all cursor-pointer"
-                    aria-checked="true">
-                    <span>5 years</span>
-                </div>
-                <div data-value="10"
-                    class="basic-button flex justify-center relative items-center border border-black p-[0.875rem] rounded-[3.25rem] z-1 overflow-visible bg-slate-50 shadow-black shadow-[2px_2px_0px_0px] aria-checked:bg-black aria-checked:text-white aria-checked:shadow-none transition-all cursor-pointer">
-                    <span>10 years</span>
-                </div>
-                <div data-value="15"
-                    class="basic-button flex justify-center relative items-center border border-black p-[0.875rem] rounded-[3.25rem] z-1 overflow-visible bg-slate-50 shadow-black shadow-[2px_2px_0px_0px] aria-checked:bg-black aria-checked:text-white aria-checked:shadow-none transition-all cursor-pointer">
-                    <span>15 years</span>
-                </div>
+            <div data-template="switch-basic" class="flex gap-[0.625rem] mb-[1.875rem]">
             </div>
 
-            <h4 class="font-medium text-[1.375rem]">In 15 years you will have</h4>
+            <h4 class="font-medium text-[1.375rem]">In <span id="basic-duration-output">15</span> years you will have</h4>
             <div class="flex items-center gap-3">
-                <h2 class="font-medium text-[3.25rem]">
+                <h2 class="max-sm:-tracking-[3px] font-medium text-[3.25rem]">
                     <span>$</span>
                     <span id="basic-output">30000</span>
                 </h2>
@@ -84,7 +80,8 @@
         <div class="gradient rounded-[1.25rem] w-full my-8 py-[2.5rem]">
             <div class="flex px-[1.25rem] flex-col gap-[0.813rem]">
                 <h2 class="font-medium text-[2.625rem]">Imagine if...</h2>
-                <span class="text-[0.875rem] font-normal">Your money was put into different financial instruments? Here's how much you could* have made:</span>
+                <span class="text-[0.875rem] font-normal">Your money was put into different financial instruments?
+                    Here's how much you could* have made:</span>
                 <div class="flex gap-[0.625rem] mb-[1.875rem]">
                     <div data-value="5"
                         class="advanced-button flex justify-center relative items-center border border-black p-[0.875rem] rounded-[3.25rem] z-1 overflow-visible aria-checked:bg-black aria-checked:text-white aria-checked:shadow-none transition-all cursor-pointer"
@@ -102,42 +99,52 @@
                 </div>
             </div>
 
-            <div class="flex justify-center items-start gap-[1.375rem] relative object-cover border-b border-[#ABABAB] pb-[2.188rem] border-opacity-10">
-                <img class="absolute w-full h-[45rem] aspect-square -top-[2.5%] left-0 z-0" src="../media/img/iceberg.png" alt="iceberg">
+            <div
+                class="overflow-hidden flex justify-center items-start gap-[1.375rem] relative object-cover border-b border-[#ABABAB] pb-[2.188rem] border-opacity-10">
+                <img class="max-sm:hidden absolute w-full h-[45rem] aspect-square -top-[2.5%] left-0 z-0"
+                    src="../media/img/iceberg.png" alt="iceberg">
+                <img class="max-sm:block hidden absolute w-[175%] max-w-[175%] -left-[37.5%] h-[45rem] aspect-square -top-[2.5%] z-0"
+                    src="../media/img/iceberg_mob.png" alt="iceberg">
                 <img class="mt-[0.5rem] h-[37rem] z-[1]" src="../media/icons/iceberg-line.svg" alt="line">
                 <div class="flex flex-col gap-[2.5rem] z-[1]">
                     <div class="flex flex-col gap-2">
                         <h5 class="font-medium text-[1.063rem]">High risk Investments</h5>
-                        <h2 class="font-medium text-[2.313rem] leading-[2.484rem]">$<span id="high-output" class="leading-[2.484rem]">30000</span></h2>
+                        <h2 class="font-medium text-[2.313rem] leading-[2.484rem]">$<span id="high-output"
+                                class="leading-[2.484rem]">30000</span></h2>
                         <span>Estimated 10% return annually</span>
                     </div>
                     <div class="flex flex-col gap-2">
                         <h5 class="font-medium text-[1.063rem]">Mid risk Investments</h5>
-                        <h2 class="font-medium text-[2.313rem] leading-[2.484rem]">$<span id="mid-output" class="leading-[2.484rem]">30000</span></h2>
+                        <h2 class="font-medium text-[2.313rem] leading-[2.484rem]">$<span id="mid-output"
+                                class="leading-[2.484rem]">30000</span></h2>
                         <span>Estimated 7% return annually</span>
                     </div>
                     <div class="flex flex-col gap-2 text-white">
                         <h5 class="font-medium text-[1.063rem]">Min risk investments</h5>
-                        <h2 class="font-medium text-[2.313rem] leading-[2.484rem]">$<span id="low-output" class="leading-[2.484rem]">30000</span></h2>
+                        <h2 class="font-medium text-[2.313rem] leading-[2.484rem]">$<span id="low-output"
+                                class="leading-[2.484rem]">30000</span></h2>
                         <span>Estimated 5% return annually</span>
                     </div>
                     <div class="flex flex-col gap-2 text-white">
                         <h5 class="font-medium text-[1.063rem]">Bank Deposit</h5>
-                        <h2 class="font-medium text-[2.313rem] leading-[2.484rem]">$<span id="bank-output" class="leading-[2.484rem]">30000</span></h2>
+                        <h2 class="font-medium text-[2.313rem] leading-[2.484rem]">$<span id="bank-output"
+                                class="leading-[2.484rem]">30000</span></h2>
                         <span>Estimated 3% return annually</span>
                     </div>
                     <div class="flex flex-col gap-2 text-white">
                         <h5 class="font-medium text-[1.063rem]">Cash</h5>
-                        <h2 class="font-medium text-[2.313rem] leading-[2.484rem]">$<span id="cash-output" class="leading-[2.484rem]">30000</span></h2>
+                        <h2 class="font-medium text-[2.313rem] leading-[2.484rem]">$<span id="cash-output"
+                                class="leading-[2.484rem]">30000</span></h2>
                         <span>Estimated 0.5% return annually</span>
                     </div>
                 </div>
             </div>
 
-            <div class="text-white flex flex-col justify-center items-center gap-[0.938rem] w-full mt-[3.438rem]">
-                <h3 class="w-max font-medium text-[1.375rem]">In <span id="duration-output">5</span> years you might have...</h3>
-                <div class="w-max flex items-center gap-[0.813rem] text-[2.625rem]">
-                    <h2 class="font-normal text-[#1774BB]">$<span id="basic-compare">10000</span></h2>
+            <div class="max-sm:px-5 max-sm:items-start text-white flex flex-col justify-center items-center gap-[0.938rem] w-full mt-[3.438rem]">
+                <h3 class="w-max font-medium text-[1.375rem]">In <span id="duration-output">5</span> years you might
+                    have...</h3>
+                <div class="max-sm:text-[2.5rem] max-sm:-tracking-[3px] w-max flex items-center gap-[0.813rem] text-[2.625rem]">
+                    <h2 class="font-light text-[#1774BB]">$<span id="basic-compare">10000</span></h2>
                     <img class="overflow-visible" src="../media/icons/arrow-right.svg" alt="arrow">
                     <h2 class="font-medium">$<span id="advanced-compare">19000</span></h2>
                 </div>

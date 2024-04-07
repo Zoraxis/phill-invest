@@ -5,9 +5,11 @@ let basicOutput,
   midOutput,
   highOutput,
   basicComapreOutput,
-  advancedComapreOutput, durationOutput;
+  advancedComapreOutput,
+  basicdurationOutput,
+  durationOutput;
 
-window.addEventListener("load", () => {
+const initBasicSwitches = () => {
   const inputIncome = document.getElementById("income-input");
   const inputSavings = document.getElementById("savings-input");
 
@@ -41,13 +43,18 @@ window.addEventListener("load", () => {
   highOutput = document.getElementById("high-output");
   basicComapreOutput = document.getElementById("basic-compare");
   advancedComapreOutput = document.getElementById("advanced-compare");
+  basicdurationOutput = document.getElementById("basic-duration-output");
   durationOutput = document.getElementById("duration-output");
 
   InputChangeHandle("income", inputIncome.value);
   InputChangeHandle("savings", inputSavings.value);
 
   CalculateClickHandle();
-});
+}
+
+// window.addEventListener("load", () => {
+//   initBasicSwitches();
+// });
 
 const inputValues = {
   savings: 0,
@@ -75,13 +82,15 @@ const ButtonClickHandle = (e, tag) => {
   mirroredElement.setAttribute("aria-checked", "true");
   _element.setAttribute("aria-checked", "true");
 
+  basicdurationOutput.innerText = currentValue;
   durationOutput.innerText = currentValue;
 
   CalculateClickHandle();
 };
 
 const InputChangeHandle = (name, value) => {
-  inputValues[name] = parseFloat(value);
+  const parsedInput = parseFloat(value);
+  inputValues[name] = isNaN(parsedInput) ? 500 : parsedInput;
 };
 
 const CalculateDeposit = (apr) => {

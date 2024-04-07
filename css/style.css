@@ -16,7 +16,7 @@ body, header, .inter {
     -moz-osx-font-smoothing: grayscale;
 }
 
-.wise-sans {
+.wise-sans, .mob-wise-sans {
     font-family: wiseSans, sans-serif;
 }
 
@@ -35,6 +35,10 @@ body, header, .inter {
 @media only screen and (max-width: 640px) {
     .main-bg{
         background-image: url(/media/img/mobile_big.png);
+    }
+
+    .mob-wise-sans {
+        font-family: "Inter", sans-serif;
     }
   }
 

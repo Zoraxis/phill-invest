@@ -1,6 +1,18 @@
 {
     "en": {
         "title": "Let’s invest together",
+        "main-heading": "Income calculator",
+        "main-descr": "Find out how much you can earn if you invest",
+        "before-interval-sad": "In",
+        "after-interval-sad": "years you will have",
+        "iceberg-heading": "But imagine if...",
+        "iceberg-descr": "Your money was put into different financial instruments? Here's how much you could* have made:",
+        "iceberg-result-before-interval": "In",
+        "iceberg-result-after-interval": "years you might have...",
+        "iceberg-result-descr": "If you consider mid risk approach",
+        "course-heading": "What if we teach you how?",
+        "course-btn": "Get course",
+        "calculate-btn": "calculate",
         "header": {
             "type": "list",
             "data": [

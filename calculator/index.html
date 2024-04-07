@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
+    <title data-text="title"></title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"
         integrity="sha512-aNMyYYxdIxIaot0Y1/PLuEu3eipGCmsEUBrUq+7aVyPGMFH8z0eTP0tkqAvv34fzN6z+201d3T8HPb1svWSKHQ=="
@@ -27,10 +27,10 @@
 
     <div class="max-sm:w-[22.875rem] w-[43.75rem] mx-auto mt-[5.5rem] flex flex-col items-center">
         <div class="max-sm:bg-white max-sm:rounded-[1.25rem] max-sm:px-5 max-sm:py-10 ">
-            <h1
+            <h1 data-text="main-heading"
                 class="max-sm:font-semibold max-sm:text-[2.625rem] max-sm:capitalize max-sm:text-left max-sm:-tracking-[3px] uppercase text-[4rem] text-center font-bold mob-wise-sans">
-                Income calculator</h1>
-            <h5 class="max-sm:text-left font-medium text-2xl text-center">Find out how much you can earn if you invest
+            </h1>
+            <h5 data-text="main-descr" class="max-sm:text-left font-medium text-2xl text-center">
             </h5>
             <div
                 class="max-sm:flex-col max-sm:gap-[1.188rem] flex justify-between items-center w-full mt-[3.25rem] h-max">
@@ -56,8 +56,8 @@
                     <span class="max-sm:hidden px-4 font-normal text-base text-transparent">Monthly savings</span>
                     <div id="calculate-button"
                         class="max-sm:bg-[#2B72F0] w-full rounded-[100px] flex justify-center items-center bg-[#84E644] p-4 py-[1.031rem]">
-                        <span
-                            class=" max-sm:text-white max-sm:capitalize max-sm:font-medium max-sm:text-[1.125rem] font-semibold text-xl uppercase inter cursor-pointer">calculate</span>
+                        <span data-text="calculate-btn"
+                            class=" max-sm:text-white max-sm:capitalize max-sm:font-medium max-sm:text-[1.125rem] font-semibold text-xl uppercase inter cursor-pointer"></span>
                     </div>
                 </div>
             </div>
@@ -67,7 +67,7 @@
             <div data-template="switch-basic" class="flex gap-[0.625rem] mb-[1.875rem]">
             </div>
 
-            <h4 class="font-medium text-[1.375rem]">In <span id="basic-duration-output">15</span> years you will have
+            <h4 class="font-medium text-[1.375rem]"><span data-text="before-interval-sad"></span> <span id="basic-duration-output">15</span> <span data-text="after-interval-sad"></span>
             </h4>
             <div class="flex items-center gap-3">
                 <h2 class="max-sm:-tracking-[3px] font-medium text-[3.25rem]">
@@ -80,9 +80,8 @@
 
         <div class="gradient rounded-[1.25rem] w-full my-8 py-[2.5rem]">
             <div class="flex px-[1.25rem] flex-col gap-[0.813rem]">
-                <h2 class="font-medium text-[2.625rem]">Imagine if...</h2>
-                <span class="text-[0.875rem] font-normal">Your money was put into different financial instruments?
-                    Here's how much you could* have made:</span>
+                <h2 data-text="iceberg-heading" class="font-medium text-[2.625rem]"></h2>
+                <span data-text="iceberg-descr" class="text-[0.875rem] font-normal"></span>
                 <div data-template="switch-advanced" class="flex gap-[0.625rem] mb-[1.875rem]">
                 </div>
             </div>
@@ -99,23 +98,22 @@
             </div>
 
             <div
-                class="max-sm:border-[#ABABAB] max-sm:border-b max-sm:px-5 max-sm:items-start text-white flex flex-col justify-center items-center gap-[0.938rem] w-full mt-[3.438rem]">
-                <h3 class="w-max font-medium text-[1.375rem]">In <span id="duration-output">5</span> years you might
-                    have...</h3>
+                class="max-sm:border-[#ABABAB] max-sm:pb-[3.438rem] max-sm:border-opacity-10 max-sm:border-b max-sm:px-5 max-sm:items-start text-white flex flex-col justify-center items-center gap-[0.938rem] w-full mt-[3.438rem]">
+                <h3 class="w-max font-medium text-[1.375rem]"><span data-text="iceberg-result-before-interval"></span> <span id="duration-output">5</span> <span data-text="iceberg-result-after-interval"></span></h3>
                 <div
                     class="max-sm:text-[2.5rem] max-sm:-tracking-[3px] w-max flex items-center gap-[0.813rem] text-[2.625rem]">
                     <h2 class="font-light text-[#1774BB]">$<span id="basic-compare">10000</span></h2>
                     <img class="overflow-visible" src="../media/icons/arrow-right.svg" alt="arrow">
                     <h2 class="font-medium">$<span id="advanced-compare">19000</span></h2>
                 </div>
-                <span class="w-max font-normal text-[0.875rem]">If you consider mid risk approach</span>
+                <span data-text="iceberg-result-descr" class="w-max font-normal text-[0.875rem]"></span>
             </div>
 
-            <div class="max-sm:flex hidden w-full flex-col justify-center">
-                <img src="" alt="">
-                <h3></h3>
-                <div class="bg-[#FFA500]">
-                    <span>Get Course</span>
+            <div class="max-sm:flex hidden w-full flex-col justify-center items-center gap-2 pt-[4.063rem]">
+                <img src="../media/img/🙂.png" alt="happy">
+                <h3 data-text="course-heading" class="font-medium text-[1.438rem] text-white"></h3>
+                <div class="bg-[#FFA500] py-[1.125rem] px-[2.375rem] rounded-[100px] w-max mt-4">
+                    <span data-text="course-btn" class="w-min"></span>
                 </div>
             </div>
         </div>

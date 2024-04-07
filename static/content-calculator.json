@@ -1,0 +1,25 @@
+{
+    "en": {
+        "title": "Let’s invest together",
+        "header": {
+            "type": "list",
+            "data": [{
+                    "label": "Episodes",
+                    "href": "/episodes"
+                },
+                {
+                    "label": "Blog",
+                    "href": "/blog"
+                },
+                {
+                    "label": "Resource",
+                    "href": "/resource"
+                },
+                {
+                    "label": "About",
+                    "href": "/about"
+                }
+            ]
+        }
+    }
+}

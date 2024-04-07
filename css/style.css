@@ -5,7 +5,12 @@
     src: url("/media/fonts/wise_sans.ttf");
 }
 
-body {
+input:focus-visible, input:focus{
+    border: none;
+    outline: none;
+}
+
+body, header, .inter {
     font-family: "Inter", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

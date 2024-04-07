@@ -2,11 +2,12 @@ const lang = "en";
 
 let allContent, content, tempaltes;
 
-const getContent = async () => {
-  const res = await fetch(`./static/content.json`);
+const getContent = async (filename) => {
+  const hostname = window.location.origin;
+  const res = await fetch(`${hostname}/static/content-${filename}.json`);
   allContent = await res.json();
   content = allContent[lang];
-  const resTempaltes = await fetch(`./static/templates.json`);
+  const resTempaltes = await fetch(`${hostname}/static/templates-${filename}.json`);
   tempaltes = await resTempaltes.json();
 };
 
@@ -41,7 +42,6 @@ const applyContent = () => {
       templateField.innerHTML += markup;
     }
     setTimeout(`${values.callback}`, 1);
-    // setTimeout(`try{${values.callback}} catch {}`, 1);
   }
 };
 
@@ -57,8 +57,7 @@ const fetchConstValues = (object, constantString) => {
   return result;
 };
 
-const LanguageChangeHandle = async () => {
-  await getContent();
+const SetText = async (filename) => {
+  await getContent(filename);
   applyContent();
 };
-LanguageChangeHandle();

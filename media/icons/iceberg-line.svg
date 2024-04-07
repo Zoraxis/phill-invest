@@ -1,0 +1,9 @@
+<svg width="9" height="528" viewBox="0 0 9 528" fill="none" xmlns="http://www.w3.org/2000/svg">
+<line x1="4.5" y1="4" x2="4.50002" y2="468" stroke="black"/>
+<line x1="4.5" y1="265" x2="4.50001" y2="528" stroke="#FFA500"/>
+<circle cx="4.5" cy="392.5" r="4.5" fill="#FFA500"/>
+<circle cx="4.5" cy="523.5" r="4.5" fill="#FFA500"/>
+<circle cx="4.5" cy="264.5" r="4.5" fill="#FFA500"/>
+<circle cx="4.5" cy="121.5" r="4.5" fill="black"/>
+<circle cx="4.5" cy="4.5" r="4.5" fill="black"/>
+</svg>

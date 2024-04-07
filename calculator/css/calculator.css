@@ -1,0 +1,9 @@
+@import url('https://fonts.cdnfonts.com/css/microsoft-avant');
+
+body {
+    font-family: 'Microsoft Avant', sans-serif;
+}
+
+.gradient {
+    background: linear-gradient(180deg, #ABEAF7 0%, #ABEAF7 60%, #01406A 60.01%, #012948 65.27%);
+}

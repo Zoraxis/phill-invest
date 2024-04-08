@@ -56,8 +56,8 @@ const fishPath = anime.path(".anim-fish-path");
 anime({
   ...basicCalcAniamtion,
   targets: ".anim-fish",
-  duration: 2200,
-  delay: 2000,
+  duration: 9000,
+//   delay: 2000,
   easing: 'cubicBezier(.895, .03, .685, .220)',
   translateX: fishPath("x"),
   translateY: fishPath("y"),

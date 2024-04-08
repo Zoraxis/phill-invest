@@ -64,9 +64,13 @@ const initBasicSwitches = () => {
   CalculateClickHandle();
 };
 
-// window.addEventListener("load", () => {
-//   initBasicSwitches();
-// });
+const showCalculations = () => {
+  document.body.classList.remove("overflow-y-hidden");
+  anime({
+    targets: "#calcultor-base",
+    opacity: 1
+  })
+};
 
 const inputValues = {
   savings: 0,
@@ -154,6 +158,13 @@ const CalculateClickHandle = (first = false) => {
       InputChangeHandle("starting", inputs["starting"].value);
     }
   }
+
+  if (
+    (inputs["starting"].value == "" || inputs["starting"].value == 0) &&
+    (inputs["savings"].value == "" || inputs["savings"].value == 0)
+  )
+    return;
+  showCalculations();
 
   basicOutput.innerText = formatNumber(
     inputValues.savings * 12 * currentValue + inputValues.starting

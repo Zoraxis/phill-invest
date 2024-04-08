@@ -67,11 +67,7 @@ const initBasicSwitches = () => {
 };
 
 const showCalculations = () => {
-  document.body.classList.remove("overflow-y-hidden");
-  anime({
-    targets: "#calcultor-base",
-    opacity: 1
-  })
+  document.getElementById("calcultor-base").classList.remove("hidden");
 };
 
 const inputValues = {

@@ -14,7 +14,9 @@ const inputs = {
   savings: null,
 };
 
+
 const initBasicSwitches = () => {
+  setTimeout(() => {scrollTo(0, 0);}, 100)
   inputs["starting"] = document.getElementById("starting-input");
   inputs["savings"] = document.getElementById("savings-input");
 

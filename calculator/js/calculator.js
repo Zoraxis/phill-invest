@@ -25,20 +25,24 @@ const initBasicSwitches = () => {
   inputs["savings"].addEventListener("input", (e) =>
     InputChangeHandle("savings", e.target.value)
   );
-  document
-    .getElementById("calculate-button")
-    .addEventListener("click", CalculateClickHandle);
-  document
-    .getElementById("calculate-button")
-    .addEventListener("touchend", CalculateClickHandle);
+  const calculateButton = document.getElementById("calculate-button");
+
+  calculateButton.addEventListener("click", CalculateClickHandle);
+  calculateButton.addEventListener("touchend", CalculateClickHandle);
 
   const basicButtons = document.getElementsByClassName("basic-button");
   const advancedButtons = document.getElementsByClassName("advanced-button");
   [...basicButtons].forEach((basicButton) => {
     basicButton.addEventListener("click", (e) => ButtonClickHandle(e, "basic"));
+    basicButton.addEventListener("touchend", (e) =>
+      ButtonClickHandle(e, "basic")
+    );
   });
   [...advancedButtons].forEach((advancedButton) => {
     advancedButton.addEventListener("click", (e) =>
+      ButtonClickHandle(e, "advanced")
+    );
+    advancedButton.addEventListener("touchend", (e) =>
       ButtonClickHandle(e, "advanced")
     );
   });
@@ -113,7 +117,8 @@ const InputChangeHandle = (name, value) => {
   const formattedInput = value.replace(/[^0-9.]/g, "");
   const parsedInput = parseFloat(formattedInput);
   const parsedValue = isNaN(parsedInput) ? 500 : parsedInput;
-  inputs[name].value = inputs[name].value != "" ? formatNumber(parsedValue) : "";
+  inputs[name].value =
+    inputs[name].value != "" ? formatNumber(parsedValue) : "";
   inputValues[name] = parsedValue;
 };
 

@@ -68,7 +68,7 @@ const formatNumber = (num) => {
   for (const numChar of numArray) {
     _result += numChar;
     if (_counter % 3 == 0 && _counter != 0 && _counter < numArray.length)
-      _result += ".";
+      _result += ",";
     _counter++;
   }
   return [..._result].reverse().join("");

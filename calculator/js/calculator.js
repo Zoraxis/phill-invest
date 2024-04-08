@@ -9,20 +9,28 @@ let basicOutput,
   basicdurationOutput,
   durationOutput;
 
-const initBasicSwitches = () => {
-  const inputIncome = document.getElementById("income-input");
-  const inputSavings = document.getElementById("savings-input");
+const inputs = {
+  starting: null,
+  savings: null,
+};
 
-  inputIncome.addEventListener("change", (e) =>
-    InputChangeHandle("savings", e.target.value)
+const initBasicSwitches = () => {
+  inputs["starting"] = document.getElementById("starting-input");
+  inputs["savings"] = document.getElementById("savings-input");
+
+  inputs["starting"].addEventListener("input", (e) =>
+    InputChangeHandle("starting", e.target.value)
   );
 
-  inputSavings.addEventListener("change", (e) =>
+  inputs["savings"].addEventListener("input", (e) =>
     InputChangeHandle("savings", e.target.value)
   );
   document
     .getElementById("calculate-button")
     .addEventListener("click", CalculateClickHandle);
+  document
+    .getElementById("calculate-button")
+    .addEventListener("touchend", CalculateClickHandle);
 
   const basicButtons = document.getElementsByClassName("basic-button");
   const advancedButtons = document.getElementsByClassName("advanced-button");
@@ -46,8 +54,8 @@ const initBasicSwitches = () => {
   basicdurationOutput = document.getElementById("basic-duration-output");
   durationOutput = document.getElementById("duration-output");
 
-  InputChangeHandle("income", inputIncome.value);
-  InputChangeHandle("savings", inputSavings.value);
+  InputChangeHandle("starting", inputs["starting"].value);
+  InputChangeHandle("savings", inputs["savings"].value);
 
   CalculateClickHandle();
 };
@@ -58,7 +66,7 @@ const initBasicSwitches = () => {
 
 const inputValues = {
   savings: 0,
-  income: 0,
+  starting: 0,
 };
 
 const formatNumber = (num) => {
@@ -98,19 +106,22 @@ const ButtonClickHandle = (e, tag) => {
   basicdurationOutput.innerText = currentValue;
   durationOutput.innerText = currentValue;
 
-  CalculateClickHandle();
+  CalculateClickHandle(true);
 };
 
 const InputChangeHandle = (name, value) => {
-  const parsedInput = parseFloat(value);
-  inputValues[name] = isNaN(parsedInput) ? 500 : parsedInput;
+  const formattedInput = value.replace(/[^0-9.]/g, "");
+  const parsedInput = parseFloat(formattedInput);
+  const parsedValue = isNaN(parsedInput) ? 500 : parsedInput;
+  inputs[name].value = inputs[name].value != "" ? formatNumber(parsedValue) : "";
+  inputValues[name] = parsedValue;
 };
 
 const CalculateDeposit = (apr) => {
-  // if(inputValues.income * currentValue > 100000 ) return CalculateBigDeposit(apr);
+  // if(inputValues.starting * currentValue > 100000 ) return CalculateBigDeposit(apr);
 
-  let amount = inputValues.savings;
-  for (let i = 1; i < currentValue * 12; i++) {
+  let amount = inputValues.starting;
+  for (let i = 1; i <= currentValue * 12; i++) {
     amount *= apr / 12 / 100 + 1;
     amount += inputValues.savings;
   }
@@ -127,8 +138,21 @@ const CalculateDeposit = (apr) => {
 //   return amount;
 // };
 
-const CalculateClickHandle = () => {
-  basicOutput.innerText = formatNumber(inputValues.savings * 12 * currentValue);
+const CalculateClickHandle = (first = false) => {
+  if (first) {
+    if (inputs["savings"].value == "") {
+      inputs["savings"].value = 0;
+      InputChangeHandle("savings", inputs["savings"].value);
+    }
+    if (inputs["starting"].value == "") {
+      inputs["starting"].value = 0;
+      InputChangeHandle("starting", inputs["starting"].value);
+    }
+  }
+
+  basicOutput.innerText = formatNumber(
+    inputValues.savings * 12 * currentValue + inputValues.starting
+  );
   cashOutput.innerText = basicOutput.innerText;
 
   bankOutput.innerText = formatNumber(CalculateDeposit(3));

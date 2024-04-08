@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'Avantt';
+    font-weight: 200;
+    src: url("../media/fonts/avantt/Avantt-Light.otf") format("opentype");
+}
+
+@font-face {
+    font-family: 'Avantt';
+    font-weight: 400;
+    src: url("../media/fonts/avantt/Avantt-Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: 'Avantt';
+    font-weight: 500;
+    src: url("../media/fonts/avantt/Avantt-Medium.otf") format("opentype");
+}
+
+@font-face {
+    font-family: 'Avantt';
+    font-weight: 600;
+    src: url("../media/fonts/avantt/Avantt-Heavy.otf") format("opentype");
+}
+
+@font-face {
+    font-family: 'Avantt';
+    font-weight: 700;
+    src: url("../media/fonts/avantt/Avantt-Bold.otf") format("opentype");
+}
+
+@font-face {
+    font-family: 'Avantt';
+    font-weight: 900;
+    src: url("../media/fonts/avantt/Avantt-ExtraBold.otf") format("opentype");
+}
+

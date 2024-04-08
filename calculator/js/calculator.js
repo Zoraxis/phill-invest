@@ -50,7 +50,7 @@ const initBasicSwitches = () => {
   InputChangeHandle("savings", inputSavings.value);
 
   CalculateClickHandle();
-}
+};
 
 // window.addEventListener("load", () => {
 //   initBasicSwitches();
@@ -59,6 +59,19 @@ const initBasicSwitches = () => {
 const inputValues = {
   savings: 0,
   income: 0,
+};
+
+const formatNumber = (num) => {
+  const numArray = [...num.toString()].reverse();
+  let _result = "",
+    _counter = 1;
+  for (const numChar of numArray) {
+    _result += numChar;
+    if (_counter % 3 == 0 && _counter != 0 && _counter < numArray.length)
+      _result += ".";
+    _counter++;
+  }
+  return [..._result].reverse().join("");
 };
 
 let currentValue = 5;
@@ -115,13 +128,13 @@ const CalculateDeposit = (apr) => {
 // };
 
 const CalculateClickHandle = () => {
-  basicOutput.innerText = inputValues.savings * 12 * currentValue;
+  basicOutput.innerText = formatNumber(inputValues.savings * 12 * currentValue);
   cashOutput.innerText = basicOutput.innerText;
 
-  bankOutput.innerText = CalculateDeposit(3);
-  lowOutput.innerText = CalculateDeposit(5);
-  midOutput.innerText = CalculateDeposit(7);
-  highOutput.innerText = CalculateDeposit(10);
+  bankOutput.innerText = formatNumber(CalculateDeposit(3));
+  lowOutput.innerText = formatNumber(CalculateDeposit(5));
+  midOutput.innerText = formatNumber(CalculateDeposit(7));
+  highOutput.innerText = formatNumber(CalculateDeposit(10));
 
   advancedComapreOutput.innerText = midOutput.innerText;
   basicComapreOutput.innerText = basicOutput.innerText;

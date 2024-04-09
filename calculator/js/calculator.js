@@ -113,7 +113,7 @@ const ButtonClickHandle = (e, tag) => {
   basicdurationOutput.innerText = currentValue;
   durationOutput.innerText = currentValue;
 
-  CalculateClickHandle(null);
+  CalculateClickHandle(null, true);
 };
 
 const InputChangeHandle = (name, value) => {

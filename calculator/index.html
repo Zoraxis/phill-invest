@@ -14,11 +14,11 @@
     <link rel="stylesheet" href="./css/calculator.css">
 </head>
 
-<body class="max-sm:bg-[#05AC6C] bg-white min-h-[100vh] w-screen max-w-[100vw] overflow-x-hidden">
+<body class="max-sm:bg-[#05AC6C] bg-white min-h-[100vh] w-screen max-w-[100vw] overflow-x-hidden pb-[3rem]">
 
     <div id="scale-block" class="absolute left-0 top-0 w-screen h-screen pointer-events-none -z-50"></div>
 
-<div class="max-sm:mb-[1.875rem] w-full mt-[2.5rem] mb-[2.875rem]">
+    <div class="max-sm:mb-[1.875rem] w-full mt-[2.5rem] mb-[2.875rem]">
         <div class="max-sm:w-full max-sm:px-[1.875rem] w-full mx-auto flex flex-col items-center">
             <div class="bg-white max-sm:rounded-[1.25rem] max-sm:px-5 max-sm:py-10 w-full">
                 <h1 data-text="main-heading"
@@ -48,13 +48,14 @@
                         </div>
                         <span data-text="input2-explanation" class="max-sm:hidden font-normal text-xs px-4"></span>
                     </div>
-                    <div class="max-sm:w-full max-sm:mt-[0.688rem] w-[12.938rem] h-full flex justify-end flex-col gap-3">
+                    <div
+                        class="max-sm:w-full max-sm:mt-[0.688rem] w-[12.938rem] h-full flex justify-end flex-col gap-3">
                         <span class="max-sm:hidden px-4 font-normal text-base text-transparent select-none">TEXT</span>
                         <div id="calculate-button"
                             class="max-sm:bg-[#2B72F0] w-full rounded-[100px] flex justify-center items-center bg-[#84E644] p-4 py-[1.031rem] cursor-pointer select-none">
                             <span id="calculate-text" data-text="calculate-btn"
                                 class=" max-sm:text-white max-sm:capitalize max-sm:font-medium max-sm:text-[1.125rem] font-semibold text-xl uppercase inter"></span>
-                                <div class="hidden loader"></div>
+                            <div class="hidden loader"></div>
                         </div>
                         <span class="max-sm:hidden font-normal text-xs px-4 text-transparent">TEXT</span>
                     </div>
@@ -65,11 +66,13 @@
 
 
     <div class="sm:bg-[#F6F6F9] w-full sm:min-h-[60vh]">
-        <div id="calcultor-base" class="max-sm:w-full max-sm:px-[1.875rem] w-[43.75rem] mx-auto flex flex-col items-center">
+        <div id="calcultor-base"
+            class="max-sm:w-full max-sm:px-[1.875rem] w-[43.75rem] mx-auto flex flex-col items-center">
             <div class="max-sm:mt-0 bg-white rounded-[1.25rem] px-5 py-10 w-full mt-8">
                 <div data-template="switch-basic" class="flex gap-[0.625rem] mb-[1.875rem]">
                 </div>
-                <h4 class="font-medium text-[1.375rem]"><span data-text="before-interval-sad"></span> <span id="basic-duration-output">5</span> <span data-text="after-interval-sad"></span>
+                <h4 class="font-medium text-[1.375rem]"><span data-text="before-interval-sad"></span> <span
+                        id="basic-duration-output">5</span> <span data-text="after-interval-sad"></span>
                 </h4>
                 <div class="flex items-center gap-3">
                     <h2 class="max-sm:-tracking-[5px] font-medium text-[3.25rem]">
@@ -91,114 +94,194 @@
                 </div>
                 <div
                     class="overflow-hidden flex justify-center items-start gap-[1.375rem] relative object-cover pb-[2.188rem]">
-                    <svg class="max-sm:-top-[2rem] max-sm:h-[43rem] absolute -top-[2.5rem] h-[46rem]" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Слой_1" x="0px" y="0px" viewBox="0 0 1199 1075.7" style="enable-background:new 0 0 1199 1075.7;" xml:space="preserve">
+                    <svg class="max-sm:-top-[2rem] max-sm:h-[43rem] absolute -top-[2.5rem] h-[46rem]"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                        id="Слой_1" x="0px" y="0px" viewBox="0 0 1199 1075.7"
+                        style="enable-background:new 0 0 1199 1075.7;" xml:space="preserve">
                         <style type="text/css">
-                            .st0{fill:#ABEAF7;}
-                            .st1{fill:url(#SVGID_1_);}
-                            .st2{fill:#FFFFFF;}
-                            .st3{opacity:0.4;fill:#FFFFFF;}
-                            .st4{opacity:0.4;fill:url(#SVGID_00000056406817401900793980000010306743043236205199_);}
-                            .st5{opacity:0.4;fill:url(#SVGID_00000180333993029113318720000013250483463975378563_);}
-                            .st6{opacity:0.4;fill:url(#SVGID_00000152252543561663923230000005703175721857544840_);}
-                            .st7{opacity:0.4;fill:url(#SVGID_00000180354331871790795160000002987455770795123339_);}
-                            .st8{fill:#107E9B;}
-                            .st9{opacity:0.3;}
-                            .st10{fill:#EBF9FD;}
-                            .st11{fill:#D8F4F9;}
-                            .st12{opacity:0.5;fill:#003756;}
+                            .st0 {
+                                fill: #ABEAF7;
+                            }
+
+                            .st1 {
+                                fill: url(#SVGID_1_);
+                            }
+
+                            .st2 {
+                                fill: #FFFFFF;
+                            }
+
+                            .st3 {
+                                opacity: 0.4;
+                                fill: #FFFFFF;
+                            }
+
+                            .st4 {
+                                opacity: 0.4;
+                                fill: url(#SVGID_00000056406817401900793980000010306743043236205199_);
+                            }
+
+                            .st5 {
+                                opacity: 0.4;
+                                fill: url(#SVGID_00000180333993029113318720000013250483463975378563_);
+                            }
+
+                            .st6 {
+                                opacity: 0.4;
+                                fill: url(#SVGID_00000152252543561663923230000005703175721857544840_);
+                            }
+
+                            .st7 {
+                                opacity: 0.4;
+                                fill: url(#SVGID_00000180354331871790795160000002987455770795123339_);
+                            }
+
+                            .st8 {
+                                fill: #107E9B;
+                            }
+
+                            .st9 {
+                                opacity: 0.3;
+                            }
+
+                            .st10 {
+                                fill: #EBF9FD;
+                            }
+
+                            .st11 {
+                                fill: #D8F4F9;
+                            }
+
+                            .st12 {
+                                opacity: 0.5;
+                                fill: #003756;
+                            }
                         </style>
                         <g>
-                            <rect x="0" class="st0" width="1199" height="1075.7"/>
-                            <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="589.9673" y1="437.6328" x2="603.5108" y2="985.1779">
-                                <stop offset="8.680555e-04" style="stop-color:#004486"/>
-                                <stop offset="0.4004" style="stop-color:#07427D"/>
-                                <stop offset="1" style="stop-color:#173E66"/>
+                            <rect x="0" class="st0" width="1199" height="1075.7" />
+                            <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="589.9673" y1="437.6328"
+                                x2="603.5108" y2="985.1779">
+                                <stop offset="8.680555e-04" style="stop-color:#004486" />
+                                <stop offset="0.4004" style="stop-color:#07427D" />
+                                <stop offset="1" style="stop-color:#173E66" />
                             </linearGradient>
-                            <rect x="0" y="570.4" class="st1" width="1199" height="505.3"/>
-                            <path class="anim-bird origin-center svg-transform st2" d="M460.8,102.8c-3.7,1.8-7.3,3.6-10.1,6.4c-13.9,14.1-12.2,36.4-12.2,36.4c-10.3-18.8-31.6-23.1-42.8-20.6   c13.8-7.2,29.2-3.7,38.7,7.3C435.9,118,446,105,460.8,102.8z"/>
-                            <path class="anim-bird origin-center svg-transform st2" d="M437.2,200.5c-4-0.6-8.1-1-11.9-0.2c-19.4,4.1-30.3,23.6-30.3,23.6c1.8-21.4-13.6-36.7-24.3-40.8   c15.5,1.6,26.4,13,28.2,27.5C408.1,199.5,423.6,194.2,437.2,200.5z"/>
-                            <circle class="anim-sun st3 origin-center" cx="717.7" cy="111.3" r="39.4"/>
-        
-                                <linearGradient id="SVGID_00000015333109371595798190000017632443706286145980_" gradientUnits="userSpaceOnUse" x1="879.3997" y1="117.662" x2="876.2194" y2="166.6384">
-                                <stop offset="0" style="stop-color:#FFFFFF"/>
-                                <stop offset="1" style="stop-color:#ABEAF7"/>
+                            <rect x="0" y="570.4" class="st1" width="1199" height="505.3" />
+                            <path class="anim-bird origin-center svg-transform st2"
+                                d="M460.8,102.8c-3.7,1.8-7.3,3.6-10.1,6.4c-13.9,14.1-12.2,36.4-12.2,36.4c-10.3-18.8-31.6-23.1-42.8-20.6   c13.8-7.2,29.2-3.7,38.7,7.3C435.9,118,446,105,460.8,102.8z" />
+                            <path class="anim-bird origin-center svg-transform st2"
+                                d="M437.2,200.5c-4-0.6-8.1-1-11.9-0.2c-19.4,4.1-30.3,23.6-30.3,23.6c1.8-21.4-13.6-36.7-24.3-40.8   c15.5,1.6,26.4,13,28.2,27.5C408.1,199.5,423.6,194.2,437.2,200.5z" />
+                            <circle class="anim-sun st3 origin-center" cx="717.7" cy="111.3" r="39.4" />
+
+                            <linearGradient id="SVGID_00000015333109371595798190000017632443706286145980_"
+                                gradientUnits="userSpaceOnUse" x1="879.3997" y1="117.662" x2="876.2194" y2="166.6384">
+                                <stop offset="0" style="stop-color:#FFFFFF" />
+                                <stop offset="1" style="stop-color:#ABEAF7" />
                             </linearGradient>
-                            <path class="anim-cloud" style="opacity:0.4;fill:url(#SVGID_00000015333109371595798190000017632443706286145980_);" d="M829,137   c0,0,6.9-18.8,34.3-17.1c27.4,1.7,32.5,27.4,32.5,27.4s24.8-14.6,36.8,11.1c0,0,22.3-13.7,29.1,13.7s-94.2,27.4-94.2,27.4   s-66.8,3.4-75.4-25.7C783.6,144.7,804.2,129.3,829,137z"/>
-        
-                                <linearGradient id="SVGID_00000117664505187617657980000006284121192983969670_" gradientUnits="userSpaceOnUse" x1="945.4577" y1="292.2151" x2="943.652" y2="337.3592">
-                                <stop offset="0" style="stop-color:#FFFFFF"/>
-                                <stop offset="1" style="stop-color:#ABEAF7"/>
+                            <path class="anim-cloud"
+                                style="opacity:0.4;fill:url(#SVGID_00000015333109371595798190000017632443706286145980_);"
+                                d="M829,137   c0,0,6.9-18.8,34.3-17.1c27.4,1.7,32.5,27.4,32.5,27.4s24.8-14.6,36.8,11.1c0,0,22.3-13.7,29.1,13.7s-94.2,27.4-94.2,27.4   s-66.8,3.4-75.4-25.7C783.6,144.7,804.2,129.3,829,137z" />
+
+                            <linearGradient id="SVGID_00000117664505187617657980000006284121192983969670_"
+                                gradientUnits="userSpaceOnUse" x1="945.4577" y1="292.2151" x2="943.652" y2="337.3592">
+                                <stop offset="0" style="stop-color:#FFFFFF" />
+                                <stop offset="1" style="stop-color:#ABEAF7" />
                             </linearGradient>
-                            <path class="anim-cloud" style="opacity:0.4;fill:url(#SVGID_00000117664505187617657980000006284121192983969670_);" d="M881.3,331.4   c0,0-3.5-36,30.8-36c17.1,0,24,15.4,24,15.4s27.4-20.6,41.1,8.6c0,0,21.8-12,28.9,12c7.1,24-58,22.3-58,22.3l-53.1-3.4   C895,350.3,883,346.9,881.3,331.4z"/>
-        
-                                <linearGradient id="SVGID_00000008865297581637025530000016078457595644628405_" gradientUnits="userSpaceOnUse" x1="325.9912" y1="272.2537" x2="332.8282" y2="322.847">
-                                <stop offset="0" style="stop-color:#FFFFFF"/>
-                                <stop offset="1" style="stop-color:#ABEAF7"/>
+                            <path class="anim-cloud"
+                                style="opacity:0.4;fill:url(#SVGID_00000117664505187617657980000006284121192983969670_);"
+                                d="M881.3,331.4   c0,0-3.5-36,30.8-36c17.1,0,24,15.4,24,15.4s27.4-20.6,41.1,8.6c0,0,21.8-12,28.9,12c7.1,24-58,22.3-58,22.3l-53.1-3.4   C895,350.3,883,346.9,881.3,331.4z" />
+
+                            <linearGradient id="SVGID_00000008865297581637025530000016078457595644628405_"
+                                gradientUnits="userSpaceOnUse" x1="325.9912" y1="272.2537" x2="332.8282" y2="322.847">
+                                <stop offset="0" style="stop-color:#FFFFFF" />
+                                <stop offset="1" style="stop-color:#ABEAF7" />
                             </linearGradient>
-                            <path class="anim-cloud" style="opacity:0.4;fill:url(#SVGID_00000008865297581637025530000016078457595644628405_);" d="M406.8,312.6   c0,0,3.3-38.7-32.5-34.1c-12,1.5-15.4,8.4-15.4,8.4s-6.9-12-27.4-6.9c-20.6,5.1-17.6,15.3-17.6,15.3s-8.1-6.7-20.1-1.6   s-12,12-12,12s-22.3-6.9-25.7,10.3s56.5,18.8,56.5,18.8S410.2,336.6,406.8,312.6z"/>
-        
-                                <linearGradient id="SVGID_00000094581579813437680370000012735200942685011113_" gradientUnits="userSpaceOnUse" x1="258.2639" y1="99.8196" x2="250.5908" y2="153.1545">
-                                <stop offset="0" style="stop-color:#FFFFFF"/>
-                                <stop offset="1" style="stop-color:#ABEAF7"/>
+                            <path class="anim-cloud"
+                                style="opacity:0.4;fill:url(#SVGID_00000008865297581637025530000016078457595644628405_);"
+                                d="M406.8,312.6   c0,0,3.3-38.7-32.5-34.1c-12,1.5-15.4,8.4-15.4,8.4s-6.9-12-27.4-6.9c-20.6,5.1-17.6,15.3-17.6,15.3s-8.1-6.7-20.1-1.6   s-12,12-12,12s-22.3-6.9-25.7,10.3s56.5,18.8,56.5,18.8S410.2,336.6,406.8,312.6z" />
+
+                            <linearGradient id="SVGID_00000094581579813437680370000012735200942685011113_"
+                                gradientUnits="userSpaceOnUse" x1="258.2639" y1="99.8196" x2="250.5908" y2="153.1545">
+                                <stop offset="0" style="stop-color:#FFFFFF" />
+                                <stop offset="1" style="stop-color:#ABEAF7" />
                             </linearGradient>
-                            <path class="anim-cloud" style="opacity:0.4;fill:url(#SVGID_00000094581579813437680370000012735200942685011113_);" d="M185.8,137.9   c0,0,0-39.4,42.8-24c0,0,6.9-18.8,30.8-17.1c24,1.7,27.4,22.3,27.4,22.3s36-12,32.5,22.3c-3.4,34.3-90.8,17.1-90.8,17.1   S192.7,156.7,185.8,137.9z"/>
-                            <rect y="531" class="st8" width="1199" height="41.1"/>
+                            <path class="anim-cloud"
+                                style="opacity:0.4;fill:url(#SVGID_00000094581579813437680370000012735200942685011113_);"
+                                d="M185.8,137.9   c0,0,0-39.4,42.8-24c0,0,6.9-18.8,30.8-17.1c24,1.7,27.4,22.3,27.4,22.3s36-12,32.5,22.3c-3.4,34.3-90.8,17.1-90.8,17.1   S192.7,156.7,185.8,137.9z" />
+                            <rect y="531" class="st8" width="1199" height="41.1" />
                             <g class="st9">
-                                <circle class="anim-bubble origin-center st2" cx="293.8" cy="530.1" r="7.7"/>
-                                <circle class="anim-bubble origin-center st2" cx="262.1" cy="652.6" r="5.1"/>
-                                <circle class="anim-bubble origin-center st2" cx="375.1" cy="690.3" r="3.4"/>
-                                <circle class="anim-bubble origin-center st2" cx="402.5" cy="769.1" r="5.1"/>
-                                <circle class="anim-bubble origin-center st2" cx="282.6" cy="815.3" r="3.4"/>
-                                <circle class="anim-bubble origin-center st2" cx="464.2" cy="863.3" r="6.9"/>
-                                <circle class="anim-bubble origin-center st2" cx="620.1" cy="902.7" r="3.4"/>
-                                <circle class="anim-bubble origin-center st2" cx="765.6" cy="841" r="3.4"/>
-                                <circle class="anim-bubble origin-center st2" cx="921.5" cy="844.4" r="5.1"/>
-                                <circle class="anim-bubble origin-center st2" cx="952.3" cy="726.3" r="5.1"/>
-                                <circle class="anim-bubble origin-center st2" cx="844.4" cy="714.3" r="6.9"/>
-                                <circle class="anim-bubble origin-center st2" cx="931.8" cy="609.8" r="5.1"/>
-                                <circle class="anim-bubble origin-center st2" cx="866.7" cy="534.4" r="3.4"/>
+                                <circle class="anim-bubble origin-center st2" cx="293.8" cy="530.1" r="7.7" />
+                                <circle class="anim-bubble origin-center st2" cx="262.1" cy="652.6" r="5.1" />
+                                <circle class="anim-bubble origin-center st2" cx="375.1" cy="690.3" r="3.4" />
+                                <circle class="anim-bubble origin-center st2" cx="402.5" cy="769.1" r="5.1" />
+                                <circle class="anim-bubble origin-center st2" cx="282.6" cy="815.3" r="3.4" />
+                                <circle class="anim-bubble origin-center st2" cx="464.2" cy="863.3" r="6.9" />
+                                <circle class="anim-bubble origin-center st2" cx="620.1" cy="902.7" r="3.4" />
+                                <circle class="anim-bubble origin-center st2" cx="765.6" cy="841" r="3.4" />
+                                <circle class="anim-bubble origin-center st2" cx="921.5" cy="844.4" r="5.1" />
+                                <circle class="anim-bubble origin-center st2" cx="952.3" cy="726.3" r="5.1" />
+                                <circle class="anim-bubble origin-center st2" cx="844.4" cy="714.3" r="6.9" />
+                                <circle class="anim-bubble origin-center st2" cx="931.8" cy="609.8" r="5.1" />
+                                <circle class="anim-bubble origin-center st2" cx="866.7" cy="534.4" r="3.4" />
                             </g>
-                            <path style="transform: translate(0px, 340px)" class="anim-fish-path" xmlns="http://www.w3.org/2000/svg" d="M1595 1H1133.5C1091 69.5 1023.5 238 1004 349C988.255 438.627 331.5 415 0.5 360.5" fill="none" stroke="none"/>
+                            <path style="transform: translate(0px, 340px)" class="anim-fish-path"
+                                xmlns="http://www.w3.org/2000/svg"
+                                d="M1595 1H1133.5C1091 69.5 1023.5 238 1004 349C988.255 438.627 331.5 415 0.5 360.5"
+                                fill="none" stroke="none" />
                             <g style="transform: translate(0px, 340px)">
-                                <path class="anim-fish origin-top-left" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" d="M28.9379 0.927197C31.8938 2.09426 34.2978 4.28179 35.7038 7.08388L23.7952 13L37 13.8281C36.7361 16.9686 35.3216 19.9298 33.0191 22.1622C30.7166 24.3946 27.6823 25.7468 24.4792 25.9679C21.2762 26.1889 18.1218 25.2639 15.6012 23.3643C14.3999 22.4589 13.3814 21.3614 12.5804 20.127L4.43912 23.8185C1.71638 25.053 -0.918223 21.9483 0.761343 19.4845L4.60944 13.8399L0.509112 7.68155C-1.14322 5.19965 1.52534 2.12372 4.23416 3.38779L12.1201 7.06748C12.2039 6.91303 12.2908 6.75996 12.3809 6.60826C14.0097 3.86803 16.5854 1.78202 19.6302 0.7374C22.6749 -0.307419 25.982 -0.239964 28.9379 0.927197Z" fill="black"/>
+                                <path class="anim-fish origin-top-left" xmlns="http://www.w3.org/2000/svg"
+                                    fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M28.9379 0.927197C31.8938 2.09426 34.2978 4.28179 35.7038 7.08388L23.7952 13L37 13.8281C36.7361 16.9686 35.3216 19.9298 33.0191 22.1622C30.7166 24.3946 27.6823 25.7468 24.4792 25.9679C21.2762 26.1889 18.1218 25.2639 15.6012 23.3643C14.3999 22.4589 13.3814 21.3614 12.5804 20.127L4.43912 23.8185C1.71638 25.053 -0.918223 21.9483 0.761343 19.4845L4.60944 13.8399L0.509112 7.68155C-1.14322 5.19965 1.52534 2.12372 4.23416 3.38779L12.1201 7.06748C12.2039 6.91303 12.2908 6.75996 12.3809 6.60826C14.0097 3.86803 16.5854 1.78202 19.6302 0.7374C22.6749 -0.307419 25.982 -0.239964 28.9379 0.927197Z"
+                                    fill="black" />
                             </g>
                             <g class="anim-iceberg origin-center">
-                                <polygon class="st2" points="577.2,111.3 639.8,160.2 684.3,247.5 581.5,286.9 513,254.4 554.1,149.9   "/>
-                                <polygon class="st10" points="511.3,173.9 554.1,149.9 513,254.4 489,221.8   "/>
-                                <polygon class="st2" points="453.1,766.5 489,320.5 495.9,304 489,221.8 475.3,256.1 401.7,321.2 394.8,362.3 435.9,389.7     432.5,742.5   "/>
-                                <polygon class="st11" points="497.6,300.6 513,254.4 489,221.8 495.9,304   "/>
-                                <polygon class="st11" points="540.4,341.7 581.5,286.9 513,254.4   "/>
-                                <polygon class="st11" points="699.7,288.6 727.1,269.8 684.3,247.5 581.5,286.9   "/>
-                                <polygon class="st10" points="374.3,415.4 370.8,382.8 394.8,362.3 435.9,389.7 435,489.2   "/>
-                                <polygon class="st11" points="394.8,716.2 432.5,742.5 435,489.2 374.3,415.4 376,653.5   "/>
-                                <polygon class="st2" points="352,634.6 376,653.5 374.3,415.4 334.9,465   "/>
-                                <polygon class="st10" points="523.3,783.6 540.4,341.7 513,254.4 489,320.5 453.1,766.5 466.8,771.6 487.3,790.5   "/>
-                                <polygon class="st11" points="545.5,805.9 529.1,633.9 523.3,783.6   "/>
-                                <polygon class="st2" points="554.1,845.3 591.8,864.1 597.8,617 530.8,590.7 529.1,633.9 545.5,805.9   "/>
-                                <polygon class="st11" points="540.4,341.7 597.8,617 530.8,590.7   "/>
-                                <polygon class="st10" points="658.6,841.9 591.8,864.1 597.8,617 639.8,650   "/>
-                                <polygon class="st2" points="756.2,328 727.1,269.8 699.7,288.6 581.5,286.9 540.4,341.7 597.8,617 639.8,650 611.3,362.3     720.3,355.4   "/>
-                                <polygon class="st11" points="674,465 611.3,362.3 658.6,841.9   "/>
-                                <polygon class="st10" points="720.3,355.4 674,465 611.3,362.3   "/>
-                                <polygon class="st10" points="805.9,369.1 756.2,328 720.3,355.4   "/>
-                                <polygon class="st2" points="722,396.5 805.9,369.1 720.3,355.4 674,465   "/>
-                                <polygon class="st10" points="814.5,400 805.9,369.1 722,396.5 674,465   "/>
-                                <polygon class="st2" points="857.3,490.7 821,425.8 814.5,400 674,465 658.6,841.9 700.1,805.9 723.7,797.3 737.4,781.9     751.1,559.2 744.2,432.5 826.5,507.9   "/>
-                                <polygon class="st10" points="790.5,533.6 751,560.6 744.2,432.5 826.5,507.9   "/>
-                                <polygon class="st11" points="826.5,572.4 857.3,490.7 827.3,507 751,560.6   "/>
-                                <polygon class="st10" points="766.5,572.4 826.5,572.4 751,560.6 750.3,572.4   "/>
-                                <polygon class="st11" points="771.6,769.9 781.9,752.8 809.2,727.4 826.5,572.4 750.3,572.4 737.4,781.9   "/>
+                                <polygon class="st2"
+                                    points="577.2,111.3 639.8,160.2 684.3,247.5 581.5,286.9 513,254.4 554.1,149.9   " />
+                                <polygon class="st10" points="511.3,173.9 554.1,149.9 513,254.4 489,221.8   " />
+                                <polygon class="st2"
+                                    points="453.1,766.5 489,320.5 495.9,304 489,221.8 475.3,256.1 401.7,321.2 394.8,362.3 435.9,389.7     432.5,742.5   " />
+                                <polygon class="st11" points="497.6,300.6 513,254.4 489,221.8 495.9,304   " />
+                                <polygon class="st11" points="540.4,341.7 581.5,286.9 513,254.4   " />
+                                <polygon class="st11" points="699.7,288.6 727.1,269.8 684.3,247.5 581.5,286.9   " />
+                                <polygon class="st10"
+                                    points="374.3,415.4 370.8,382.8 394.8,362.3 435.9,389.7 435,489.2   " />
+                                <polygon class="st11"
+                                    points="394.8,716.2 432.5,742.5 435,489.2 374.3,415.4 376,653.5   " />
+                                <polygon class="st2" points="352,634.6 376,653.5 374.3,415.4 334.9,465   " />
+                                <polygon class="st10"
+                                    points="523.3,783.6 540.4,341.7 513,254.4 489,320.5 453.1,766.5 466.8,771.6 487.3,790.5   " />
+                                <polygon class="st11" points="545.5,805.9 529.1,633.9 523.3,783.6   " />
+                                <polygon class="st2"
+                                    points="554.1,845.3 591.8,864.1 597.8,617 530.8,590.7 529.1,633.9 545.5,805.9   " />
+                                <polygon class="st11" points="540.4,341.7 597.8,617 530.8,590.7   " />
+                                <polygon class="st10" points="658.6,841.9 591.8,864.1 597.8,617 639.8,650   " />
+                                <polygon class="st2"
+                                    points="756.2,328 727.1,269.8 699.7,288.6 581.5,286.9 540.4,341.7 597.8,617 639.8,650 611.3,362.3     720.3,355.4   " />
+                                <polygon class="st11" points="674,465 611.3,362.3 658.6,841.9   " />
+                                <polygon class="st10" points="720.3,355.4 674,465 611.3,362.3   " />
+                                <polygon class="st10" points="805.9,369.1 756.2,328 720.3,355.4   " />
+                                <polygon class="st2" points="722,396.5 805.9,369.1 720.3,355.4 674,465   " />
+                                <polygon class="st10" points="814.5,400 805.9,369.1 722,396.5 674,465   " />
+                                <polygon class="st2"
+                                    points="857.3,490.7 821,425.8 814.5,400 674,465 658.6,841.9 700.1,805.9 723.7,797.3 737.4,781.9     751.1,559.2 744.2,432.5 826.5,507.9   " />
+                                <polygon class="st10" points="790.5,533.6 751,560.6 744.2,432.5 826.5,507.9   " />
+                                <polygon class="st11" points="826.5,572.4 857.3,490.7 827.3,507 751,560.6   " />
+                                <polygon class="st10" points="766.5,572.4 826.5,572.4 751,560.6 750.3,572.4   " />
+                                <polygon class="st11"
+                                    points="771.6,769.9 781.9,752.8 809.2,727.4 826.5,572.4 750.3,572.4 737.4,781.9   " />
                             </g>
-                            <path class="anim-water st12" d="M0,469.6c0,0,139.6,18.3,261.2-3.6s204,14.7,382,10.7c178.1-4,221.2-16.8,318.7-10.4s224.2,17,237.1,19.3v590   H0V469.6z"/>
+                            <path class="anim-water st12"
+                                d="M0,469.6c0,0,139.6,18.3,261.2-3.6s204,14.7,382,10.7c178.1-4,221.2-16.8,318.7-10.4s224.2,17,237.1,19.3v590   H0V469.6z" />
                         </g>
-                        </svg>
+                    </svg>
                     <img class="mt-[0.5rem] h-[37rem] z-[1]" src="../media/icons/iceberg-line.svg" alt="line">
                     <div data-template="iceberg-item" class="flex flex-col gap-[2.5rem] z-[1]">
                     </div>
                 </div>
                 <div
                     class="border-[#ABABAB] pb-[3.438rem] border-opacity-10 border-b max-sm:px-5 max-sm:items-start text-white flex flex-col justify-center items-center gap-[0.938rem] w-full mt-[3.438rem]">
-                    <h3 class="w-max font-medium text-[1.375rem]"><span data-text="iceberg-result-before-interval"></span> <span id="duration-output">5</span> <span data-text="iceberg-result-after-interval"></span></h3>
+                    <h3 class="w-max font-medium text-[1.375rem]"><span
+                            data-text="iceberg-result-before-interval"></span> <span id="duration-output">5</span> <span
+                            data-text="iceberg-result-after-interval"></span></h3>
                     <div
                         class="max-sm:text-[2.5rem] max-sm:-tracking-[3px] w-max flex items-center gap-[0.813rem] text-[2.625rem]">
                         <h2 class="font-light text-[#1774BB]">$<span id="basic-compare">10000</span></h2>
@@ -207,20 +290,29 @@
                     </div>
                     <span data-text="iceberg-result-descr" class="w-max font-normal text-[0.875rem] max-w-full"></span>
                 </div>
-                <div class="w-full flex justify-center px-5 mt-[0.938rem]">
-                    <span data-text="disclaimer-text" class="text-[0.875rem] font-normal text-opacity-[36%] text-white text-center"></span>
+                <div
+                    class="max-sm:hidden max-sm:border-[#ABABAB] max-sm:pb-[3.438rem] max-sm:border-opacity-10 max-sm:border-b w-full flex justify-center px-5 mt-[0.938rem]">
+                    <span data-text="disclaimer-text"
+                        class="text-[0.875rem] font-normal text-opacity-[36%] text-white text-center"></span>
+                </div>
+                <div class="max-sm:flex hidden w-full flex-col justify-center items-center gap-2 pt-[4.063rem]">
+                    <img class="w-[2.125rem] aspect-square" src="../media/img/🙂.png" alt="happy">
+                    <h3 data-text="course-heading" class="font-medium text-[1.438rem] text-white"></h3>
+                    <div class="bg-[#FFA500] py-[1.125rem] px-[2.375rem] rounded-[100px] w-max mt-4">
+                        <span data-text="course-btn" class="w-min"></span>
+                    </div>
                 </div>
             </div>
         </div>
-    </dic>
+        </dic>
 
-    <script src="../js/animate.js"></script>
-    <script src="../js/text.js"></script>
-    <script>
-        SetText("calculator")
-    </script>
-    <script src="./js/calculator.js"></script>
-    <script src="./js/calculator-animation.js"></script>
+        <script src="../js/animate.js"></script>
+        <script src="../js/text.js"></script>
+        <script>
+            SetText("calculator")
+        </script>
+        <script src="./js/calculator.js"></script>
+        <script src="./js/calculator-animation.js"></script>
 </body>
 
 </html>

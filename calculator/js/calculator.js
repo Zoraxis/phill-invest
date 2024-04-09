@@ -183,7 +183,7 @@ const CalculateClickHandle = (e, first = false) => {
     })
 
     CalculateHandle();
-  }, 1500);
+  }, 1000);
 };
 
 const CalculateHandle = () => {

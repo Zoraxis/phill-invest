@@ -1,6 +1,21 @@
 {
     "en": {
         "title": "Let’s invest together",
+        "header": {
+            "type": "list",
+            "data": [
+                {
+                "label": "HOME",
+                "href": "https://junifynow.com",
+                "styles": "max-sm:hover:text-white hover:text-black transition-colors"
+            },
+                {
+                "label": "WEALTH CALCULATOR",
+                "href": "",
+                "styles": "max-sm:text-white text-black"
+            }
+        ]
+        },
         "main-heading": "wealth calculator",
         "main-descr": "Find out how much you can earn with investing",
         "input1-label": "Initial capital",

@@ -94,9 +94,9 @@
                     "apr": 3
                 },
                 {
-                    "title": "Cash",
+                    "title": "Cash without investing",
                     "id": "cash",
-                    "apr": 0.5
+                    "apr": 0
                 }
             ],
             "default": {

@@ -23,6 +23,10 @@ const initBasicSwitches = () => {
   }, 100);
   inputs["starting"] = document.getElementById("starting-input");
   inputs["savings"] = document.getElementById("savings-input");
+  // if (window.screen.width <= mobileMax) {
+  //   inputs["starting"].value = "";
+  //   inputs["savings"].value = "";
+  // }
 
   inputs["starting"].addEventListener("input", (e) =>
     InputChangeHandle("starting", e.target.value)

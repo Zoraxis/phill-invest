@@ -167,7 +167,7 @@ const CalculateClickHandle = (e, first = false) => {
   calculateText.classList.add("hidden");
   anime({
     targets: "#calcultor-base",
-    opacity: 0.65,
+    opacity: 0.25,
     duration: 200,
     easing: "linear"
   })

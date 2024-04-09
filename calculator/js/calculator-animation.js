@@ -36,7 +36,7 @@ anime({
   ...basicCalcAniamtion,
   duration: 6500,
   targets: ".anim-water",
-  scale: [{ value: 1.1 }, { value: 1.2 }, { value: 1 }, { value: 0.95 }],
+  scale: [{ value: 1.1 }, { value: 1.2 }, { value: 1 }, { value: 1 }],
   rotate: [
     { value: "-=2deg" },
     { value: "+=1deg" },

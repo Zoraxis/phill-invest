@@ -5,18 +5,22 @@
     src: url("/media/fonts/wise_sans.ttf");
 }
 
-input:focus-visible, input:focus{
+input:focus-visible,
+input:focus {
     border: none;
     outline: none;
 }
 
-body, header, .inter {
+body,
+header,
+.inter {
     font-family: "Inter", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
-.wise-sans, .mob-wise-sans {
+.wise-sans,
+.mob-wise-sans {
     font-family: wiseSans, sans-serif;
 }
 
@@ -37,14 +41,14 @@ body, header, .inter {
 }
 
 @media only screen and (max-width: 640px) {
-    .main-bg{
+    .main-bg {
         background-image: url(/media/img/mobile_big.png);
     }
 
     .mob-wise-sans {
         font-family: "Inter", sans-serif;
     }
-  }
+}
 
 .gradient-top {
     background: linear-gradient(180deg, #000 10.18%, rgba(0, 0, 0, 0.00) 45.22%);

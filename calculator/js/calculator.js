@@ -7,16 +7,19 @@ let basicOutput,
   basicComapreOutput,
   advancedComapreOutput,
   basicdurationOutput,
-  durationOutput;
+  durationOutput,
+  loader,
+  calculateText;
 
 const inputs = {
   starting: null,
   savings: null,
 };
 
-
 const initBasicSwitches = () => {
-  setTimeout(() => {scrollTo(0, 0);}, 100)
+  setTimeout(() => {
+    scrollTo(0, 0);
+  }, 100);
   inputs["starting"] = document.getElementById("starting-input");
   inputs["savings"] = document.getElementById("savings-input");
 
@@ -59,15 +62,13 @@ const initBasicSwitches = () => {
   advancedComapreOutput = document.getElementById("advanced-compare");
   basicdurationOutput = document.getElementById("basic-duration-output");
   durationOutput = document.getElementById("duration-output");
+  loader = document.getElementsByClassName("loader")[0];
+  calculateText = document.getElementById("calculate-text");
 
   InputChangeHandle("starting", inputs["starting"].value);
   InputChangeHandle("savings", inputs["savings"].value);
 
-  CalculateClickHandle();
-};
-
-const showCalculations = () => {
-  document.getElementById("calcultor-base").classList.remove("hidden");
+  CalculateClickHandle(null, true);
 };
 
 const inputValues = {
@@ -112,7 +113,7 @@ const ButtonClickHandle = (e, tag) => {
   basicdurationOutput.innerText = currentValue;
   durationOutput.innerText = currentValue;
 
-  CalculateClickHandle(true);
+  CalculateClickHandle(null);
 };
 
 const InputChangeHandle = (name, value) => {
@@ -145,25 +146,32 @@ const CalculateDeposit = (apr) => {
 //   return amount;
 // };
 
-const CalculateClickHandle = (first = false) => {
+const CalculateClickHandle = (e, first = false) => {
   if (first) {
-    if (inputs["savings"].value == "") {
-      inputs["savings"].value = 0;
-      InputChangeHandle("savings", inputs["savings"].value);
-    }
-    if (inputs["starting"].value == "") {
-      inputs["starting"].value = 0;
-      InputChangeHandle("starting", inputs["starting"].value);
-    }
+    CalculateHandle();
+    return;
   }
 
-  if (
-    (inputs["starting"].value == "" || inputs["starting"].value == 0) &&
-    (inputs["savings"].value == "" || inputs["savings"].value == 0)
-  )
-    return;
-  showCalculations();
+  if (inputs["savings"].value == "") {
+    inputs["savings"].value = 0;
+    InputChangeHandle("savings", inputs["savings"].value);
+  }
+  if (inputs["starting"].value == "") {
+    inputs["starting"].value = 0;
+    InputChangeHandle("starting", inputs["starting"].value);
+  }
 
+  loader.classList.remove("hidden");
+  calculateText.classList.add("hidden");
+  setTimeout(() => {
+    loader.classList.add("hidden");
+    calculateText.classList.remove("hidden");
+
+    CalculateHandle();
+  }, 1500);
+};
+
+const CalculateHandle = () => {
   basicOutput.innerText = formatNumber(
     inputValues.savings * 12 * currentValue + inputValues.starting
   );

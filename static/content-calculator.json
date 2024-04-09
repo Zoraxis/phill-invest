@@ -19,32 +19,10 @@
         "course-heading": "Want to learn how?",
         "course-btn": "Get course",
         "calculate-btn": "calculate",
-        "header": {
-            "type": "list",
-            "data": [
-                {
-                    "label": "Episodes",
-                    "href": "/episodes"
-                },
-                {
-                    "label": "Blog",
-                    "href": "/blog"
-                },
-                {
-                    "label": "Resource",
-                    "href": "/resource"
-                },
-                {
-                    "label": "About",
-                    "href": "/about"
-                }
-            ]
-        },
         "switch-basic": {
             "type": "list",
             "callback": "initBasicSwitches();",
-            "data": [
-                {
+            "data": [{
                     "value": 5,
                     "selected": true
                 },
@@ -61,8 +39,7 @@
         },
         "switch-advanced": {
             "type": "list",
-            "data": [
-                {
+            "data": [{
                     "value": 5,
                     "selected": true
                 },
@@ -79,8 +56,7 @@
         },
         "iceberg-item": {
             "type": "list",
-            "data": [
-                {
+            "data": [{
                     "title": "High risk Investments",
                     "id": "high",
                     "color": "black",

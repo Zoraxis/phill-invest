@@ -168,7 +168,7 @@ const CalculateClickHandle = (e, first = false) => {
   anime({
     targets: "#calcultor-base",
     opacity: 0.25,
-    duration: 200,
+    duration: 400,
     easing: "linear"
   })
   basePart.classList.add("opacity-50");
@@ -178,7 +178,7 @@ const CalculateClickHandle = (e, first = false) => {
     anime({
       targets: "#calcultor-base",
       opacity: 1,
-      duration: 200,
+      duration: 300,
       easing: "linear"
     })
 

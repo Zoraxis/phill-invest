@@ -25,6 +25,10 @@ body, header, .inter {
     position: relative;
 }
 
+.svg-transform {
+    transform-box: fill-box;
+}
+
 .main-bg {
     background-image: url(/media/img/big.png);
     background-position: bottom;

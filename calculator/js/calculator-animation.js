@@ -34,6 +34,19 @@ anime({
 
 anime({
   ...basicCalcAniamtion,
+  targets: [".anim-bird"],
+  scale: 1.01,
+  duration: 6500,
+  rotate: [
+    { value: "-=12deg" },
+    { value: "+=9deg" },
+    { value: "-=5deg" },
+    { value: "+=13deg" },
+  ],
+});
+
+anime({
+  ...basicCalcAniamtion,
   duration: 6500,
   targets: ".anim-water",
   scale: [{ value: 1.1 }, { value: 1.2 }, { value: 1 }, { value: 1 }],

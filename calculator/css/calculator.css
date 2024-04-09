@@ -8,7 +8,7 @@ body {
 }
 
 .gradient {
-    background: linear-gradient(180deg, #ABEAF7 0%, #ABEAF7 60%, #01406A 60.01%, #012948 65.27%);
+    background: linear-gradient(180deg, #ABEAF7 0%, #ABEAF7 55%, #01406A 55.01%, #012948 65.27%);
 }
 
 .loader {

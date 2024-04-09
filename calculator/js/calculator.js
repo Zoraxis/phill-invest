@@ -9,7 +9,8 @@ let basicOutput,
   basicdurationOutput,
   durationOutput,
   loader,
-  calculateText;
+  calculateText,
+  basePart;
 
 const inputs = {
   starting: null,
@@ -64,6 +65,7 @@ const initBasicSwitches = () => {
   durationOutput = document.getElementById("duration-output");
   loader = document.getElementsByClassName("loader")[0];
   calculateText = document.getElementById("calculate-text");
+  basePart = document.getElementById("calcultor-base");
 
   InputChangeHandle("starting", inputs["starting"].value);
   InputChangeHandle("savings", inputs["savings"].value);
@@ -163,9 +165,22 @@ const CalculateClickHandle = (e, first = false) => {
 
   loader.classList.remove("hidden");
   calculateText.classList.add("hidden");
+  anime({
+    targets: "#calcultor-base",
+    opacity: 0.65,
+    duration: 200,
+    easing: "linear"
+  })
+  basePart.classList.add("opacity-50");
   setTimeout(() => {
     loader.classList.add("hidden");
     calculateText.classList.remove("hidden");
+    anime({
+      targets: "#calcultor-base",
+      opacity: 1,
+      duration: 200,
+      easing: "linear"
+    })
 
     CalculateHandle();
   }, 1500);

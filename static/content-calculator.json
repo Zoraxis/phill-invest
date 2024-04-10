@@ -29,7 +29,7 @@
         "iceberg-descr2": "Here's how much you could potentially make *",
         "iceberg-result-before-interval": "In",
         "iceberg-result-after-interval": "years you might have...",
-        "iceberg-result-descr": "If you consider a mid risk approach with 7% returns annually",
+        "iceberg-result-descr": "If you consider a mid-risk approach with 7% returns annually",
         "disclaimer-text": "* Investment involves risk. As a general rule, you should only trade in financial products that you are familiar with and understand the risk associated with them. ",
         "course-heading": "Want to learn how?",
         "course-btn": "Join bootcamp",
@@ -72,24 +72,24 @@
         "iceberg-item": {
             "type": "list",
             "data": [{
-                    "title": "High risk Investments",
+                    "title": "High-risk Investments",
                     "id": "high",
                     "color": "black",
                     "apr": 10
                 },
                 {
-                    "title": "Mid risk Investments",
+                    "title": "Mid-risk Investments",
                     "id": "mid",
                     "color": "black",
                     "apr": 7
                 },
                 {
-                    "title": "Low risk Investments",
+                    "title": "Low-risk Investments",
                     "id": "low",
                     "apr": 5
                 },
                 {
-                    "title": "Bank Deposit",
+                    "title": "Bank Fixed Deposit",
                     "id": "bank",
                     "apr": 3
                 },

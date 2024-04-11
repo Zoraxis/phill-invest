@@ -8,7 +8,7 @@ body {
 }
 
 .gradient {
-    background: linear-gradient(180deg, #ABEAF7 0%, #ABEAF7 55%, #01406A 55.01%, #012948 65.27%);
+    background: linear-gradient(180deg, #ABEAF7 0%, #ABEAF7 55%,#0B3B5E 61%, #0B3B5E 61.1%, #012948 75.27%);
 }
 
 .loader {
@@ -24,9 +24,11 @@ body {
     .loader {
         border-color: white #2B72F0;
     }
+
+    .gradient {
+        background: linear-gradient(180deg, #ABEAF7 0%, #ABEAF7 55%,#0B3B5E 58%, #0B3B5E 58.1%, #012948 75.27%);
+    }
 }
-
-
 
 @keyframes l1 {
     to {

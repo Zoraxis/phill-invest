@@ -30,6 +30,12 @@ body {
     }
 }
 
+@media only screen and (max-width: 412px) {
+    .gradient {
+        background: linear-gradient(180deg, #ABEAF7 0%, #ABEAF7 55%,#0B3B5E 56%, #0B3B5E 56.1%, #012948 75.27%);
+    }
+}
+
 @keyframes l1 {
     to {
         transform: rotate(.5turn)

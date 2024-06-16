@@ -1,6 +1,6 @@
 {
     "header": {
-        "markup": "<a href=\"{href}\"><span class=\"{styles}\">{label}</span></a>"
+        "markup": "<a class=\"cursor-pointer\" onclick=\"window.location.href = '{href}';\"><span class=\"{styles}\">{label}</span></a>"
     },
     "switch-basic": {
         "markup": "<div data-value=\"{value}\" class=\"basic-button flex justify-center relative items-center border border-black p-[0.875rem] max-sm:py-[0.65rem] rounded-[3.25rem] z-1 overflow-visible bg-white shadow-black shadow-[2px_2px_0px_0px] aria-checked:bg-black aria-checked:text-white aria-checked:shadow-none transition-all cursor-pointer\" aria-checked=\"{selected}\"> <span class=\"max-sm:leading-[1.4rem]\">{value} years</span> </div>"
